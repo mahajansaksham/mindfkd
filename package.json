@@ -13,7 +13,8 @@
     "start": "next start --hostname 0.0.0.0",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "build:site": "SITES_STATIC_EXPORT=1 next build --webpack"
   },
   "repository": {
     "type": "git",

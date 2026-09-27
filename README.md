@@ -56,3 +56,7 @@ Questions favor stable facts; dated comparisons explicitly name the reference ye
 ## V1.1
 
 Playtest completion times and per-question error rates; rebalance the curve, increase type variety, and expand/source-review the expert bank. Add a local deterministic daily practice mode before adding real ranked infrastructure. Future authenticated rankings should use versioned server-issued seeds and validate answer events server-side. No fake rankings, accounts, database, ads or payments are included.
+
+## Hosting
+
+The public Sites deployment uses `npm run build:site`, which exports static assets to `out/`. Standard `npm run build` followed by `npm start` retains the normal Next.js server workflow. `.openai/hosting.json` identifies the hosted site. The custom domains are mindfkd.com and www.mindfkd.com; DNS verification must complete before they serve the app.
