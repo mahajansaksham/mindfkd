@@ -1,4 +1,5 @@
 "use client";
+import { config } from "../lib/game";
 import { useEffect, useRef, useState } from "react";
 export default function Timer({
   deadline,
@@ -50,7 +51,9 @@ export default function Timer({
       <div className="eyebrow">SECONDS LEFT</div>
       <div className="time-track">
         <div
-          style={{ transform: `scaleX(${Math.min(1, remaining / 60000)})` }}
+          style={{
+            transform: `scaleX(${Math.min(1, remaining / config.startMs)})`,
+          }}
         />
       </div>
     </div>

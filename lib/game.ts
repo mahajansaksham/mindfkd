@@ -11,7 +11,7 @@ export type Question = {
   explanation?: string;
 };
 export const config = {
-  startMs: 60000,
+  startMs: 30000,
   bonusMs: 4000,
   penaltyMs: 6000,
   correctFeedbackMs: 520,

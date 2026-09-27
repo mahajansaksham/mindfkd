@@ -32,19 +32,19 @@ test("bank integrity and coverage", () => {
 test("timer bonus, penalty, combo, speed and rapid taps", () => {
   const rng = seededRandom(42);
   const r = startRun(questions, rng, 100);
-  assert.equal(r.deadline, 60100);
+  assert.equal(r.deadline, 30100);
   const right = answerRun(r, r.question!.answer, 1100);
-  assert.equal(right.deadline, 64100);
+  assert.equal(right.deadline, 34100);
   assert.equal(right.combo, 1);
   assert.equal(right.score, 350);
   assert.equal(answerRun(right, r.question!.answer, 1101), right);
   const next = nextQuestion(right, questions, rng, 1620);
   const wrong = answerRun(next, "invalid", 1700);
-  assert.equal(wrong.deadline, 58100);
+  assert.equal(wrong.deadline, 28100);
   assert.equal(wrong.combo, 0);
   assert.equal(wrong.incorrect, 1);
   assert.equal(wrong.bestCombo, 1);
-  assert.equal(answerRun(r, r.question!.answer, 60100).phase, "gameOver");
+  assert.equal(answerRun(r, r.question!.answer, 30100).phase, "gameOver");
   assert.equal(nextQuestion(wrong, questions, rng, 100000).phase, "gameOver");
 });
 test("scoring thresholds and level boundaries", () => {

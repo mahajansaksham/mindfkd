@@ -37,7 +37,7 @@ The supplied remote was empty when inspected, so no Borderline code or history w
 
 ## Rules
 
-60 seconds initially; correct answers add 4 seconds, wrong answers subtract 6 seconds. Time continues during feedback and in background tabs. Answers lock synchronously, preventing repeated taps from counting twice. Correct feedback lasts 520 ms, wrong feedback 850 ms. The monotonic `performance.now()` deadline is authoritative, independent of rendering cadence.
+30 seconds initially; correct answers add 4 seconds, wrong answers subtract 6 seconds. Time continues during feedback and in background tabs. Answers lock synchronously, preventing repeated taps from counting twice. Correct feedback lasts 520 ms, wrong feedback 850 ms. The monotonic `performance.now()` deadline is authoritative, independent of rendering cadence.
 
 Score = `(150 × difficulty + max(0, 300 − floor(answerMilliseconds / 10))) × multiplier`, rounded once. Combo thresholds are 3 → 1.2×, 5 → 1.5×, 10 → 2×, 15 → 3×. Errors reset combo. Time bonuses are never multiplied.
 

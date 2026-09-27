@@ -179,12 +179,13 @@ export default function Game() {
             your brain <em>go?</em>
           </h1>
           <p className="intro">
-            60 seconds. Questions get harder.
+            {config.startMs / 1000} seconds. Questions get harder.
             <br />
             Don’t run out of time.
           </p>
           <div className="start-clock">
-            60<span>.00</span>
+            {config.startMs / 1000}
+            <span>.00</span>
             <span className="clock-label eyebrow">
               SECONDS. MAKE THEM COUNT.
             </span>
@@ -347,8 +348,8 @@ export default function Game() {
           {modal === "help" ? (
             <>
               <p>
-                Start with 60 seconds. Every answer takes you up a level. Keep
-                going until the clock hits zero.
+                Start with {config.startMs / 1000} seconds. Every answer takes
+                you up a level. Keep going until the clock hits zero.
               </p>
               <div className="rules">
                 <p>
