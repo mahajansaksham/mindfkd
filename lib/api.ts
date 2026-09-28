@@ -1,5 +1,4 @@
 export type Player = {
-  id: string;
   username: string | null;
   displayName: string;
   bio: string;

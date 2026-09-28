@@ -8,9 +8,11 @@ export default function Question({
   onAnswer,
   disabled = false,
   pendingAnswer = null,
+  pendingLabel = "Answer selected. Checking…",
 }: {
   disabled?: boolean;
   pendingAnswer?: string | string[] | null;
+  pendingLabel?: string;
   question: Q;
   feedback: Run["feedback"];
   onAnswer: (a: string | string[]) => void;
@@ -151,7 +153,7 @@ export default function Question({
             </span>
           </>
         ) : pendingAnswer !== null ? (
-          <span className="input-hint">Answer selected. Checking…</span>
+          <span className="input-hint">{pendingLabel}</span>
         ) : (
           <span className="input-hint">
             {q.type === "order"

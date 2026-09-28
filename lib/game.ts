@@ -1,3 +1,4 @@
+import { type Genre, categoryGenre } from "./genres";
 export type Kind =
   "choice" | "binary" | "higher" | "order" | "boolean" | "number" | "visual";
 export type Question = {
@@ -11,6 +12,7 @@ export type Question = {
   explanation?: string;
   topicKey?: string;
   source?: string;
+  genre?: Genre;
 };
 export const config = {
   startMs: 30000,
@@ -51,6 +53,39 @@ export function shuffle<T>(items: T[], random: () => number): T[] {
   return out;
 }
 export type QuestionHistory = Record<string, number>;
+const indexes = new WeakMap<
+  Question[],
+  { byId: Map<string, Question>; tiers: Map<number, Question[]> }
+>();
+function bankIndex(bank: Question[]) {
+  let index = indexes.get(bank);
+  if (!index) {
+    const tiers = new Map<number, Question[]>();
+    for (const q of bank) {
+      const rows = tiers.get(q.difficulty) ?? [];
+      rows.push(q);
+      tiers.set(q.difficulty, rows);
+    }
+    index = { byId: new Map(bank.map((q) => [q.id, q])), tiers };
+    indexes.set(bank, index);
+  }
+  return index;
+}
+const genrePools = new WeakMap<Question[], Map<Genre, Question[]>>();
+export function questionsForGenre(bank: Question[], genre: Genre) {
+  if (genre === "mixed") return bank;
+  let pools = genrePools.get(bank);
+  if (!pools) {
+    pools = new Map();
+    genrePools.set(bank, pools);
+  }
+  if (!pools.has(genre))
+    pools.set(
+      genre,
+      bank.filter((q) => (q.genre ?? categoryGenre(q.category)) === genre),
+    );
+  return pools.get(genre)!;
+}
 export function selectQuestion(
   bank: Question[],
   level: number,
@@ -58,7 +93,7 @@ export function selectQuestion(
   random: () => number,
   history: QuestionHistory = {},
 ): Question | null {
-  const byId = new Map(bank.map((q) => [q.id, q]));
+  const { byId, tiers } = bankIndex(bank);
   const group = (q: Question) => q.topicKey ?? q.id;
   const usedGroups = new Set(
     used
@@ -67,8 +102,8 @@ export function selectQuestion(
       .map(group),
   );
   // Never jump difficulty or repeat a fact in the same run.
-  const available = bank.filter(
-    (q) => q.difficulty === difficultyFor(level) && !usedGroups.has(group(q)),
+  const available = (tiers.get(difficultyFor(level)) ?? []).filter(
+    (q) => !usedGroups.has(group(q)),
   );
   if (!available.length) return null;
   const lastSeen = (q: Question) => history[group(q)] ?? 0;

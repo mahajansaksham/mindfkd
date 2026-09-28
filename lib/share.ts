@@ -1,15 +1,22 @@
+import { genreLabel, type Genre } from "./genres";
 import { trackShare } from "./analytics";
 import { profileUrl } from "./api";
 import { Run } from "./game";
-export const shareText = (r: Run, username?: string, runId?: string) =>
-  `MINDFKD ⚡\n\n🧠 ${r.score.toLocaleString("en-US")}\n⚡ Level ${r.level}\n🎯 ${r.correct}/${r.correct + r.incorrect}\n🔥 ${r.bestCombo} combo\n\nHow far can your brain go?\nhttps://mindfkd.com${username ? `\nMy profile: ${profileUrl(username, runId)}` : ""}`;
+export const shareText = (
+  r: Run,
+  username?: string,
+  runId?: string,
+  genre: Genre = "mixed",
+) =>
+  `MINDFKD ⚡\n${genreLabel(genre)}\n\n🧠 ${r.score.toLocaleString("en-US")}\n⚡ Level ${r.level}\n🎯 ${r.correct}/${r.correct + r.incorrect}\n🔥 ${r.bestCombo} combo\n\nHow far can your brain go?\nhttps://mindfkd.com${username ? `\nMy profile: ${profileUrl(username, runId)}` : ""}`;
 export async function shareRun(
   r: Run,
   username?: string,
   runId?: string,
   analyticsRunId = runId,
+  genre: Genre = "mixed",
 ) {
-  const text = shareText(r, username, runId);
+  const text = shareText(r, username, runId, genre);
   if (navigator.share) {
     try {
       await navigator.share({ title: "MINDFKD", text });

@@ -36,6 +36,7 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     .sort())
     sqlite.exec(readFileSync(`drizzle/${file}`, "utf8"));
   const reads: string[] = [];
+  let staleRunCount = false;
   function prepare(sql: string) {
     let args: unknown[] = [];
     const obj = {
@@ -45,6 +46,8 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
       },
       async first() {
         reads.push(sql);
+        if (staleRunCount && sql.startsWith("SELECT COUNT(*) AS n FROM runs"))
+          return { n: 0 };
         return sqlite.prepare(sql).get(...(args as [])) ?? null;
       },
       async all() {
@@ -73,7 +76,13 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
         }
       },
     },
-    ASSETS: { fetch: async () => new Response("asset") },
+    ASSETS: {
+      fetch: async () =>
+        new Response("<html>asset</html>", {
+          headers: { "Content-Type": "text/html" },
+        }),
+    },
+    GOOGLE_CLIENT_ID: "test-client",
   } as unknown as Env;
   for (const id of ["one", "two"]) {
     sqlite
@@ -108,13 +117,23 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     );
     return {
       status: r.status,
+      headers: r.headers,
       value: (await r.json()) as {
         id: string;
+        nonce: string;
+        genre: string;
+        version: number;
+        isMe: boolean;
         run: Run;
         counts: { followers: number };
-        players: { username: string; score: number }[];
+        players: { username: string; score: number; genre: string }[];
         sharedRun: { id: string };
-        player: { googleSub?: string; email?: string } | null;
+        player: {
+          id?: string;
+          username?: string;
+          googleSub?: string;
+          email?: string;
+        } | null;
       },
     };
   }
@@ -240,6 +259,205 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
   assert.equal(p.value.sharedRun.id, id);
   assert.equal(p.value.player!.googleSub, undefined);
   assert.equal(p.value.player!.email, undefined);
+  assert.equal(
+    p.value.player!.id,
+    undefined,
+    "internal account ID must not leave API",
+  );
+  assert.equal(p.value.isMe, true);
+  assert.equal(
+    (await request("/api/player?u=first", undefined, "two")).value.isMe,
+    false,
+  );
+  assert.equal(
+    (await request("/api/player?u=first", undefined, "absent")).value.isMe,
+    false,
+  );
+  assert.equal((await request("/api/me")).value.player!.id, undefined);
+  assert.equal(
+    (
+      await request(
+        "/api/runs/answer",
+        {
+          id: secondStart.value.id,
+          version: 0,
+          answer: "x",
+          isMe: true,
+          player_id: "one",
+        },
+        "two",
+      )
+    ).status,
+    404,
+  );
+  assert.equal(
+    (
+      await request(
+        "/api/runs/next",
+        { id: secondStart.value.id, version: 0 },
+        "two",
+      )
+    ).status,
+    404,
+  );
+  assert.equal(
+    (
+      await request("/api/runs/answer", {
+        id: secondStart.value.id,
+        version: -1,
+        answer: "x",
+      })
+    ).status,
+    400,
+  );
+  assert.equal(
+    (await request("/api/runs/start", { genre: "invalid" })).status,
+    400,
+  );
+  assert.equal((await request("/api/leaderboard?genre=invalid")).status, 400);
+  assert.equal(
+    (
+      await request("/api/profile", {
+        username: "first",
+        displayName: "x".repeat(20000),
+      })
+    ).status,
+    413,
+  );
+  assert.equal(
+    (
+      await request("/api/profile", {
+        username: "first",
+        displayName: "🙂".repeat(5000),
+      })
+    ).status,
+    413,
+  );
+  assert.equal(
+    (
+      await request("/api/profile", {
+        username: "first",
+        displayName: "First",
+        id: "two",
+        isMe: true,
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request("/api/player?u=second")).value.player!.username,
+    "second",
+  );
+  assert.equal(
+    (
+      await request("/api/profile", {
+        username: "renamed",
+        displayName: "First",
+      })
+    ).status,
+    400,
+  );
+  assert.equal((await request("/api/question_events")).status, 404);
+  const politics = await request("/api/runs/start", { genre: "politics" });
+  assert.equal(politics.value.genre, "politics");
+  assert.equal(politics.value.run.question?.genre, "politics");
+  const politicsState = JSON.parse(
+    sqlite.prepare("SELECT state FROM runs WHERE id=?").get(politics.value.id)!
+      .state as string,
+  );
+  const politicsAnswer = await request("/api/runs/answer", {
+    id: politics.value.id,
+    version: 0,
+    genre: "sports",
+    answer: politicsState.run.question.answer,
+  });
+  assert.equal(
+    politicsAnswer.value.genre,
+    "politics",
+    "category cannot change during a run",
+  );
+  const finishedPolitics = JSON.parse(
+    sqlite.prepare("SELECT state FROM runs WHERE id=?").get(politics.value.id)!
+      .state as string,
+  );
+  finishedPolitics.run.deadline = 0;
+  sqlite
+    .prepare("UPDATE runs SET state=? WHERE id=?")
+    .run(JSON.stringify(finishedPolitics), politics.value.id);
+  await request("/api/runs/finish", {
+    id: politics.value.id,
+    version: politicsAnswer.value.version,
+  });
+  const politicsBoard = await request("/api/leaderboard?genre=politics");
+  assert.equal(politicsBoard.value.players.length, 1);
+  assert.equal(politicsBoard.value.players[0].genre, "politics");
+  assert.equal(
+    (await request("/api/leaderboard?genre=sports")).value.players.length,
+    0,
+  );
+  const overall = await request("/api/leaderboard?genre=overall");
+  assert.equal(overall.value.players.length, 1);
+  assert.equal(
+    overall.value.players[0].score,
+    Math.max(first.value.run.score, politicsAnswer.value.run.score),
+  );
+  assert.equal(
+    overall.value.players[0].genre,
+    politicsAnswer.value.run.score > first.value.run.score
+      ? "politics"
+      : "mixed",
+  );
+  const nonce = await request("/api/auth/nonce", {});
+  assert.ok(nonce.headers.get("set-cookie")?.includes("HttpOnly"));
+  const nonceRequest = () =>
+    worker.fetch(
+      new Request("https://mindfkd.com/api/auth/google", {
+        method: "POST",
+        headers: {
+          Origin: "https://mindfkd.com",
+          "X-Mindfkd-Request": "1",
+          "Content-Type": "application/json",
+          cookie: `__Host-mindfkd-nonce=${nonce.value.nonce}`,
+        },
+        body: JSON.stringify({ credential: "not-a-valid-token" }),
+      }),
+      env,
+    );
+  assert.equal((await nonceRequest()).status, 401);
+  assert.equal(
+    sqlite.prepare("SELECT COUNT(*) AS n FROM auth_nonces").get()!.n,
+    0,
+  );
+  assert.equal((await nonceRequest()).status, 401, "nonce replay rejected");
+  const assets = await worker.fetch(new Request("https://mindfkd.com/"), env);
+  assert.equal(assets.headers.get("x-frame-options"), "DENY");
+  assert.match(
+    assets.headers.get("content-security-policy")!,
+    /frame-ancestors 'none'/,
+  );
+  assert.equal(p.headers.get("x-content-type-options"), "nosniff");
+  // Simulate another request using a stale precheck. The write must still enforce 120/hour.
+  let n = Number(
+    sqlite
+      .prepare("SELECT COUNT(*) AS n FROM runs WHERE player_id=?")
+      .get("one")!.n,
+  );
+  while (n++ < 120)
+    sqlite
+      .prepare(
+        "INSERT INTO runs(id,player_id,state,status,created_at) VALUES(?,?,?,'active',?)",
+      )
+      .run(crypto.randomUUID(), "one", "{}", Date.now());
+  const eventsBefore = sqlite
+    .prepare("SELECT COUNT(*) AS n FROM question_events")
+    .get()!.n;
+  staleRunCount = true;
+  assert.equal((await request("/api/runs/start", {})).status, 429);
+  staleRunCount = false;
+  assert.equal(
+    sqlite.prepare("SELECT COUNT(*) AS n FROM question_events").get()!.n,
+    eventsBefore,
+  );
   await request("/api/auth/logout", {});
   assert.equal((await request("/api/me")).value.player, null);
   sqlite.close();

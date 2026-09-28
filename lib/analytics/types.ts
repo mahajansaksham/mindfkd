@@ -1,3 +1,4 @@
+import type { Genre } from "../genres";
 export type Scalar = string | number | boolean;
 export type Properties = Record<string, Scalar>;
 export type Mode = "guest" | "ranked";
@@ -22,6 +23,7 @@ export type AnalyticsEventMap = {
   game_started: {
     run_id: string;
     mode: Mode;
+    genre?: Genre;
     starting_time: number;
     previous_best_score: number;
     previous_best_level: number;
@@ -66,6 +68,7 @@ export type AnalyticsEventMap = {
     previous_best_score: number;
     new_personal_best: boolean;
     mode: Mode;
+    genre?: Genre;
   };
   run_replayed: {
     run_id: string;

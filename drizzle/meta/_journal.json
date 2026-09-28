@@ -15,6 +15,20 @@
       "when": 1790555723916,
       "tag": "0001_wet_steel_serpent",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790618713549,
+      "tag": "0002_genres_security",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1790619349046,
+      "tag": "0003_live_matches",
+      "breakpoints": true
     }
   ]
 }

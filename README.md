@@ -81,3 +81,7 @@ See [ANALYTICS.md](ANALYTICS.md) for providers, configuration, consent, event de
 ## Interaction responsiveness
 
 Number questions now use direct-submit choices and keyboard 1–4. Ranked answers highlight the selected choice immediately while the server verifies it. Accepted run requests combine authentication and run lookup in one database read; start prechecks run concurrently. Feedback wait values are calculated at response time so database work is not added to the intentional feedback delay. Home and leaderboard navigation use client-side links. Ranked verification still depends on network latency; no measured zero-latency guarantee is made.
+
+## Latest release
+
+Six playable categories, category/overall best-score leaderboards and `/compete` for shared-clock 1v1 or unequal-team matches. See PROJECT_LOG.md for decisions, SECURITY_AUDIT.md for the review, LIVE_MATCHES.md for rules/transport and SCALING.md for the million-question roadmap. Schema migrations are additive. See QUESTIONS.md for the current 1,146-question bank and editorial limitations.

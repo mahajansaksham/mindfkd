@@ -101,3 +101,30 @@ test("cross-run history prefers unseen questions and never escalates an exhauste
     null,
   );
 });
+
+test("all five genre pools cover every tier, stay in genre, and progress to tier seven", async () => {
+  const { GENRES } = await import("../lib/genres");
+  const { questionsForGenre } = await import("../lib/game");
+  for (const genre of GENRES) {
+    const pool = questionsForGenre(questions, genre.id);
+    for (let tier = 1; tier <= 7; tier++)
+      assert.ok(
+        pool.filter((q) => q.difficulty === tier).length >=
+          (tier >= 5 && tier <= 6 ? 10 : 5),
+        `${genre.id} tier ${tier}`,
+      );
+    if (genre.id !== "mixed")
+      assert.ok(pool.every((q) => q.genre === genre.id));
+    let r = startRun(pool, seededRandom(7), 0),
+      now = 0;
+    for (let level = 1; level < 45; level++) {
+      assert.equal(r.phase, "playing", `${genre.id} level ${level}`);
+      now += 100;
+      r = answerRun(r, r.question!.answer, now);
+      now += 600;
+      r = nextQuestion(r, pool, seededRandom(level), now);
+    }
+    assert.equal(r.level, 45);
+    assert.equal(new Set(r.used).size, r.used.length);
+  }
+});

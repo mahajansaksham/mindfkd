@@ -69,7 +69,24 @@ const foundations = rows.map((row) => {
     options: [answer, ...other],
   };
 });
-for (const q of [...approved, ...foundations]) {
+const additions = (await readFile("data/genre-additions.tsv", "utf8"))
+  .trim()
+  .split("\n")
+  .map((row) => {
+    const [tier, category, prompt, answer, ...other] = row.split("|");
+    return {
+      id:
+        "genre-" +
+        createHash("sha256").update(prompt).digest("hex").slice(0, 16),
+      difficulty: Number(tier),
+      category,
+      type: "choice",
+      prompt,
+      answer,
+      options: [answer, ...other],
+    };
+  });
+for (const q of [...approved, ...foundations, ...additions]) {
   if (
     q.options.length !== 4 ||
     new Set(q.options).size !== 4 ||
@@ -107,4 +124,9 @@ await writeFile(
     null,
     2,
   ) + "\n",
+);
+
+await writeFile(
+  "data/genre-additions.json",
+  JSON.stringify(additions, null, 2) + "\n",
 );

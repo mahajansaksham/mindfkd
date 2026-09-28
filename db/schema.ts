@@ -32,6 +32,7 @@ export const runs = sqliteTable(
       .notNull()
       .references(() => players.id, { onDelete: "cascade" }),
     state: text("state").notNull(),
+    genre: text("genre").notNull().default("mixed"),
     season: text("season").notNull().default("launch"),
     bankVersion: text("bank_version").notNull().default("launch"),
     version: integer("version").notNull().default(0),
@@ -47,6 +48,8 @@ export const runs = sqliteTable(
   (t) => [
     index("runs_player_status").on(t.playerId, t.status),
     index("runs_leaderboard").on(t.status, t.score),
+    index("runs_genre_score").on(t.season, t.genre, t.status, t.score),
+    index("runs_player_created").on(t.playerId, t.createdAt),
     index("runs_season_score").on(t.season, t.status, t.score),
   ],
 );
@@ -91,4 +94,71 @@ export const questionEvents = sqliteTable(
     index("question_history_player").on(t.playerId, t.topicKey),
     index("question_calibration").on(t.bankVersion, t.questionId),
   ],
+);
+
+export const authNonces = sqliteTable(
+  "auth_nonces",
+  {
+    hash: text("hash").primaryKey(),
+    expiresAt: integer("expires_at").notNull(),
+  },
+  (t) => [index("auth_nonce_expiry").on(t.expiresAt)],
+);
+
+export const matches = sqliteTable(
+  "matches",
+  {
+    code: text("code").primaryKey(),
+    hostId: text("host_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    mode: text("mode").notNull(),
+    genre: text("genre").notNull(),
+    status: text("status").notNull().default("waiting"),
+    questions: text("questions").notNull(),
+    createdAt: integer("created_at").notNull(),
+    startAt: integer("start_at"),
+    endAt: integer("end_at"),
+    winnerTeam: integer("winner_team"),
+    finishedAt: integer("finished_at"),
+  },
+  (t) => [
+    index("matches_host_created").on(t.hostId, t.createdAt),
+    index("matches_status_end").on(t.status, t.endAt),
+  ],
+);
+export const matchMembers = sqliteTable(
+  "match_members",
+  {
+    code: text("code")
+      .notNull()
+      .references(() => matches.code, { onDelete: "cascade" }),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    team: integer("team").notNull(),
+    ready: integer("ready").notNull().default(0),
+    joinedAt: integer("joined_at").notNull(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.code, t.playerId] }),
+    index("match_member_player").on(t.playerId, t.code),
+  ],
+);
+export const matchAnswers = sqliteTable(
+  "match_answers",
+  {
+    code: text("code")
+      .notNull()
+      .references(() => matches.code, { onDelete: "cascade" }),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    round: integer("round").notNull(),
+    answer: text("answer").notNull(),
+    correct: integer("correct").notNull(),
+    score: integer("score").notNull(),
+    answeredAt: integer("answered_at").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.code, t.playerId, t.round] })],
 );

@@ -1,3 +1,4 @@
+import { type Genre } from "../lib/genres";
 import { questions } from "../data/questions";
 import {
   Run,
@@ -7,16 +8,30 @@ import {
   nextQuestion,
   seededRandom,
   config,
+  questionsForGenre,
 } from "../lib/game";
-export type RankedState = { run: Run; seed: number; readyAt: number };
+export type RankedState = {
+  run: Run;
+  seed: number;
+  readyAt: number;
+  genre?: Genre;
+};
 export function newRanked(
   seed: number,
   now: number,
   history: QuestionHistory = {},
+  genre: Genre = "mixed",
 ): RankedState {
   return {
-    run: startRun(questions, seededRandom(seed), now, 1, history),
+    run: startRun(
+      questionsForGenre(questions, genre),
+      seededRandom(seed),
+      now,
+      1,
+      history,
+    ),
     seed,
+    genre,
     readyAt: 0,
   };
 }
@@ -53,7 +68,7 @@ export function advanceRanked(
     ...state,
     run: nextQuestion(
       state.run,
-      questions,
+      questionsForGenre(questions, state.genre ?? "mixed"),
       seededRandom(state.seed + state.run.level),
       now,
       history,
@@ -69,6 +84,7 @@ export function publicRun(
   const r = state.run;
   return {
     id,
+    genre: state.genre ?? "mixed",
     version,
     remainingMs: Math.max(0, r.deadline - now),
     waitMs: Math.max(0, state.readyAt - now),

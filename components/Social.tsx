@@ -2,6 +2,7 @@
 import { trackChallengeOpened } from "../lib/analytics";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { GENRES, genreLabel, type LeaderboardGenre } from "../lib/genres";
 import { CURRENT_SEASON, SEASONS } from "../lib/catalog";
 import { api, Player, profileUrl } from "../lib/api";
 import { useAccount } from "./Account";
@@ -11,10 +12,12 @@ type Row = {
   score: number;
   level: number;
   run_id: string;
+  genre: string;
   rank: number;
 };
 type Result = {
   id: string;
+  genre: string;
   score: number;
   level: number;
   correct: number;
@@ -23,6 +26,13 @@ type Result = {
   finishedAt: number;
 };
 type Profile = {
+  competition: {
+    wins: number;
+    losses: number;
+    draws: number;
+    teamWins: number;
+    teamLosses: number;
+  };
   player: Player;
   stats: {
     games: number;
@@ -62,6 +72,7 @@ function Shell({ children }: { children: React.ReactNode }) {
   );
 }
 export function Leaderboard() {
+  const [genre, setGenre] = useState<LeaderboardGenre>("overall");
   const [season, setSeason] = useState(CURRENT_SEASON);
   const [data, setData] = useState<{ players: Row[]; me: Row | null } | null>(
       null,
@@ -71,7 +82,7 @@ export function Leaderboard() {
   useEffect(() => {
     let active = true;
     api<{ players: Row[]; me: Row | null }>(
-      `/api/leaderboard?season=${encodeURIComponent(season)}`,
+      `/api/leaderboard?season=${encodeURIComponent(season)}&genre=${genre}`,
     )
       .then((d) => {
         if (active) {
@@ -85,12 +96,34 @@ export function Leaderboard() {
     return () => {
       active = false;
     };
-  }, [player, season]);
+  }, [player, season, genre]);
   return (
     <Shell>
       <div className="eyebrow">THE GLOBAL LEADERBOARD</div>
       <h1>Brains to beat.</h1>
-      <p className="muted">Each player’s best verified run in this season.</p>
+      <p className="muted">
+        {genre === "overall"
+          ? "Each player’s highest single score across all categories in this season."
+          : `Each player’s best ${genreLabel(genre)} run in this season.`}
+      </p>
+      <label className="season-picker">
+        Category
+        <select
+          value={genre}
+          onChange={(e) => {
+            setData(null);
+            setError("");
+            setGenre(e.target.value as LeaderboardGenre);
+          }}
+        >
+          <option value="overall">Overall · Highest score</option>
+          {GENRES.map((g) => (
+            <option key={g.id} value={g.id}>
+              {g.label}
+            </option>
+          ))}
+        </select>
+      </label>
       <label className="season-picker">
         Leaderboard
         <select
@@ -142,7 +175,9 @@ export function Leaderboard() {
                   </span>
                   <span className="board-score">
                     <strong>{row.score.toLocaleString()}</strong>
-                    <small>LEVEL {row.level}</small>
+                    <small>
+                      {genreLabel(row.genre).toUpperCase()} · LEVEL {row.level}
+                    </small>
                   </span>
                 </Link>
               ))}
@@ -270,7 +305,8 @@ export function PublicProfile() {
               <div className="eyebrow">SHARED VERIFIED RUN</div>
               <strong>{data.sharedRun.score.toLocaleString()}</strong>
               <p>
-                Level {data.sharedRun.level} · {data.sharedRun.correct}/
+                {genreLabel(data.sharedRun.genre)} · Level{" "}
+                {data.sharedRun.level} · {data.sharedRun.correct}/
                 {data.sharedRun.correct + data.sharedRun.incorrect} correct ·{" "}
                 {data.sharedRun.bestCombo} best combo
               </p>
@@ -292,6 +328,25 @@ export function PublicProfile() {
               </div>
             ))}
           </div>
+          <h2 className="section-title">Live competitions</h2>
+          <div className="competition-record">
+            <div>
+              <strong>{data.competition.wins}</strong>
+              <span>1V1 WINS</span>
+            </div>
+            <div>
+              <strong>{data.competition.losses}</strong>
+              <span>1V1 LOSSES</span>
+            </div>
+            <div>
+              <strong>{data.competition.draws}</strong>
+              <span>1V1 DRAWS</span>
+            </div>
+          </div>
+          <p className="muted">
+            Team matches: {data.competition.teamWins} wins ·{" "}
+            {data.competition.teamLosses} losses
+          </p>
           <h2 className="section-title">Recent runs</h2>
           {data.recent.length ? (
             <div className="leaderboard">
@@ -305,7 +360,9 @@ export function PublicProfile() {
                     <strong>{r.score.toLocaleString()} pts</strong>
                     <small>{new Date(r.finishedAt).toLocaleDateString()}</small>
                   </span>
-                  <span className="board-score">LEVEL {r.level}</span>
+                  <span className="board-score">
+                    {genreLabel(r.genre).toUpperCase()} · LEVEL {r.level}
+                  </span>
                 </Link>
               ))}
             </div>

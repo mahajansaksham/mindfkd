@@ -10,7 +10,8 @@ import {
   ArrowRight,
   Share2,
 } from "lucide-react";
-import { questions } from "../data/questions";
+import { loadQuestionBank } from "../lib/question-bank";
+import { GENRES, genreLabel, type Genre } from "../lib/genres";
 import {
   Run,
   QuestionHistory,
@@ -52,6 +53,10 @@ const labels = [
 export default function Game() {
   const account = useAccount();
   const [ranked, setRanked] = useState(false);
+  const [genre, setGenre] = useState<Genre>("mixed");
+  const [loadingBank, setLoadingBank] = useState(false);
+  const bank = useRef<import("../lib/game").Question[]>([]);
+  const starting = useRef(false);
   const [run, setRun] = useState<Run>(emptyRun),
     [stats, setStats] = useState<Stats>(blankStats),
     [modal, setModal] = useState<"help" | "stats" | null>(null),
@@ -91,7 +96,7 @@ export default function Game() {
         update(
           nextQuestion(
             current.current,
-            questions,
+            bank.current,
             rng.current,
             performance.now(),
             history.current,
@@ -125,10 +130,23 @@ export default function Game() {
     });
     return () => cancelAnimationFrame(id);
   }, [run]);
-  function start() {
+  async function start() {
+    if (starting.current) return;
     if (account.player?.username) {
       setRanked(true);
       return;
+    }
+    starting.current = true;
+    setLoadingBank(true);
+    setMessage("");
+    try {
+      bank.current = await loadQuestionBank(genre);
+    } catch {
+      setMessage("Could not load questions. Please try again.");
+      return;
+    } finally {
+      starting.current = false;
+      setLoadingBank(false);
     }
     saved.current = false;
     setPreviousBest(stats.bestScore);
@@ -144,11 +162,12 @@ export default function Game() {
       crypto.randomUUID(),
       "guest",
       readStats(),
+      genre,
     );
     history.current = { ...readQuestionHistory(), ...history.current };
     update(
       startRun(
-        questions,
+        bank.current,
         rng.current,
         performance.now(),
         level,
@@ -164,6 +183,7 @@ export default function Game() {
           account.player?.username ?? undefined,
           undefined,
           telemetry.current?.id,
+          genre,
         ),
       );
     } catch {
@@ -173,7 +193,16 @@ export default function Game() {
   }
   const active = run.phase === "playing" || run.phase === "feedback";
   const tier = run.question?.difficulty ?? 1;
-  if (ranked) return <RankedGame onExit={() => setRanked(false)} />;
+  if (ranked)
+    return (
+      <RankedGame
+        genre={genre}
+        onExit={() => {
+          setRanked(false);
+          update(emptyRun);
+        }}
+      />
+    );
   return (
     <main className={active ? "is-playing" : ""}>
       <header>
@@ -257,12 +286,46 @@ export default function Game() {
               SECONDS. MAKE THEM COUNT.
             </span>
           </div>
-          <button className="primary start" onClick={start}>
-            START RUN <ArrowUpRight size={23} />
+          <fieldset className="genre-picker">
+            <legend className="eyebrow">CHOOSE YOUR CHALLENGE</legend>
+            <div>
+              {GENRES.map((g) => (
+                <label key={g.id} className={genre === g.id ? "selected" : ""}>
+                  <input
+                    type="radio"
+                    name="genre"
+                    value={g.id}
+                    checked={genre === g.id}
+                    disabled={loadingBank}
+                    onChange={() => setGenre(g.id)}
+                  />
+                  <span>{g.label}</span>
+                </label>
+              ))}
+            </div>
+            <p>{GENRES.find((g) => g.id === genre)?.description}</p>
+          </fieldset>
+          <button
+            className="primary start"
+            disabled={loadingBank}
+            onClick={() => void start()}
+            onPointerEnter={() => void loadQuestionBank(genre).catch(() => {})}
+            onFocus={() => void loadQuestionBank(genre).catch(() => {})}
+          >
+            {loadingBank ? "LOADING QUESTIONS…" : "START RUN"}{" "}
+            <ArrowUpRight size={23} />
           </button>
+          {message && (
+            <p role="status" className="share-message">
+              {message}
+            </p>
+          )}
           <Link className="guest-leaderboard" href="/leaderboard">
             <BarChart3 size={18} /> GLOBAL LEADERBOARD{" "}
             <ArrowUpRight size={18} />
+          </Link>
+          <Link className="live-invite" href="/compete">
+            LIVE COMPETITIONS <span>1v1 · Team vs team ↗</span>
           </Link>
           <div className="difficulty-ruler">
             <span>EASY</span>
@@ -296,7 +359,7 @@ export default function Game() {
               </strong>
             </span>
             <span>
-              <Zap size={13} /> ENDLESS V0
+              <Zap size={13} /> THINK FAST. LAST LONG.
             </span>
           </div>
         </div>
@@ -307,7 +370,7 @@ export default function Game() {
               LEVEL <strong>{String(run.level).padStart(2, "0")}</strong>
             </span>
             <span className="eyebrow milestone" key={Math.floor(run.level / 5)}>
-              {labels[tier]}
+              {genreLabel(genre).toUpperCase()} · {labels[tier]}
             </span>
           </div>
           <Timer
@@ -380,8 +443,20 @@ export default function Game() {
               <span>BEST COMBO</span>
             </div>
           </div>
-          <button className="primary start" onClick={start}>
-            RUN AGAIN <ArrowRight size={22} />
+          <button
+            className="primary start"
+            disabled={loadingBank}
+            onClick={() => void start()}
+          >
+            {loadingBank ? "LOADING QUESTIONS…" : "RUN AGAIN"}{" "}
+            <ArrowRight size={22} />
+          </button>
+          <button
+            className="text-button change-category"
+            disabled={loadingBank}
+            onClick={() => update(emptyRun)}
+          >
+            CHANGE CATEGORY
           </button>
           <button className="share" onClick={share}>
             <Share2 size={16} /> SHARE SCORE
@@ -392,7 +467,12 @@ export default function Game() {
           {fallback && (
             <textarea
               readOnly
-              value={shareText(run, account.player?.username ?? undefined)}
+              value={shareText(
+                run,
+                account.player?.username ?? undefined,
+                undefined,
+                genre,
+              )}
               aria-label="Share result"
               onFocus={(e) => e.target.select()}
             />

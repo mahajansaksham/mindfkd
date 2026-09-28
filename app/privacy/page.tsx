@@ -24,8 +24,13 @@ export default function Page() {
           your email address.
         </p>
         <p>
-          Your profile, scores and the players you follow are public and may be
-          shared. Only create a profile with information you want others to see.
+          Live rooms store team membership and submitted answers to verify
+          results. Room members can see each player’s scores and correct, wrong
+          and unanswered counts; answers are revealed after the shared timer
+          closes. Your 1v1 wins, losses and draws and team wins and losses
+          appear on your public profile. Your profile, scores and the players
+          you follow are public and may be shared. Only create a profile with
+          information you want others to see.
         </p>
         <p>
           A secure session cookie keeps you signed in for up to 30 days. Sign

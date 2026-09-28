@@ -1,3 +1,6 @@
+import { matchAPI, MatchError, competitionStats } from "./matches";
+import { GENRES, isGenre } from "../lib/genres";
+import { secureResponse } from "./security";
 import { BANK_VERSION, CURRENT_SEASON, SEASONS } from "../lib/catalog";
 import type { QuestionHistory } from "../lib/game";
 import type { Env, Player } from "./types";
@@ -48,8 +51,35 @@ const fail = (status: number, message: string): never => {
 async function body(request: Request) {
   if (!request.headers.get("content-type")?.startsWith("application/json"))
     fail(415, "Expected JSON");
-  const text = await request.text();
-  if (text.length > 16000) fail(413, "Request too large");
+  const limit = 16000;
+  if (Number(request.headers.get("content-length")) > limit)
+    fail(413, "Request too large");
+  const reader = request.body?.getReader();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  if (reader) {
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        size += value.byteLength;
+        if (size > limit) {
+          await reader.cancel();
+          fail(413, "Request too large");
+        }
+        chunks.push(value);
+      }
+    } finally {
+      reader.releaseLock();
+    }
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  const text = new TextDecoder().decode(bytes);
   try {
     const parsed = JSON.parse(text);
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
@@ -66,14 +96,13 @@ async function requirePlayer(request: Request, env: Env) {
 }
 function publicPlayer(p: Player) {
   return {
-    id: p.id,
     username: p.username,
     displayName: p.display_name,
     bio: p.bio,
     createdAt: p.created_at,
   };
 }
-const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished' AND r.season=?), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
+const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished' AND r.season=? AND (?='overall' OR r.genre=?)), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,b.genre,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
 async function questionHistory(
   env: Env,
   playerId: string,
@@ -98,6 +127,21 @@ async function api(request: Request, env: Env) {
       request.headers.get("x-mindfkd-request") !== "1")
   )
     fail(403, "Invalid request origin");
+  if (path.startsWith("/api/matches/")) {
+    if (
+      method === "GET" &&
+      request.headers.get("origin") &&
+      !origins.has(request.headers.get("origin")!)
+    )
+      fail(403, "Invalid request origin");
+    const player = await requirePlayer(request, env);
+    return matchAPI(
+      request,
+      env,
+      player,
+      method === "POST" ? await body(request) : {},
+    );
+  }
   if (path === "/api/me" && method === "GET") {
     const player = await currentPlayer(request, env);
     return json({
@@ -107,6 +151,12 @@ async function api(request: Request, env: Env) {
   }
   if (path === "/api/auth/nonce" && method === "POST") {
     const nonce = token();
+    await env.DB.batch([
+      env.DB.prepare("DELETE FROM auth_nonces WHERE expires_at<?").bind(now),
+      env.DB.prepare(
+        "INSERT INTO auth_nonces(hash,expires_at) VALUES(?,?)",
+      ).bind(await hash(nonce), now + 600000),
+    ]);
     return json({ nonce }, 200, {
       "Set-Cookie": setCookie("__Host-mindfkd-nonce", nonce, 600),
     });
@@ -118,6 +168,13 @@ async function api(request: Request, env: Env) {
       nonce = cookie(request, "__Host-mindfkd-nonce");
     if (!nonce || typeof input.credential !== "string")
       fail(400, "Start sign-in again");
+    const consumed = await env.DB.prepare(
+      "DELETE FROM auth_nonces WHERE hash=? AND expires_at>?",
+    )
+      .bind(await hash(nonce!), now)
+      .run();
+    if (!consumed.meta.changes)
+      fail(401, "Sign-in attempt expired or already used. Start again.");
     let sub: string;
     try {
       sub = await verifyGoogle(input.credential, env.GOOGLE_CLIENT_ID!, nonce!);
@@ -188,11 +245,13 @@ async function api(request: Request, env: Env) {
       .first();
     if (existing) fail(409, "That username is taken");
     try {
-      await env.DB.prepare(
-        "UPDATE players SET username=?,display_name=?,bio=? WHERE id=?",
+      const changed = await env.DB.prepare(
+        "UPDATE players SET username=?,display_name=?,bio=? WHERE id=? AND (username IS NULL OR username=?)",
       )
-        .bind(username, displayName, bio, p.id)
+        .bind(username, displayName, bio, p.id, username)
         .run();
+      if (!changed.meta.changes)
+        fail(409, "Profile changed. Refresh and try again.");
     } catch {
       return fail(409, "That username is taken");
     }
@@ -203,24 +262,34 @@ async function api(request: Request, env: Env) {
   if (path === "/api/leaderboard" && method === "GET") {
     const p = await currentPlayer(request, env);
     const season = url.searchParams.get("season") ?? CURRENT_SEASON;
+    const genre = url.searchParams.get("genre") ?? "overall";
+    if (genre !== "overall" && !isGenre(genre)) fail(400, "Unknown category");
     if (!SEASONS.some((s) => s.id === season)) fail(400, "Unknown season");
     const top = await env.DB.prepare(
       leaderboardSQL + "SELECT * FROM ranked ORDER BY rank LIMIT 50",
     )
-      .bind(season)
+      .bind(season, genre, genre)
       .all();
     const me = p?.username
       ? await env.DB.prepare(
           leaderboardSQL + "SELECT * FROM ranked WHERE username=?",
         )
-          .bind(season, p.username)
+          .bind(season, genre, genre, p.username)
           .first()
       : null;
-    return json({ players: top.results, me, season, seasons: SEASONS });
+    return json({
+      players: top.results,
+      me,
+      season,
+      seasons: SEASONS,
+      genre,
+      genres: GENRES,
+    });
   }
   if (path === "/api/player" && method === "GET") {
     const username = url.searchParams.get("u")?.toLowerCase();
-    if (!username) fail(400, "Missing username");
+    if (!username || !/^[a-z0-9_]{3,20}$/.test(username))
+      fail(400, "Invalid username");
     const p = await env.DB.prepare(
       "SELECT id,username,display_name,bio,created_at FROM players WHERE username=?",
     )
@@ -234,7 +303,7 @@ async function api(request: Request, env: Env) {
       .bind(p!.id)
       .first();
     const recent = await env.DB.prepare(
-      "SELECT id,score,level,correct,incorrect,best_combo AS bestCombo,finished_at AS finishedAt FROM runs WHERE player_id=? AND status='finished' ORDER BY finished_at DESC LIMIT 10",
+      "SELECT id,genre,score,level,correct,incorrect,best_combo AS bestCombo,finished_at AS finishedAt FROM runs WHERE player_id=? AND status='finished' ORDER BY finished_at DESC LIMIT 10",
     )
       .bind(p!.id)
       .all();
@@ -256,15 +325,18 @@ async function api(request: Request, env: Env) {
           .first())
       : false;
     const runId = url.searchParams.get("run");
+    if (runId && !/^[a-zA-Z0-9-]{1,80}$/.test(runId))
+      fail(400, "Invalid result link");
     const sharedRun = runId
       ? await env.DB.prepare(
-          "SELECT id,score,level,correct,incorrect,best_combo AS bestCombo,finished_at AS finishedAt FROM runs WHERE id=? AND player_id=? AND status='finished'",
+          "SELECT id,genre,score,level,correct,incorrect,best_combo AS bestCombo,finished_at AS finishedAt FROM runs WHERE id=? AND player_id=? AND status='finished'",
         )
           .bind(runId, p!.id)
           .first()
       : null;
     return json({
       player: publicPlayer(p!),
+      competition: await competitionStats(env, p!.id),
       stats,
       recent: recent.results,
       following: following.results,
@@ -278,7 +350,11 @@ async function api(request: Request, env: Env) {
     const p = await requirePlayer(request, env);
     if (!p.username) fail(409, "Create your profile first");
     const input = await body(request);
-    if (typeof input.username !== "string" || typeof input.follow !== "boolean")
+    if (
+      typeof input.username !== "string" ||
+      !/^[a-z0-9_]{3,20}$/.test(input.username) ||
+      typeof input.follow !== "boolean"
+    )
       fail(400, "Invalid follow request");
     const target = await env.DB.prepare(
       "SELECT id FROM players WHERE username=?",
@@ -303,6 +379,9 @@ async function api(request: Request, env: Env) {
   if (path === "/api/runs/start" && method === "POST") {
     const p = await requirePlayer(request, env);
     if (!p.username) fail(409, "Create your profile first");
+    const input = await body(request);
+    const genre = input.genre ?? "mixed";
+    if (!isGenre(genre)) fail(400, "Unknown category");
     const [count, history] = await Promise.all([
       env.DB.prepare(
         "SELECT COUNT(*) AS n FROM runs WHERE player_id=? AND created_at>?",
@@ -318,11 +397,12 @@ async function api(request: Request, env: Env) {
         crypto.getRandomValues(new Uint32Array(1))[0],
         now,
         history,
+        genre,
       );
     const q = state.run.question!;
-    await env.DB.batch([
+    const [created] = await env.DB.batch([
       env.DB.prepare(
-        "INSERT INTO runs(id,player_id,state,status,created_at,season,bank_version) VALUES(?,?,?,'active',?,?,?)",
+        "INSERT INTO runs(id,player_id,state,status,created_at,season,bank_version,genre) SELECT ?,?,?,'active',?,?,?,? WHERE (SELECT COUNT(*) FROM runs WHERE player_id=? AND created_at>?)<120",
       ).bind(
         id,
         p.id,
@@ -330,9 +410,12 @@ async function api(request: Request, env: Env) {
         now,
         CURRENT_SEASON,
         BANK_VERSION,
+        genre,
+        p.id,
+        now - 3600000,
       ),
       env.DB.prepare(
-        "INSERT INTO question_events(run_id,question_id,topic_key,player_id,bank_version,difficulty,shown_at) VALUES(?,?,?,?,?,?,?)",
+        "INSERT INTO question_events(run_id,question_id,topic_key,player_id,bank_version,difficulty,shown_at) SELECT ?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM runs WHERE id=?)",
       ).bind(
         id,
         q.id,
@@ -341,8 +424,10 @@ async function api(request: Request, env: Env) {
         BANK_VERSION,
         q.difficulty,
         now,
+        id,
       ),
     ]);
+    if (!created.meta.changes) fail(429, "Too many runs. Try again later.");
     return json(publicRun(state, Date.now(), id, 0));
   }
   if (
@@ -352,7 +437,12 @@ async function api(request: Request, env: Env) {
     const input = await body(request);
     const sessionToken = cookie(request, "__Host-mindfkd");
     if (!sessionToken) fail(401, "Sign in to continue");
-    if (typeof input.id !== "string" || !Number.isInteger(input.version))
+    if (
+      typeof input.id !== "string" ||
+      !/^[a-zA-Z0-9-]{1,80}$/.test(input.id) ||
+      !Number.isSafeInteger(input.version) ||
+      input.version < 0
+    )
       fail(400, "Invalid run");
     const row = await env.DB.prepare(
       "SELECT r.state,r.version,r.status,r.bank_version,r.player_id FROM runs r JOIN sessions s ON s.player_id=r.player_id WHERE r.id=? AND s.token_hash=? AND s.expires_at>?",
@@ -377,10 +467,12 @@ async function api(request: Request, env: Env) {
     let next = state;
     if (path.endsWith("/answer")) {
       if (!(
-        typeof input.answer === "string" ||
+        (typeof input.answer === "string" && input.answer.length <= 500) ||
         (Array.isArray(input.answer) &&
           input.answer.length <= 6 &&
-          input.answer.every((a: unknown) => typeof a === "string"))
+          input.answer.every(
+            (a: unknown) => typeof a === "string" && a.length <= 500,
+          ))
       ))
         fail(400, "Invalid answer");
       next = answerRanked(state, input.answer, now);
@@ -470,16 +562,23 @@ const worker = {
   async fetch(request: Request, env: Env): Promise<Response> {
     try {
       const url = new URL(request.url);
-      if (url.pathname.startsWith("/api/")) return await api(request, env);
-      return await env.ASSETS.fetch(request);
+      if (url.pathname.startsWith("/api/"))
+        return secureResponse(await api(request, env));
+      const response = await env.ASSETS.fetch(request);
+      return secureResponse(
+        response,
+        response.headers.get("content-type")?.includes("text/html"),
+      );
     } catch (error) {
-      if (error instanceof HttpError)
-        return json({ error: error.message }, error.status);
+      if (error instanceof HttpError || error instanceof MatchError)
+        return secureResponse(json({ error: error.message }, error.status));
       console.error(
         "MINDFKD request failed",
         error instanceof Error ? error.name : "UnknownError",
       );
-      return json({ error: "Service unavailable. Please try again." }, 503);
+      return secureResponse(
+        json({ error: "Service unavailable. Please try again." }, 503),
+      );
     }
   },
 };

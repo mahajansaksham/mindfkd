@@ -1,4 +1,5 @@
 "use client";
+import { genreLabel, type Genre } from "../lib/genres";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Run, multiplier } from "../lib/game";
@@ -12,11 +13,18 @@ import Question from "./Question";
 type Snapshot = {
   id: string;
   version: number;
+  genre: Genre;
   remainingMs: number;
   waitMs: number;
   run: Run;
 };
-export default function RankedGame({ onExit }: { onExit: () => void }) {
+export default function RankedGame({
+  onExit,
+  genre,
+}: {
+  onExit: () => void;
+  genre: Genre;
+}) {
   const { player } = useAccount();
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null),
     [busy, setBusy] = useState(false),
@@ -42,7 +50,12 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
       latest.current = s;
       setSnapshot(s);
       if (telemetry.current?.id !== s.id)
-        telemetry.current = createRunTracker(s.id, "ranked", readStats());
+        telemetry.current = createRunTracker(
+          s.id,
+          "ranked",
+          readStats(),
+          s.genre,
+        );
       telemetry.current.observe(s.run);
       pending.current = null;
       setPendingAnswer(null);
@@ -56,9 +69,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
   useEffect(() => {
     if (!initial.current) {
       initial.current = true;
-      void request("/api/runs/start", {});
+      void request("/api/runs/start", { genre });
     }
-  }, [request]);
+  }, [request, genre]);
   const finish = useCallback(() => {
     const s = latest.current;
     if (s && s.run.phase !== "gameOver" && !locked.current)
@@ -131,7 +144,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
         </div>
       ) : r.phase === "gameOver" ? (
         <div className="results">
-          <div className="eyebrow">VERIFIED RUN · SAVED TO YOUR PROFILE</div>
+          <div className="eyebrow">
+            {genreLabel(genre).toUpperCase()} · VERIFIED RUN
+          </div>
           <div className="result-score">{r.score.toLocaleString()}</div>
           <h1>
             Your brain fried at
@@ -153,7 +168,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
           <button
             className="primary start"
             disabled={busy}
-            onClick={() => void request("/api/runs/start", {})}
+            onClick={() => void request("/api/runs/start", { genre })}
           >
             {busy ? "STARTING RUN…" : "RUN AGAIN ↗"}
           </button>
@@ -166,11 +181,18 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
                     r,
                     player?.username ?? undefined,
                     snapshot!.id,
+                    snapshot!.id,
+                    genre,
                   ),
                 );
               } catch {
                 setMessage(
-                  shareText(r, player?.username ?? undefined, snapshot!.id),
+                  shareText(
+                    r,
+                    player?.username ?? undefined,
+                    snapshot!.id,
+                    genre,
+                  ),
                 );
               }
             }}
@@ -185,7 +207,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
               GLOBAL LEADERBOARD ↗
             </Link>
             <button className="text-button" onClick={onExit}>
-              HOME
+              CHANGE CATEGORY
             </button>
           </div>
         </div>
@@ -195,7 +217,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
             <span className="eyebrow">
               LEVEL <strong>{String(r.level).padStart(2, "0")}</strong>
             </span>
-            <span className="eyebrow">GLOBAL RANKED RUN</span>
+            <span className="eyebrow">
+              {genreLabel(genre).toUpperCase()} · RANKED
+            </span>
           </div>
           <Timer
             deadline={r.deadline}

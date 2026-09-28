@@ -1,3 +1,4 @@
+import type { Genre } from "../genres";
 import type { Run } from "../game";
 import { config } from "../game";
 import {
@@ -20,6 +21,7 @@ export function createRunTracker(
   id: string,
   mode: Mode,
   fallback: AnalyticsSummary,
+  genre: Genre = "mixed",
 ) {
   const baseline = analyticsSummary(fallback),
     started = performance.now();
@@ -28,6 +30,7 @@ export function createRunTracker(
   trackGameStarted({
     run_id: id,
     mode,
+    genre,
     starting_time: config.startMs / 1000,
     previous_best_score: baseline.bestScore,
     previous_best_level: baseline.bestLevel,
@@ -111,6 +114,7 @@ export function createRunTracker(
             previous_best_score: baseline.bestScore,
             new_personal_best: r.score > baseline.bestScore,
             mode,
+            genre,
           });
           saveAnalyticsSummary({
             gamesPlayed: baseline.gamesPlayed + 1,

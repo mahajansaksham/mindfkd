@@ -33,9 +33,14 @@ export const KEYS = {
 export const productionHost = (host: string) =>
   ["mindfkd.com", "www.mindfkd.com"].includes(host.toLowerCase());
 export function safePage(path: string) {
-  return ["/", "/profile", "/leaderboard", "/privacy", "/questions"].includes(
-    path,
-  )
+  return [
+    "/",
+    "/profile",
+    "/leaderboard",
+    "/privacy",
+    "/questions",
+    "/compete",
+  ].includes(path)
     ? path
     : "/other";
 }
@@ -104,7 +109,7 @@ const fields: Record<EventName, string> = {
   page_view:
     "page referrer utm_source utm_medium utm_campaign utm_content utm_term",
   game_started:
-    "run_id mode starting_time previous_best_score previous_best_level games_played is_returning_player",
+    "run_id mode genre starting_time previous_best_score previous_best_level games_played is_returning_player",
   question_shown:
     "run_id question_id level difficulty category question_type time_remaining",
   question_answered:
@@ -112,7 +117,7 @@ const fields: Record<EventName, string> = {
   level_reached: "run_id level score time_remaining combo",
   combo_reached: "run_id combo level score time_remaining",
   game_over:
-    "run_id final_score final_level correct_answers wrong_answers accuracy best_combo questions_attempted run_duration_seconds previous_best_score new_personal_best mode",
+    "run_id final_score final_level correct_answers wrong_answers accuracy best_combo questions_attempted run_duration_seconds previous_best_score new_personal_best mode genre",
   run_replayed: "run_id previous_run_id previous_score previous_level",
   score_shared: "run_id score level share_method",
   stats_opened: "games_played best_score best_level",

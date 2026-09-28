@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "genre-ed3bb9df3277d409",
+    "difficulty": 1,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What do citizens cast in an election?",
+    "answer": "Votes",
+    "options": [
+      "Votes",
+      "Recipes",
+      "Goals",
+      "Tickets"
+    ]
+  },
+  {
+    "id": "genre-26ba19da44c090c9",
+    "difficulty": 1,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is the usual name for a country's written set of basic governing rules?",
+    "answer": "Constitution",
+    "options": [
+      "Constitution",
+      "Dictionary",
+      "Atlas",
+      "Calendar"
+    ]
+  },
+  {
+    "id": "genre-866fc90d9b383549",
+    "difficulty": 1,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which organisation is abbreviated UN?",
+    "answer": "United Nations",
+    "options": [
+      "United Nations",
+      "Universal Network",
+      "United Navy",
+      "Union of Newspapers"
+    ]
+  },
+  {
+    "id": "genre-153467c13ba0baaa",
+    "difficulty": 1,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is a system with a king or queen called?",
+    "answer": "Monarchy",
+    "options": [
+      "Monarchy",
+      "Republic",
+      "Federation",
+      "Democracy"
+    ]
+  },
+  {
+    "id": "genre-fd641c84d3091528",
+    "difficulty": 1,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is the name for the person who represents a country diplomatically abroad?",
+    "answer": "Ambassador",
+    "options": [
+      "Ambassador",
+      "Referee",
+      "Curator",
+      "Pilot"
+    ]
+  },
+  {
+    "id": "genre-e3091c764673c6c3",
+    "difficulty": 2,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What does a legislature primarily make?",
+    "answer": "Laws",
+    "options": [
+      "Laws",
+      "Weather forecasts",
+      "Banknotes",
+      "Court verdicts"
+    ]
+  },
+  {
+    "id": "genre-4ffd7209cafbb13d",
+    "difficulty": 2,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What does the term suffrage mean?",
+    "answer": "The right to vote",
+    "options": [
+      "The right to vote",
+      "The right to inherit a title",
+      "A military alliance",
+      "A tax on imports"
+    ]
+  },
+  {
+    "id": "genre-77838ec0af271dad",
+    "difficulty": 2,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What do we call a direct public vote on a specific proposal?",
+    "answer": "Referendum",
+    "options": [
+      "Referendum",
+      "Census",
+      "Cabinet",
+      "Coalition"
+    ]
+  },
+  {
+    "id": "genre-bbfb18d7cc7f8680",
+    "difficulty": 2,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which branch of government interprets laws in courts?",
+    "answer": "Judiciary",
+    "options": [
+      "Judiciary",
+      "Legislature",
+      "Executive",
+      "Treasury"
+    ]
+  },
+  {
+    "id": "genre-eee337303fd5eb5d",
+    "difficulty": 3,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "In a bicameral legislature, how many chambers are there?",
+    "answer": "Two",
+    "options": [
+      "Two",
+      "One",
+      "Three",
+      "Four"
+    ]
+  },
+  {
+    "id": "genre-e066d0d03eb62fe6",
+    "difficulty": 3,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which chamber is the lower house of India's Parliament?",
+    "answer": "Lok Sabha",
+    "options": [
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Vidhan Parishad",
+      "Supreme Court"
+    ]
+  },
+  {
+    "id": "genre-d2e0244629d761b9",
+    "difficulty": 3,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which voting system awards seats broadly in proportion to votes received?",
+    "answer": "Proportional representation",
+    "options": [
+      "Proportional representation",
+      "First-past-the-post",
+      "Hereditary succession",
+      "Sortition"
+    ]
+  },
+  {
+    "id": "genre-b7167613357666bd",
+    "difficulty": 4,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What does a vote of no confidence test in a parliamentary system?",
+    "answer": "Whether the government retains the legislature's support",
+    "options": [
+      "Whether the government retains the legislature's support",
+      "Whether a court may hear an appeal",
+      "Whether a treaty is translated correctly",
+      "Whether a census is complete"
+    ]
+  },
+  {
+    "id": "genre-42cc97812fc7c829",
+    "difficulty": 4,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is gerrymandering?",
+    "answer": "Drawing electoral boundaries to favour a political group",
+    "options": [
+      "Drawing electoral boundaries to favour a political group",
+      "Counting votes by hand",
+      "A public vote on a constitutional amendment",
+      "Combining two ministries"
+    ]
+  },
+  {
+    "id": "genre-cc0d224de120f304",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which treaty established the European Union?",
+    "answer": "Maastricht Treaty",
+    "options": [
+      "Maastricht Treaty",
+      "Treaty of Versailles",
+      "Treaty of Tordesillas",
+      "Treaty of Paris of 1783"
+    ]
+  },
+  {
+    "id": "genre-b19e6e85bfd932aa",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is an ombudsman's usual role?",
+    "answer": "Investigating complaints about public administration",
+    "options": [
+      "Investigating complaints about public administration",
+      "Commanding the armed forces",
+      "Setting interest rates",
+      "Appointing ambassadors"
+    ]
+  },
+  {
+    "id": "genre-cf77d58f0e70e76a",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "In political theory, what is subsidiarity?",
+    "answer": "Decisions should be taken at the lowest effective level",
+    "options": [
+      "Decisions should be taken at the lowest effective level",
+      "Every decision requires unanimity",
+      "Courts must make all economic policy",
+      "All powers belong to a monarch"
+    ]
+  },
+  {
+    "id": "genre-84e9a410d8169fa9",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which international body has five permanent members with veto powers?",
+    "answer": "UN Security Council",
+    "options": [
+      "UN Security Council",
+      "UN General Assembly",
+      "International Court of Justice",
+      "World Health Assembly"
+    ]
+  },
+  {
+    "id": "genre-aaa97052c4f87d99",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is a filibuster generally intended to do?",
+    "answer": "Delay or obstruct legislative action",
+    "options": [
+      "Delay or obstruct legislative action",
+      "Count the population",
+      "Declare a treaty invalid",
+      "Appoint a head of state"
+    ]
+  },
+  {
+    "id": "genre-6b236e2b78e10b24",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which country has a federal legislature called the Bundestag and Bundesrat?",
+    "answer": "Germany",
+    "options": [
+      "Germany",
+      "Austria",
+      "Switzerland",
+      "Belgium"
+    ]
+  },
+  {
+    "id": "genre-d96d1c174e1f8062",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which US constitutional amendment abolished slavery, except as punishment for crime?",
+    "answer": "Thirteenth",
+    "options": [
+      "Thirteenth",
+      "First",
+      "Nineteenth",
+      "Twenty-second"
+    ]
+  },
+  {
+    "id": "genre-3a7c3699f2e9811b",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What is the name for transferring powers from central government to regional institutions?",
+    "answer": "Devolution",
+    "options": [
+      "Devolution",
+      "Annexation",
+      "Naturalisation",
+      "Extradition"
+    ]
+  },
+  {
+    "id": "genre-93ecaca2e5b20c46",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which country uses the term cantons for its constituent states?",
+    "answer": "Switzerland",
+    "options": [
+      "Switzerland",
+      "Canada",
+      "Australia",
+      "Brazil"
+    ]
+  },
+  {
+    "id": "genre-f475e725be02007a",
+    "difficulty": 5,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which institution elects the President of the European Commission after a nomination by the European Council?",
+    "answer": "European Parliament",
+    "options": [
+      "European Parliament",
+      "European Court of Auditors",
+      "European Central Bank",
+      "Council of Europe"
+    ]
+  },
+  {
+    "id": "genre-48c709ecef50eab3",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which theorist wrote A Theory of Justice, published in 1971?",
+    "answer": "John Rawls",
+    "options": [
+      "John Rawls",
+      "Thomas Hobbes",
+      "Alexis de Tocqueville",
+      "John Stuart Mill"
+    ]
+  },
+  {
+    "id": "genre-ca43105adef7afd6",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "In electoral systems, what does STV stand for?",
+    "answer": "Single transferable vote",
+    "options": [
+      "Single transferable vote",
+      "State territorial veto",
+      "Simple threshold vote",
+      "Second tier voting"
+    ]
+  },
+  {
+    "id": "genre-df676f7353f3c361",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which German constitutional mechanism requires electing a successor when removing a chancellor?",
+    "answer": "Constructive vote of no confidence",
+    "options": [
+      "Constructive vote of no confidence",
+      "Suspensive veto",
+      "Royal assent",
+      "Popular recall"
+    ]
+  },
+  {
+    "id": "genre-09f0755ffec1e4e9",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which principle limits EU action to powers granted by its member states in the treaties?",
+    "answer": "Conferral",
+    "options": [
+      "Conferral",
+      "Primogeniture",
+      "Extraterritoriality",
+      "Non-refoulement"
+    ]
+  },
+  {
+    "id": "genre-bef89a252abe1ead",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which institution is the executive body of the African Union?",
+    "answer": "African Union Commission",
+    "options": [
+      "African Union Commission",
+      "African Court of Justice",
+      "Pan-African Parliament",
+      "African Development Bank"
+    ]
+  },
+  {
+    "id": "genre-e7f3edee42a3009a",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which document signed in 1945 created the United Nations?",
+    "answer": "UN Charter",
+    "options": [
+      "UN Charter",
+      "Atlantic Charter",
+      "Geneva Convention of 1949",
+      "Universal Declaration of Human Rights"
+    ]
+  },
+  {
+    "id": "genre-7470464bc20214fa",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What does a suspensive veto do?",
+    "answer": "Delays a measure without necessarily blocking it permanently",
+    "options": [
+      "Delays a measure without necessarily blocking it permanently",
+      "Dissolves all courts",
+      "Removes every member of a cabinet",
+      "Cancels all elections"
+    ]
+  },
+  {
+    "id": "genre-c3998946498bc0a6",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which country calls its national parliament the Oireachtas?",
+    "answer": "Ireland",
+    "options": [
+      "Ireland",
+      "Iceland",
+      "Finland",
+      "Malta"
+    ]
+  },
+  {
+    "id": "genre-39cb9bbfe5bfab51",
+    "difficulty": 6,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Who wrote The Spirit of the Laws, associated with separation of powers?",
+    "answer": "Montesquieu",
+    "options": [
+      "Montesquieu",
+      "Machiavelli",
+      "Rousseau",
+      "Locke"
+    ]
+  },
+  {
+    "id": "genre-ce8ab14f4797e6d1",
+    "difficulty": 7,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which electoral seat-allocation method uses successive divisors 1, 2, 3, 4 and so on?",
+    "answer": "D'Hondt method",
+    "options": [
+      "D'Hondt method",
+      "Sainte-Laguë method",
+      "Hare quota",
+      "Droop quota"
+    ]
+  },
+  {
+    "id": "genre-426e91c88aba11b3",
+    "difficulty": 7,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Who developed the concept of consociational democracy in comparative politics?",
+    "answer": "Arend Lijphart",
+    "options": [
+      "Arend Lijphart",
+      "Robert Nozick",
+      "Isaiah Berlin",
+      "Michael Oakeshott"
+    ]
+  },
+  {
+    "id": "genre-5f22a75c66ee01c5",
+    "difficulty": 7,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "Which voting paradox concerns cyclic collective preferences despite individually transitive preferences?",
+    "answer": "Condorcet paradox",
+    "options": [
+      "Condorcet paradox",
+      "Simpson's paradox",
+      "St Petersburg paradox",
+      "Birthday paradox"
+    ]
+  },
+  {
+    "id": "genre-b24247a2c53313ff",
+    "difficulty": 7,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "What does Duverger's law associate with single-member plurality elections?",
+    "answer": "A tendency toward a two-party system",
+    "options": [
+      "A tendency toward a two-party system",
+      "Mandatory coalition government",
+      "A hereditary executive",
+      "A ban on independent candidates"
+    ]
+  },
+  {
+    "id": "genre-41b0d23d6c366c3e",
+    "difficulty": 7,
+    "category": "Politics",
+    "type": "choice",
+    "prompt": "In a standard Sainte-Laguë allocation, which sequence of divisors is used?",
+    "answer": "1, 3, 5, 7",
+    "options": [
+      "1, 3, 5, 7",
+      "1, 2, 3, 4",
+      "2, 4, 6, 8",
+      "1, 4, 9, 16"
+    ]
+  },
+  {
+    "id": "genre-ec14ff358e010846",
+    "difficulty": 2,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In golf, what is one stroke under par on a hole called?",
+    "answer": "Birdie",
+    "options": [
+      "Birdie",
+      "Bogey",
+      "Eagle",
+      "Albatross"
+    ]
+  },
+  {
+    "id": "genre-03a24dd8c40e0e26",
+    "difficulty": 2,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In badminton doubles, how many players are on court in total?",
+    "answer": "Four",
+    "options": [
+      "Four",
+      "Two",
+      "Six",
+      "Eight"
+    ]
+  },
+  {
+    "id": "genre-45273bb051d6ff44",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "How long is a standard Olympic swimming pool?",
+    "answer": "50 metres",
+    "options": [
+      "50 metres",
+      "25 metres",
+      "75 metres",
+      "100 metres"
+    ]
+  },
+  {
+    "id": "genre-e59691853b40e5e5",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "What is the final event of the men's decathlon?",
+    "answer": "1500 metres",
+    "options": [
+      "1500 metres",
+      "800 metres",
+      "400 metres",
+      "5000 metres"
+    ]
+  },
+  {
+    "id": "genre-f6f3db1f9567de46",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In cricket, how many legal deliveries normally make up an over?",
+    "answer": "Six",
+    "options": [
+      "Six",
+      "Four",
+      "Five",
+      "Eight"
+    ]
+  },
+  {
+    "id": "genre-7798e2e5b6ed9d84",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In baseball, what is the maximum number of outs in a completed half-inning?",
+    "answer": "Three",
+    "options": [
+      "Three",
+      "Two",
+      "Four",
+      "Six"
+    ]
+  },
+  {
+    "id": "genre-80f8f83f88eb45f8",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which country hosted the 1992 Summer Olympics?",
+    "answer": "Spain",
+    "options": [
+      "Spain",
+      "Greece",
+      "Australia",
+      "South Korea"
+    ]
+  },
+  {
+    "id": "genre-110c92db71ac7dda",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In rugby union, how many points is a drop goal worth?",
+    "answer": "Three",
+    "options": [
+      "Three",
+      "One",
+      "Two",
+      "Five"
+    ]
+  },
+  {
+    "id": "genre-5a76e7cb716963e0",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In tennis, which Grand Slam is played on grass?",
+    "answer": "Wimbledon",
+    "options": [
+      "Wimbledon",
+      "Australian Open",
+      "French Open",
+      "US Open"
+    ]
+  },
+  {
+    "id": "genre-a777567ca08df415",
+    "difficulty": 5,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In fencing, which weapon permits hits with both the edge and the point?",
+    "answer": "Sabre",
+    "options": [
+      "Sabre",
+      "Foil",
+      "Épée",
+      "Lance"
+    ]
+  },
+  {
+    "id": "genre-2781565260be808a",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In snooker, what is the total value of the six colours when potted once each?",
+    "answer": "27",
+    "options": [
+      "27",
+      "21",
+      "25",
+      "29"
+    ]
+  },
+  {
+    "id": "genre-4b575d4ac2360c7e",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "How far apart are the wickets on a regulation cricket pitch?",
+    "answer": "22 yards",
+    "options": [
+      "22 yards",
+      "18 yards",
+      "20 yards",
+      "24 yards"
+    ]
+  },
+  {
+    "id": "genre-bf06fa7d1559f4f7",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In track cycling, what is the final event of the Olympic omnium?",
+    "answer": "Points race",
+    "options": [
+      "Points race",
+      "Keirin",
+      "Individual pursuit",
+      "Team sprint"
+    ]
+  },
+  {
+    "id": "genre-b987e30b8d1f893b",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which city hosted the 1952 Summer Olympics?",
+    "answer": "Helsinki",
+    "options": [
+      "Helsinki",
+      "Stockholm",
+      "Oslo",
+      "Copenhagen"
+    ]
+  },
+  {
+    "id": "genre-51383de13f4b7885",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which swimming stroke follows backstroke in an individual medley?",
+    "answer": "Breaststroke",
+    "options": [
+      "Breaststroke",
+      "Butterfly",
+      "Freestyle",
+      "Sidestroke"
+    ]
+  },
+  {
+    "id": "genre-005f847949972262",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In association football, what is the minimum number of players a team needs for a match to continue under IFAB laws?",
+    "answer": "Seven",
+    "options": [
+      "Seven",
+      "Six",
+      "Eight",
+      "Nine"
+    ]
+  },
+  {
+    "id": "genre-a9847ece44d833b2",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "How many hurdles does each athlete clear in a men's 110-metre hurdles race?",
+    "answer": "Ten",
+    "options": [
+      "Ten",
+      "Eight",
+      "Nine",
+      "Twelve"
+    ]
+  },
+  {
+    "id": "genre-395746b36470b2bf",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In standard indoor volleyball, how many points normally win the deciding fifth set, with a two-point lead?",
+    "answer": "15",
+    "options": [
+      "15",
+      "11",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "id": "genre-bac65a480d4e582f",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "What is the diameter of the shot-put throwing circle?",
+    "answer": "2.135 metres",
+    "options": [
+      "2.135 metres",
+      "2.500 metres",
+      "1.750 metres",
+      "3.000 metres"
+    ]
+  },
+  {
+    "id": "genre-cb58122887112cd7",
+    "difficulty": 6,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In a standard squash game under point-a-rally scoring, what target score requires a two-point winning margin?",
+    "answer": "11",
+    "options": [
+      "11",
+      "9",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "id": "genre-7ec9bbae0e71ea5c",
+    "difficulty": 7,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Under the Duckworth-Lewis-Stern method, which two resources are combined to adjust a cricket target?",
+    "answer": "Overs remaining and wickets in hand",
+    "options": [
+      "Overs remaining and wickets in hand",
+      "Run rate and boundary count",
+      "Pitch size and wind speed",
+      "Toss result and batting average"
+    ]
+  },
+  {
+    "id": "genre-76f94caf91016017",
+    "difficulty": 7,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "What is the regulation distance of the men's Olympic steeplechase?",
+    "answer": "3000 metres",
+    "options": [
+      "3000 metres",
+      "2000 metres",
+      "4000 metres",
+      "5000 metres"
+    ]
+  },
+  {
+    "id": "genre-7c342e315cb2fce7",
+    "difficulty": 7,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In a 3000-metre steeplechase, how many water jumps must each runner negotiate?",
+    "answer": "Seven",
+    "options": [
+      "Seven",
+      "Five",
+      "Six",
+      "Eight"
+    ]
+  },
+  {
+    "id": "genre-9f312dd691e7fe03",
+    "difficulty": 7,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In fencing, which weapon has the whole body as a valid target and no right-of-way rule?",
+    "answer": "Épée",
+    "options": [
+      "Épée",
+      "Foil",
+      "Sabre",
+      "Rapier"
+    ]
+  },
+  {
+    "id": "genre-780e6117d96a6508",
+    "difficulty": 7,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "In Olympic archery's individual recurve event, what is the target distance?",
+    "answer": "70 metres",
+    "options": [
+      "70 metres",
+      "50 metres",
+      "60 metres",
+      "90 metres"
+    ]
+  },
+  {
+    "id": "genre-2760fc70c7cbaa7c",
+    "difficulty": 1,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which civilisation built the pyramids at Giza?",
+    "answer": "Ancient Egyptians",
+    "options": [
+      "Ancient Egyptians",
+      "Vikings",
+      "Aztecs",
+      "Incas"
+    ]
+  },
+  {
+    "id": "genre-c4389a5324840efc",
+    "difficulty": 1,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which ancient civilisation is associated with gladiators and the Colosseum?",
+    "answer": "Romans",
+    "options": [
+      "Romans",
+      "Maya",
+      "Incas",
+      "Persians"
+    ]
+  },
+  {
+    "id": "genre-41a1ea6ae2718548",
+    "difficulty": 1,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Who is associated with India's nonviolent independence movement and the title Mahatma?",
+    "answer": "Mohandas Gandhi",
+    "options": [
+      "Mohandas Gandhi",
+      "Isaac Newton",
+      "Julius Caesar",
+      "Marco Polo"
+    ]
+  },
+  {
+    "id": "genre-81f1e0ba579b0962",
+    "difficulty": 1,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which invention made it possible to reproduce books much faster in fifteenth-century Europe?",
+    "answer": "Printing press",
+    "options": [
+      "Printing press",
+      "Steam locomotive",
+      "Telegraph",
+      "Electric motor"
+    ]
+  },
+  {
+    "id": "genre-bd9e0e3db178d080",
+    "difficulty": 6,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which treaty in 1494 divided newly claimed lands outside Europe between Portugal and Spain?",
+    "answer": "Treaty of Tordesillas",
+    "options": [
+      "Treaty of Tordesillas",
+      "Treaty of Utrecht",
+      "Treaty of Ghent",
+      "Treaty of Brest-Litovsk"
+    ]
+  },
+  {
+    "id": "genre-2efdb73a603dfeec",
+    "difficulty": 6,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which empire was defeated by the Mamluks at Ain Jalut in 1260?",
+    "answer": "Mongol Empire",
+    "options": [
+      "Mongol Empire",
+      "Byzantine Empire",
+      "Ottoman Empire",
+      "Safavid Empire"
+    ]
+  },
+  {
+    "id": "genre-696ea274d96b3f9b",
+    "difficulty": 6,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Who led the Haitian state when it declared independence in 1804?",
+    "answer": "Jean-Jacques Dessalines",
+    "options": [
+      "Jean-Jacques Dessalines",
+      "Toussaint Louverture",
+      "Simón Bolívar",
+      "Henri Christophe"
+    ]
+  },
+  {
+    "id": "genre-59517fdf2385c336",
+    "difficulty": 6,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which treaty ended Russia's participation in World War I in 1918?",
+    "answer": "Treaty of Brest-Litovsk",
+    "options": [
+      "Treaty of Brest-Litovsk",
+      "Treaty of Versailles",
+      "Treaty of Trianon",
+      "Treaty of Sèvres"
+    ]
+  },
+  {
+    "id": "genre-36644afccc3bea3f",
+    "difficulty": 7,
+    "category": "History",
+    "type": "choice",
+    "prompt": "The Edict of Nantes of 1598 was revoked by which edict in 1685?",
+    "answer": "Edict of Fontainebleau",
+    "options": [
+      "Edict of Fontainebleau",
+      "Edict of Milan",
+      "Edict of Worms",
+      "Edict of Thessalonica"
+    ]
+  },
+  {
+    "id": "genre-42ec426d923f0851",
+    "difficulty": 7,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which dynasty ruled China during the voyages of Zheng He?",
+    "answer": "Ming",
+    "options": [
+      "Ming",
+      "Qing",
+      "Song",
+      "Tang"
+    ]
+  },
+  {
+    "id": "genre-f8bae3148d98fc2b",
+    "difficulty": 7,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which battle in 1071 saw the Byzantine emperor Romanos IV defeated by the Seljuks?",
+    "answer": "Manzikert",
+    "options": [
+      "Manzikert",
+      "Hastings",
+      "Tours",
+      "Lepanto"
+    ]
+  },
+  {
+    "id": "genre-30e6dfb8201bcb0a",
+    "difficulty": 7,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which agreement of 1122 settled a phase of the Investiture Controversy?",
+    "answer": "Concordat of Worms",
+    "options": [
+      "Concordat of Worms",
+      "Concordat of Bologna",
+      "Peace of Cateau-Cambrésis",
+      "Treaty of Verdun"
+    ]
+  },
+  {
+    "id": "genre-f836c0e5f5df4ea1",
+    "difficulty": 1,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "On which continent is Brazil?",
+    "answer": "South America",
+    "options": [
+      "South America",
+      "Europe",
+      "Africa",
+      "Asia"
+    ]
+  },
+  {
+    "id": "genre-39ff5b48e47f1aeb",
+    "difficulty": 1,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which ocean is between Africa and Australia?",
+    "answer": "Indian Ocean",
+    "options": [
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Atlantic Ocean",
+      "Southern Ocean"
+    ]
+  },
+  {
+    "id": "genre-70992228efbbd58a",
+    "difficulty": 1,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country lies directly north of the contiguous United States?",
+    "answer": "Canada",
+    "options": [
+      "Canada",
+      "Mexico",
+      "Brazil",
+      "Argentina"
+    ]
+  },
+  {
+    "id": "genre-2f0984735c808ac8",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which landlocked country lies between France and Spain in the Pyrenees?",
+    "answer": "Andorra",
+    "options": [
+      "Andorra",
+      "Monaco",
+      "Liechtenstein",
+      "San Marino"
+    ]
+  },
+  {
+    "id": "genre-92e2139661da137f",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which strait separates Morocco from Spain?",
+    "answer": "Strait of Gibraltar",
+    "options": [
+      "Strait of Gibraltar",
+      "Strait of Hormuz",
+      "Strait of Malacca",
+      "Bering Strait"
+    ]
+  },
+  {
+    "id": "genre-e025d4ecb6c8aab6",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which river flows through Baghdad?",
+    "answer": "Tigris",
+    "options": [
+      "Tigris",
+      "Nile",
+      "Jordan",
+      "Indus"
+    ]
+  },
+  {
+    "id": "genre-351da42fd0cdc58e",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which African country entirely surrounds Lesotho?",
+    "answer": "South Africa",
+    "options": [
+      "South Africa",
+      "Namibia",
+      "Botswana",
+      "Zimbabwe"
+    ]
+  },
+  {
+    "id": "genre-c0644a1b1e94b897",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "What is the capital of Mongolia?",
+    "answer": "Ulaanbaatar",
+    "options": [
+      "Ulaanbaatar",
+      "Astana",
+      "Bishkek",
+      "Tashkent"
+    ]
+  },
+  {
+    "id": "genre-b7c2d8c46d1f5ea7",
+    "difficulty": 5,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which sea lies between Italy and the Balkan Peninsula?",
+    "answer": "Adriatic Sea",
+    "options": [
+      "Adriatic Sea",
+      "Baltic Sea",
+      "Red Sea",
+      "Caspian Sea"
+    ]
+  },
+  {
+    "id": "genre-579dadfa0592c2b6",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which strait links the Black Sea to the Sea of Marmara?",
+    "answer": "Bosporus",
+    "options": [
+      "Bosporus",
+      "Dardanelles",
+      "Strait of Messina",
+      "Strait of Otranto"
+    ]
+  },
+  {
+    "id": "genre-6f0669c77d902163",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country contains the Danakil Depression's Dallol geothermal area?",
+    "answer": "Ethiopia",
+    "options": [
+      "Ethiopia",
+      "Kenya",
+      "Chad",
+      "Morocco"
+    ]
+  },
+  {
+    "id": "genre-bcc7b7bc5f3bd883",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which river drains Lake Baikal?",
+    "answer": "Angara",
+    "options": [
+      "Angara",
+      "Lena",
+      "Amur",
+      "Volga"
+    ]
+  },
+  {
+    "id": "genre-9f33710007f16a5a",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country includes the autonomous region of Gagauzia?",
+    "answer": "Moldova",
+    "options": [
+      "Moldova",
+      "Georgia",
+      "Romania",
+      "Ukraine"
+    ]
+  },
+  {
+    "id": "genre-a1744b92fdf34938",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "What is the capital of Bhutan?",
+    "answer": "Thimphu",
+    "options": [
+      "Thimphu",
+      "Kathmandu",
+      "Vientiane",
+      "Dushanbe"
+    ]
+  },
+  {
+    "id": "genre-46a8b25be394a88d",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country has the capital city Asmara?",
+    "answer": "Eritrea",
+    "options": [
+      "Eritrea",
+      "Ethiopia",
+      "Somalia",
+      "Djibouti"
+    ]
+  },
+  {
+    "id": "genre-eaf8b4b43dff5e01",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country has an autonomous exclave called Nakhchivan?",
+    "answer": "Azerbaijan",
+    "options": [
+      "Azerbaijan",
+      "Armenia",
+      "Georgia",
+      "Kazakhstan"
+    ]
+  },
+  {
+    "id": "genre-dc208040975f6fe8",
+    "difficulty": 6,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which lake is shared by Peru and Bolivia?",
+    "answer": "Lake Titicaca",
+    "options": [
+      "Lake Titicaca",
+      "Lake Maracaibo",
+      "Lake Nicaragua",
+      "Lake Chapala"
+    ]
+  },
+  {
+    "id": "genre-6d1509416494a11a",
+    "difficulty": 7,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which river connects Lake Tanganyika to the Congo basin when its outflow is active?",
+    "answer": "Lukuga",
+    "options": [
+      "Lukuga",
+      "Shire",
+      "Kagera",
+      "Omo"
+    ]
+  },
+  {
+    "id": "genre-73aced61fe757024",
+    "difficulty": 7,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which country administers the Kerguelen Islands?",
+    "answer": "France",
+    "options": [
+      "France",
+      "Australia",
+      "New Zealand",
+      "South Africa"
+    ]
+  },
+  {
+    "id": "genre-2decd1588281fa6c",
+    "difficulty": 7,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which African country has the exclave of Cabinda?",
+    "answer": "Angola",
+    "options": [
+      "Angola",
+      "Gabon",
+      "Namibia",
+      "Cameroon"
+    ]
+  },
+  {
+    "id": "genre-93ef9c914143bf4f",
+    "difficulty": 7,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which strait separates the islands of Java and Sumatra?",
+    "answer": "Sunda Strait",
+    "options": [
+      "Sunda Strait",
+      "Lombok Strait",
+      "Makassar Strait",
+      "Torres Strait"
+    ]
+  },
+  {
+    "id": "genre-a51b00d8a7d57a0d",
+    "difficulty": 7,
+    "category": "Geography",
+    "type": "choice",
+    "prompt": "Which river's delta forms much of the boundary between Romania and Ukraine at the Black Sea?",
+    "answer": "Danube",
+    "options": [
+      "Danube",
+      "Dnieper",
+      "Dniester",
+      "Don"
+    ]
+  },
+  {
+    "id": "genre-c068ba87f370ec59",
+    "difficulty": 6,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which SI derived unit measures electrical conductance?",
+    "answer": "Siemens",
+    "options": [
+      "Siemens",
+      "Ohm",
+      "Farad",
+      "Henry"
+    ]
+  },
+  {
+    "id": "genre-acaa1aa428767e37",
+    "difficulty": 6,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which enzyme synthesises RNA from a DNA template during transcription?",
+    "answer": "RNA polymerase",
+    "options": [
+      "RNA polymerase",
+      "DNA ligase",
+      "Amylase",
+      "Pepsin"
+    ]
+  },
+  {
+    "id": "genre-2689c4dbe9d0ca09",
+    "difficulty": 7,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which theorem connects continuous symmetries with conservation laws?",
+    "answer": "Noether's theorem",
+    "options": [
+      "Noether's theorem",
+      "Bayes' theorem",
+      "Pythagoras' theorem",
+      "Fermat's little theorem"
+    ]
+  },
+  {
+    "id": "genre-01fe4d004ecf0940",
+    "difficulty": 7,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which quantum number describes the orientation of an orbital's angular momentum?",
+    "answer": "Magnetic quantum number",
+    "options": [
+      "Magnetic quantum number",
+      "Principal quantum number",
+      "Spin quantum number",
+      "Mass number"
+    ]
+  },
+  {
+    "id": "genre-b7c47c220f4d34ab",
+    "difficulty": 7,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the SI unit of catalytic activity?",
+    "answer": "Katal",
+    "options": [
+      "Katal",
+      "Becquerel",
+      "Gray",
+      "Sievert"
+    ]
+  },
+  {
+    "id": "genre-0b5a8ccb24bffe21",
+    "difficulty": 7,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which principle says no two identical fermions can occupy the same quantum state simultaneously?",
+    "answer": "Pauli exclusion principle",
+    "options": [
+      "Pauli exclusion principle",
+      "Archimedes' principle",
+      "Le Chatelier's principle",
+      "Huygens' principle"
+    ]
+  },
+  {
+    "id": "genre-521c215c0f85c045",
+    "difficulty": 7,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which phenomenon is the splitting of spectral lines in a magnetic field?",
+    "answer": "Zeeman effect",
+    "options": [
+      "Zeeman effect",
+      "Photoelectric effect",
+      "Compton effect",
+      "Doppler effect"
+    ]
+  }
+]

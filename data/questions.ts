@@ -1,3 +1,5 @@
+import additions from "./genre-additions.json";
+import {categoryGenre} from "../lib/genres";
 import { Question, Kind } from "../lib/game";
 import community from "./community.json";
 import foundations from "./foundations.json";
@@ -570,7 +572,8 @@ const tierOverrides: Record<string, number> = {
  q133:4,q134:5,q135:6,q136:6,q137:5,q138:4,q139:6,q140:4,q141:5,q142:5,q143:4,q144:6,q145:5,q146:5,q147:5,q148:6,q149:5,q150:5,q151:5,q152:6,q153:6,q154:5,
  x13:4,x14:4,x15:1,x19:4,x20:4,x21:4,x23:3,x24:4,x25:4,x26:4,x27:5,x28:4,x29:4,x30:4,x31:3,x32:4,x33:5,x34:5,x35:4,x36:5,x37:4,x38:5,x39:5,x40:6,x41:3,x42:5,
 };
-export const questions: Question[] = [
+const catalog: Question[] = [
+ ...(additions as Question[]),
  ...original.map(q => ({...q,difficulty:tierOverrides[q.id] ?? q.difficulty,
   prompt:q.id === 'q31' ? 'What does the first W in WWW stand for?' : q.id === 'q108' ? 'Which region is the origin of kimchi?' : q.prompt,
   topicKey:q.id === 'x1' ? 'giraffe-height' : q.id === 'q109' ? 'atmosphere-nitrogen' : q.id,
@@ -578,3 +581,6 @@ export const questions: Question[] = [
  ...(community as Question[]),
  ...(foundations as Question[]).map(q => ({...q,topicKey:q.prompt === 'Which animal is the tallest living land animal?' ? 'giraffe-height' : q.id})),
 ];
+
+const genreOverrides = {q66:"sports",q76:"history",q88:"politics",q120:"politics",q142:"history",q154:"history"} as const;
+export const questions = catalog.map(q=>({...q,genre:genreOverrides[q.id as keyof typeof genreOverrides] ?? categoryGenre(q.category)}));
