@@ -7,39 +7,23 @@ export default function Question({
   feedback,
   onAnswer,
   disabled = false,
+  pendingAnswer = null,
 }: {
   disabled?: boolean;
+  pendingAnswer?: string | string[] | null;
   question: Q;
   feedback: Run["feedback"];
   onAnswer: (a: string | string[]) => void;
 }) {
   const [order, setOrder] = useState(q.options),
-    [drag, setDrag] = useState<number | null>(null),
-    [number, setNumber] = useState(0);
+    [drag, setDrag] = useState<number | null>(null);
   const locked = !!feedback || disabled;
   useEffect(() => {
     function key(e: KeyboardEvent) {
       if (locked || e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
       const target = e.target as HTMLElement;
       if (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
-      if (q.type === "number") {
-        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-          e.preventDefault();
-          setNumber((n) =>
-            Math.max(
-              0,
-              Math.min(
-                q.options.length - 1,
-                n + (e.key === "ArrowRight" ? 1 : -1),
-              ),
-            ),
-          );
-        }
-        if (e.key === "Enter" && target.tagName !== "BUTTON") {
-          e.preventDefault();
-          onAnswer(q.options[number]);
-        }
-      } else if (
+      if (
         q.type !== "order" &&
         /^[1-4]$/.test(e.key) &&
         q.options[Number(e.key) - 1]
@@ -50,7 +34,7 @@ export default function Question({
     }
     window.addEventListener("keydown", key);
     return () => window.removeEventListener("keydown", key);
-  }, [q, locked, onAnswer, number]);
+  }, [q, locked, onAnswer]);
   function move(from: number, to: number) {
     if (locked || to < 0 || to >= order.length) return;
     const next = [...order];
@@ -60,7 +44,9 @@ export default function Question({
   }
   const state = (a: string) =>
     !feedback
-      ? ""
+      ? pendingAnswer === a
+        ? "pending"
+        : ""
       : a === q.answer
         ? "correct"
         : a === feedback.selected
@@ -125,29 +111,6 @@ export default function Question({
             LOCK IN ORDER <Check size={18} />
           </button>
         </div>
-      ) : q.type === "number" ? (
-        <div className="number-picker">
-          <div className="number-options">
-            {q.options.map((a, i) => (
-              <button
-                key={a}
-                disabled={locked}
-                aria-pressed={i === number}
-                className={`${i === number ? "chosen" : ""} ${state(a)}`}
-                onClick={() => setNumber(i)}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
-          <button
-            className="primary submit"
-            disabled={locked}
-            onClick={() => onAnswer(q.options[number])}
-          >
-            LOCK IN ANSWER <Check size={18} />
-          </button>
-        </div>
       ) : (
         <div className={`answers ${q.type === "visual" ? "visual" : ""}`}>
           {q.options.map((a, i) => (
@@ -187,13 +150,13 @@ export default function Question({
                 : `Correct: ${Array.isArray(q.answer) ? q.answer.join(" → ") : q.answer}`}
             </span>
           </>
+        ) : pendingAnswer !== null ? (
+          <span className="input-hint">Answer selected. Checking…</span>
         ) : (
           <span className="input-hint">
             {q.type === "order"
               ? "Drag to reorder, or use the arrows"
-              : q.type === "number"
-                ? "Choose a value, then lock it in"
-                : "Trust your first instinct."}
+              : "Tap a choice to answer."}
           </span>
         )}
       </div>

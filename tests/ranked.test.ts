@@ -35,6 +35,7 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     .filter((f) => f.endsWith(".sql"))
     .sort())
     sqlite.exec(readFileSync(`drizzle/${file}`, "utf8"));
+  const reads: string[] = [];
   function prepare(sql: string) {
     let args: unknown[] = [];
     const obj = {
@@ -43,6 +44,7 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
         return obj;
       },
       async first() {
+        reads.push(sql);
         return sqlite.prepare(sql).get(...(args as [])) ?? null;
       },
       async all() {
@@ -184,6 +186,7 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     sqlite.prepare("SELECT state FROM runs WHERE id=?").get(id)!
       .state as string,
   );
+  reads.length = 0;
   const first = await request("/api/runs/answer", {
     id,
     version: 0,
@@ -191,6 +194,11 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     score: 99999999,
   });
   assert.equal(first.status, 200);
+  assert.equal(
+    reads.length,
+    1,
+    "accepted ranked answer uses one authenticated state read",
+  );
   assert.ok(first.value.run.score < 1000);
   const duplicate = await request("/api/runs/answer", {
     id,

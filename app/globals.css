@@ -1285,3 +1285,13 @@ a {
   margin-right: 8px;
   cursor: pointer;
 }
+
+.answer.pending {
+  border-color: var(--accent);
+  background: #262b1d;
+  opacity: 1;
+}
+.answer:active:not(:disabled),
+.primary:active:not(:disabled) {
+  transform: translateY(1px);
+}

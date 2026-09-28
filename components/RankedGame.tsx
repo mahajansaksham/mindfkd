@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Run, multiplier } from "../lib/game";
 import { api } from "../lib/api";
@@ -21,6 +22,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [message, setMessage] = useState("");
+  const [pendingAnswer, setPendingAnswer] = useState<string | string[] | null>(
+    null,
+  );
   const telemetry = useRef<ReturnType<typeof createRunTracker> | null>(null);
   const latest = useRef<Snapshot | null>(null),
     locked = useRef(false),
@@ -41,6 +45,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
         telemetry.current = createRunTracker(s.id, "ranked", readStats());
       telemetry.current.observe(s.run);
       pending.current = null;
+      setPendingAnswer(null);
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -82,6 +87,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
   function answer(answer: string | string[]) {
     const s = latest.current;
     if (!s || locked.current) return;
+    setPendingAnswer(answer);
     void request("/api/runs/answer", { id: s.id, version: s.version, answer });
   }
   const r = snapshot?.run;
@@ -149,7 +155,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
             disabled={busy}
             onClick={() => void request("/api/runs/start", {})}
           >
-            RUN AGAIN ↗
+            {busy ? "STARTING RUN…" : "RUN AGAIN ↗"}
           </button>
           <button
             className="share"
@@ -175,9 +181,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
             {message}
           </p>
           <div className="profile-actions">
-            <a href="/leaderboard" className="text-link">
+            <Link href="/leaderboard" className="text-link">
               GLOBAL LEADERBOARD ↗
-            </a>
+            </Link>
             <button className="text-button" onClick={onExit}>
               HOME
             </button>
@@ -206,6 +212,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
               feedback={r.feedback}
               onAnswer={answer}
               disabled={busy || !!error}
+              pendingAnswer={pendingAnswer}
             />
           )}
           <div className="play-bottom eyebrow">

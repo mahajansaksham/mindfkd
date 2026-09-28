@@ -43,7 +43,7 @@ Score = `(150 × difficulty + max(0, 300 − floor(answerMilliseconds / 10))) ×
 
 Levels 1–5 use tier 1, 6–10 tier 2, 11–15 tier 3, 16–20 tier 4, 21–30 tier 5, 31–40 tier 6, 41+ tier 7. Questions and answer positions are seeded and shuffled. Cross-run history prioritizes unseen facts, then least recently seen. Facts do not repeat within a run. An exhausted tier ends the run without jumping difficulty. See QUESTIONS.md for review, attribution, calibration and seasons.
 
-Interactions: multiple choice, binary, higher/lower, chronological ordering (drag and arrow controls), true/false, numeric choice, and emoji visual choice. The number interface selects a value and locks it in. Keyboard: 1–4, arrows for numeric selection, Tab/Enter for controls. Reduced motion disables animation. Native dialogs trap focus and support Escape. No remote image or font dependencies.
+Interactions: multiple choice, binary, higher/lower, chronological ordering (drag and arrow controls), true/false, numeric choice, and emoji visual choice. Number choices submit immediately with one tap, like other choices. Keyboard: 1–4 to answer, Tab/Enter for controls. Ordering still requires confirming the completed sequence. Reduced motion disables animation. Native dialogs trap focus and support Escape. No remote image or font dependencies.
 
 Local stats include games played, best score/level/combo, total right/wrong, weighted overall accuracy, and eight recent scores. Stats are per browser, not ranked. If storage is unavailable, the run still works and shows a save warning. Sharing never exposes answers.
 
@@ -77,3 +77,7 @@ Set the production runtime variable `GOOGLE_CLIENT_ID` to the Web client ID regi
 ## Analytics
 
 See [ANALYTICS.md](ANALYTICS.md) for providers, configuration, consent, event definitions, validation and current hosting limitations. Analytics is optional and unconfigured by default.
+
+## Interaction responsiveness
+
+Number questions now use direct-submit choices and keyboard 1–4. Ranked answers highlight the selected choice immediately while the server verifies it. Accepted run requests combine authentication and run lookup in one database read; start prechecks run concurrently. Feedback wait values are calculated at response time so database work is not added to the intentional feedback delay. Home and leaderboard navigation use client-side links. Ranked verification still depends on network latency; no measured zero-latency guarantee is made.

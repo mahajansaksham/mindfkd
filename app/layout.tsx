@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AnalyticsRoot from "../components/Analytics";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -27,7 +28,7 @@ export default function RootLayout({
           <a href="mailto:ceo@mindfkd.com">
             Contact us <span>↗</span>
           </a>
-          <a href="/questions">Question sources &amp; fairness</a>
+          <Link href="/questions">Question sources &amp; fairness</Link>
         </footer>
         <AnalyticsRoot vercelHosted={process.env.VERCEL === "1"} />
       </body>

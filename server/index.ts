@@ -303,14 +303,16 @@ async function api(request: Request, env: Env) {
   if (path === "/api/runs/start" && method === "POST") {
     const p = await requirePlayer(request, env);
     if (!p.username) fail(409, "Create your profile first");
-    const count = await env.DB.prepare(
-      "SELECT COUNT(*) AS n FROM runs WHERE player_id=? AND created_at>?",
-    )
-      .bind(p.id, now - 3600000)
-      .first<{ n: number }>();
+    const [count, history] = await Promise.all([
+      env.DB.prepare(
+        "SELECT COUNT(*) AS n FROM runs WHERE player_id=? AND created_at>?",
+      )
+        .bind(p.id, now - 3600000)
+        .first<{ n: number }>(),
+      questionHistory(env, p.id),
+    ]);
     if ((count?.n ?? 0) >= 120)
       fail(429, "Too many runs. Take a break and try again later.");
-    const history = await questionHistory(env, p.id);
     const id = crypto.randomUUID(),
       state = newRanked(
         crypto.getRandomValues(new Uint32Array(1))[0],
@@ -341,30 +343,37 @@ async function api(request: Request, env: Env) {
         now,
       ),
     ]);
-    return json(publicRun(state, now, id, 0));
+    return json(publicRun(state, Date.now(), id, 0));
   }
   if (
     ["/api/runs/answer", "/api/runs/next", "/api/runs/finish"].includes(path) &&
     method === "POST"
   ) {
-    const p = await requirePlayer(request, env),
-      input = await body(request);
+    const input = await body(request);
+    const sessionToken = cookie(request, "__Host-mindfkd");
+    if (!sessionToken) fail(401, "Sign in to continue");
     if (typeof input.id !== "string" || !Number.isInteger(input.version))
       fail(400, "Invalid run");
     const row = await env.DB.prepare(
-      "SELECT state,version,status,bank_version FROM runs WHERE id=? AND player_id=?",
+      "SELECT r.state,r.version,r.status,r.bank_version,r.player_id FROM runs r JOIN sessions s ON s.player_id=r.player_id WHERE r.id=? AND s.token_hash=? AND s.expires_at>?",
     )
-      .bind(input.id, p.id)
+      .bind(input.id, await hash(sessionToken!), now)
       .first<{
         state: string;
         version: number;
         status: string;
         bank_version: string;
+        player_id: string;
       }>();
-    if (!row) fail(404, "Run not found");
+    if (!row) {
+      // Only unsuccessful lookups need a second query to distinguish expiry from ownership.
+      await requirePlayer(request, env);
+      fail(404, "Run not found");
+    }
+    const p = { id: row!.player_id };
     const state = JSON.parse(row!.state) as RankedState;
     if (row!.status === "finished" || row!.version !== input.version)
-      return json(publicRun(state, now, input.id, row!.version));
+      return json(publicRun(state, Date.now(), input.id, row!.version));
     let next = state;
     if (path.endsWith("/answer")) {
       if (!(
@@ -389,7 +398,7 @@ async function api(request: Request, env: Env) {
         run: { ...state.run, phase: "gameOver", reason: "time" },
       };
     if (next === state)
-      return json(publicRun(state, now, input.id, row!.version));
+      return json(publicRun(state, Date.now(), input.id, row!.version));
     const r = next.run,
       finished = r.phase === "gameOver";
     const serialized = JSON.stringify(next);
@@ -453,7 +462,7 @@ async function api(request: Request, env: Env) {
     }
     const [result] = await env.DB.batch(statements);
     if (!result.meta.changes) fail(409, "Run updated. Retry your request.");
-    return json(publicRun(next, now, input.id, row!.version + 1));
+    return json(publicRun(next, Date.now(), input.id, row!.version + 1));
   }
   return fail(404, "Not found");
 }

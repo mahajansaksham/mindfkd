@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
@@ -192,13 +193,13 @@ export default function Game() {
           </div>
         ) : (
           <div className="header-tools">
-            <a
+            <Link
               className="icon"
               aria-label="Global leaderboard"
               href="/leaderboard"
             >
               ↗
-            </a>
+            </Link>
             <button
               className="text-button account-button"
               onClick={account.openAccount}
@@ -259,10 +260,10 @@ export default function Game() {
           <button className="primary start" onClick={start}>
             START RUN <ArrowUpRight size={23} />
           </button>
-          <a className="guest-leaderboard" href="/leaderboard">
+          <Link className="guest-leaderboard" href="/leaderboard">
             <BarChart3 size={18} /> GLOBAL LEADERBOARD{" "}
             <ArrowUpRight size={18} />
-          </a>
+          </Link>
           <div className="difficulty-ruler">
             <span>EASY</span>
             <div>
@@ -445,7 +446,7 @@ export default function Game() {
               </div>
               <p>
                 Tap choices or use 1–4. Reorder with drag or arrow buttons.
-                Number questions have a lock-in button. The clock keeps running
+                Number choices submit with one tap. The clock keeps running
                 during feedback and while you’re away.
               </p>
               <p className="muted">
