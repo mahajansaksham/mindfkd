@@ -9,6 +9,8 @@ export type Question = {
   options: string[];
   answer: string | string[];
   explanation?: string;
+  topicKey?: string;
+  source?: string;
 };
 export const config = {
   startMs: 30000,
@@ -48,25 +50,36 @@ export function shuffle<T>(items: T[], random: () => number): T[] {
   }
   return out;
 }
+export type QuestionHistory = Record<string, number>;
 export function selectQuestion(
   bank: Question[],
   level: number,
   used: string[],
   random: () => number,
+  history: QuestionHistory = {},
 ): Question | null {
-  const available = bank.filter((q) => !used.includes(q.id));
+  const byId = new Map(bank.map((q) => [q.id, q]));
+  const group = (q: Question) => q.topicKey ?? q.id;
+  const usedGroups = new Set(
+    used
+      .map((id) => byId.get(id))
+      .filter((q): q is Question => !!q)
+      .map(group),
+  );
+  // Never jump difficulty or repeat a fact in the same run.
+  const available = bank.filter(
+    (q) => q.difficulty === difficultyFor(level) && !usedGroups.has(group(q)),
+  );
   if (!available.length) return null;
-  const tier = difficultyFor(level);
-  const exact = available.filter((q) => q.difficulty === tier);
-  // Exhausted tiers move upward before falling back to the hardest remaining questions.
-  const pool = exact.length
-    ? exact
-    : available.filter(
-        (q) =>
-          q.difficulty ===
-          (available.find((q) => q.difficulty > tier)?.difficulty ??
-            Math.max(...available.map((q) => q.difficulty))),
-      );
+  const lastSeen = (q: Question) => history[group(q)] ?? 0;
+  const unseen = available.filter((q) => !lastSeen(q));
+  const oldest = Math.min(...available.map(lastSeen));
+  let pool = unseen.length
+    ? unseen
+    : available.filter((q) => lastSeen(q) === oldest);
+  const recentCategories = used.slice(-2).map((id) => byId.get(id)?.category);
+  const varied = pool.filter((q) => !recentCategories.includes(q.category));
+  if (varied.length) pool = varied;
   const q = pool[Math.floor(random() * pool.length)];
   return {
     ...q,
@@ -93,6 +106,9 @@ export type Run = {
     correct: boolean;
     points: number;
     selected: string | string[];
+    responseTimeMs?: number;
+    timeBeforeMs?: number;
+    timeAfterMs?: number;
   };
   reason?: "time" | "bank";
 };
@@ -115,11 +131,13 @@ export function startRun(
   random: () => number,
   now: number,
   level = 1,
+  history: QuestionHistory = {},
 ): Run {
-  const question = selectQuestion(bank, level, [], random);
+  const question = selectQuestion(bank, level, [], random, history);
   return {
     ...emptyRun,
-    phase: "playing",
+    phase: question ? "playing" : "gameOver",
+    reason: question ? undefined : "bank",
     deadline: now + config.startMs,
     questionStartedAt: now,
     question,
@@ -149,7 +167,17 @@ export function answerRun(
     bestCombo: Math.max(combo, run.bestCombo),
     correct: run.correct + Number(correct),
     incorrect: run.incorrect + Number(!correct),
-    feedback: { correct, points, selected: answer },
+    feedback: {
+      correct,
+      points,
+      selected: answer,
+      responseTimeMs: Math.max(0, now - run.questionStartedAt),
+      timeBeforeMs: Math.max(0, run.deadline - now),
+      timeAfterMs: Math.max(
+        0,
+        run.deadline - now + (correct ? config.bonusMs : -config.penaltyMs),
+      ),
+    },
   };
 }
 export function nextQuestion(
@@ -157,10 +185,11 @@ export function nextQuestion(
   bank: Question[],
   random: () => number,
   now: number,
+  history: QuestionHistory = {},
 ): Run {
   if (now >= run.deadline) return { ...run, phase: "gameOver", reason: "time" };
   const level = run.level + 1,
-    question = selectQuestion(bank, level, run.used, random);
+    question = selectQuestion(bank, level, run.used, random, history);
   if (!question) return { ...run, phase: "gameOver", reason: "bank" };
   return {
     ...run,

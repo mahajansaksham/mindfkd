@@ -1,0 +1,4847 @@
+{
+  "ot-43dc85df40884c3c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6a73062247d5820a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f7c568ea9d4a3590": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9b7bf132388b0d89": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-682a3cccca3733f2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-260a9d9fd13fa82c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-52772cc735cf002d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fe24616a4970e088": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-219de7b73d3421b3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5f04c64ac2c05618": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-87a44be1a335c95d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-56d56b3d6787a7e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9a4d5bcc47f6c083": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-087de13ba7effaad": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-acf174b153b6d826": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-040447be63c071c5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-276f25b8b42e3ce6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4cd7a06b00a64ad3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ddf1bec95dcb1f16": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9f1498845ae31453": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-38b00428d426af9c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0a22e784ad271e62": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e1194cd9b97a0caf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c85946fad12aabdd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "answer": "Alan Shepard"
+  },
+  "ot-d294f57da61e4fef": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d8db9ceb7b3decc6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-704a63c2369446a7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f3bed994088c9725": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-224e1813313a3433": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fb6760df977b3bdf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-758306e9d2e0b81d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6a996f516de307b7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d7e65be33f65f443": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c71552727196ad6e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "At standard atmospheric pressure, what is the boiling point of pure water in degrees Fahrenheit?"
+  },
+  "ot-4b6d3a7fe1d02332": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-48764c03dd2dda6d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-975f0de7c707496e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dd025f46f4844944": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5a2e816c8cec3305": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Approximately how old is the universe according to the standard cosmological model?"
+  },
+  "ot-67707b5df877c024": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ff6ce959dcb8cd2b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b9a7cd918aa2b355": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "What colour is deoxygenated human blood?"
+  },
+  "ot-f8ca99b71d3789a9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-94e4c457a816fe3b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2d0c663b5dd3ee3a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-25a5385e298b4fd8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7d0dc2981ba81dd4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-89c8554efaf7753a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c662f937b9cfe747": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-69df6585036f3614": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-207f516a01ae81c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a2fe3d1e360df7dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1a1df74473642943": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which of these is the lowest-pitched brass instrument in a typical orchestra?"
+  },
+  "ot-0b4f4065e57be764": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a9b6aeafaf54c631": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a24d449f808faa9d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8681ead14075ac7b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f1d73de80c54a052": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-d07b8e4e8e025de4": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-aeb86952eda4b3f9": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-4af8077eb0dcf279": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4377a80c51933189": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c994faa3bac95602": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-beb59de5fab4091d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-aa5f569ec06c5848": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b1ba876b364152b2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-f15e8369eeafc80e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4ac5cc9676b8256d": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8d967aba2655e100": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0c52c0d1c8d988fd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8be791b38d48d98c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-14c249236d94f615": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7618d4f094f26674": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4185cf40aa2330d6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ced3581afc93436f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6f4c90c6c9090520": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e9f2523049dcec20": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c298d3d5db61e54d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "answer": "The Philippines"
+  },
+  "ot-e05e6771604f2bde": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-124c3ad0d24fa116": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bf83265c2a0ca7c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-943e87b79d585753": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d5fa0e2ebce690ca": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Finding an antiderivative reverses which mathematical operation?",
+    "answer": "Differentiation"
+  },
+  "ot-4f52e2df8d7f639b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6ef55694fbc691c0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1e49b2be1af9d3db": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-80d3b61a6deda70b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-178b26fa49abc327": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a8a068c9935126df": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5cd00a8dd815a147": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9d6212a8689b0c84": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b01127d2cc72f9e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3c37a2eca09de83a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bb18c1491663cf41": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-25743703435ad45c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dde36066448e8e5d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b2b2e24b580b0988": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4395c240c2b324dd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-aa268acb187bab10": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b3fe8de28c1bd8d2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2c7c7ac8a37bd376": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-93e85e04f52f6cf5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-04dfa376f2e84da9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6155030e9cd1902b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0d1cde41098a20c9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e5dd7a96ca8e6eb0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-84b56ee8c13ae882": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-60efb1f34db3624e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fe8703ade9d98657": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c0619b71067be7ad": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9fe529408726c79c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7302c791b8ff44e9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1019bc0ecc5ef23f": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-73fd1890de8b0034": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b4aa6f8cc9af5f15": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-51cba1cdcfa96402": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9fc583e4c3e85c35": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f02d8a4389d1909e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c509a08a954e1bcc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-91ebcf279baf3460": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-85b54e30239ec593": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fb7284a904eb3b02": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5a38f74107106148": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-cf7d17013ca79b5e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-edca58c0964e2761": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-9020680f4ea98462": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dcfe05041deab5cb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f43c63cf19c6cd53": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-65f23e5c4a0ca198": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5bb9516a27d9ae3f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fd4f6e75362a972f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fe431d5f3830d02a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5e15b544d21cd985": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a2c32b0b84b7e9c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-787a2b5c3cdf9ab3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "What is the minimum number of obsidian blocks needed for a standard Nether portal frame in Minecraft?"
+  },
+  "ot-7363a486bf3bf7e7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-267c7b041572a38b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5e66add8e85a838d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-29ff451ee79d232d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a4fe669e4b97fc1c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1c27369e38c0b760": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-304ea24d74d805c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ad729f68f198767b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-52617e91a18951b8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7e0f12e8b0017c54": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3de9f20a979c3557": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-310d4cfc38c35ab4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ea3948d74b385d29": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3ecd83c03eef558c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7eea88fc1feb101e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bdff456ec4cf6971": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which animation studio produced the first season of \"Log Horizon\"?",
+    "answer": "Satelight"
+  },
+  "ot-bbbfe0d12814a16f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-070adc6398cb4dd5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-eaa8c13cdc102329": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-73e0a1b0a90b487b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0ce9c7c5586771d7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f4dfbd1d21e433ae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-60db51ae8dfa0175": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-16fa4c19470eadeb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fb118da72d1080c3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c38a20f257f6a82a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8e30e8005fb15c5d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-93925d5b76346317": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f7bc5b2930e4cdd3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-04ceffd8be12e04f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-da781144ac03bd4b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-50008223e8186a72": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-82b756210de58d1c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-80062797a54d2c5e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cd21a4928198ab5c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a7bd4042f8216ab6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ebfa0611ab8b6f05": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2a70a50097ec3939": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-082e5f94f849aafd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7df6d0218157ac92": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e5bf30b0329528e7": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-1a1c1c546c5c869f": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-73e52082a1918452": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-34f34084e4a3d153": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-e47de8f89007b8ef": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b0791222c2674528": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-48cfc85547d6ecc8": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8bbd42fbfb1493d5": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-9ed0b576bd2388ff": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-ab81307a4fe35429": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-2138deafb2545aa5": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-3f44923c11d963b6": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-20c60c0ba041530a": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-e35d348b51dc1f29": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-5d99e01330dc6943": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c2bcdeaaf7966044": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-1a1fea7db5ca362f": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-05b982016f4ee18e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-e90b1f5fb17bf380": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-a5766beadb8242b6": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b985ddc4724ef9e2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-a96cca1f4a0145ab": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-d02935cb24692b71": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-819ef9920cc4e428": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-7d61ddf322e8250a": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-ac7cfb1963137d93": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1f717429b1f71f99": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-98079d15b04da148": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-06c56df85c8fc41e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f269947a16ce9d36": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e7cd20040483b2b2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which spirit is traditionally distilled from fermented grain or potatoes?"
+  },
+  "ot-6dee36b90cba3313": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-09c9034d69d1fa1d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c1773651ece99bf5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9700de8ae47dd70a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-07e631dd3101ba72": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-13cc0d3917aba7a2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-7fc0e471e5894a97": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a452ca57b852e673": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2fda75749a0442c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c4b801d343bcb58d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-15d32467b4807f91": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0e41be7f49c86178": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-df9be923b9633bc0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-278dca4e1a57ed61": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-078e88b1d56da29c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-24ada2fa7c9ff121": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-25950e5060690bae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-192c062167282851": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d2092a1b4ee067c9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1c4eadd4d1cc3d54": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cbc1f860334d6061": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d2215e922d83467a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d049883bfd705a8e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c9524be7a8e88c82": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-feaf4eb52c065e15": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0776e70df8b30994": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bbc2af7d403b8bf3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6426ff768ef07cbe": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6730181d7fb4b088": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-ed3fb3a747a1a015": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-672d686683e40e90": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d1296246f0d305df": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which Greek god is associated with music and prophecy?"
+  },
+  "ot-e17fad40ff93c007": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-eee61120e5fe4203": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cd9802316a1e96ae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-02d8f1a093afb6a8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5bc80ceef74a977d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3c1df214ecfe29a2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-deb8fb08fea4ec05": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fa6032755300118b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b10ca23730fd0fc2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-de2751b84fbb2dcf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9fbf41b692fdd307": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-28ff95e5d1d26c0b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-867b8cfbb2d6de66": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-54de9e03bf755aa6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f729aa0a86a84f6c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0cbc2f8e44b5c3eb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e900d4a4905741d0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ccd1fff692d71e50": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ee01fd3d2201e80c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d06134faad4e6021": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5e0dc3e44d9773a1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-477ec092c4c24d65": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-33d4184b81392187": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d4b38487830e3257": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-eeec5ca1312b0c87": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dae0f2c0c69c6eb9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2f0a52cd04a60b71": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-11aeae76d20f92e2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7fb3204faf0824d2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d431df92f7d9170f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-11e18a5aabace990": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2b2d8bf2175e6d4b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a915c59fed8b3bc3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6514b16560d983e6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which US territory granted women the right to vote in 1869?"
+  },
+  "ot-de6fc74d4b47eca0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f4236555a0a465f4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cd30cb98b3a740d7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-784eb19b40571174": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-44c3285c2ea13208": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-faa1898124492584": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-009bcb605b3d04d1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which dwarf planet is named after the Greek goddess of discord?"
+  },
+  "ot-8fd457e2a8b45002": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-64065ada60fa8c9e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fd8d75415530847f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b57e1c9b48809775": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bd3344f21a704e31": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b23b2abd560c9252": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8fa1c66a4a1950d8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-912d0530c54c76dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-193dcbb1350d2e91": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a19bbd57c12dc14e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-be091b875ef1536c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9696d5db2cce278a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dfbcc4e993a4eb4e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a56401d72e2e4681": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which African lake has the largest surface area?"
+  },
+  "ot-e5650910006a6cda": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-42a164df0ef7b1c0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b57e23ab0cc4c4d8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0a6956ad5ef62c69": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e64b91dd9d645d00": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b8b8c142cc6de328": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7ab4c82c572c1ee1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b7cbb2cdfd538f39": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-250e4d83dca77b32": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-40904a7435308b21": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-322a6f243da3062e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-28e8c404d85f3256": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ca66c74b4c99ed83": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-378e0272e3690644": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-119dbf40b8df7cf5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f3b987c1f9a5644b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-59a19ede8934f551": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ec56a9030f7f540f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-77942a81d6e51f39": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4ec52cdc9476dfff": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-89a52c0ec7b4df67": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3b578f442225f308": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dd41a05033491242": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8401114c26e28c8b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e5814153d3fb353f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fdc09eb9448e47d1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-13bdfd9de9323864": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-88d90534a6f7cf8b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-597237871149dada": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-873c52e64c3bab2a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-021d37eda6e689d2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5d35c899c9a42866": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-df9da557d897a5c4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5f2b5c2c2a1c2033": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6dab0e50fb989211": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ac1674fa57aefafb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bb4a344bc1f9a220": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cf9d6af797a3c5b7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fdfd9c6fabd79cff": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d5209d3b0b6f2b9d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bc46859c5a934440": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-47f92cc3b6f63040": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-65c2cf84aedb08d0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f635c75c7cd019cd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-63fcd813f713b0b4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9a1f0f670d1e35d9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-26a9bab0ad0762fd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-897ede48711a61fc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-75bce9b2bf4f4b39": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-de9012782c12a183": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9a9585b07625de2f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e76a8e5c60b2248c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0b8740ec6d70ee7a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3122b74a952205cf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f990cfd0670d82e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-43dc689ca4c8f253": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-202c669fe2eeada8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2d83b349045f0003": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4765d29ae98120ce": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-73e5002b7d71540d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cbf5c74618fb89f2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-46877450e73cf6eb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7f32fba8cef11c72": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-12e9ed3fb95b2656": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e671f567cd8f00b1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6df38dda24a9fbe9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0d7da57bd9dee1bc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-18c60f50713b65c1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dee6f93ba7bbfd25": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-883b0925b592e58d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fa3af9f484c16f3b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c4ff2b5a1d791c11": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-556ba67e543a73ed": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b9a7259f6736812a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9fa36e062e70f977": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7b0078cf48588f07": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cd2b9a2a943dff8d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b105f5d7f934de33": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e06e82d0f40054bf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a32e3dd2e8ec0a2c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9050504227a01770": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-10f31b439450e505": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-77850a94641e16dc": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-680a54641b9e557b": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-7cd0c3501a3d169c": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-9808ca087b22a2ad": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-624938574bfdf975": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-cc8b3e97a38a66eb": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-7894941243f3b794": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-79f839bed6b34886": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-4f5e86a5bf6c1130": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-77ad68298178b5da": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-5099959342dcde59": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-27ea428c1ae60857": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-0c293f50dad9eff2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-6510656762bb8c5c": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8c65ce9104968657": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-ce2bfab67165984f": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c08cd02aae1ef8c5": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c61b82bc7f196647": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-1e851262091aa532": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-cbb309c209dc2ff7": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-41206d766aad327e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-dbfeee5041e9f5b2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-d76b7f53f3d1f75f": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-e4034ae8ffb16a29": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8fb66aa9f9b4db41": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-aee4a99921749c3a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-04579b55aacb6702": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ef775b02d2cbd18e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-337d2ac7d374571a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-df71d02120bb7208": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2606d7baf4ecd401": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-30b8de3ddbfa833b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-35cfd21367928710": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0e18663b1af52ba9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which country has the largest total area?"
+  },
+  "ot-bf77c543f8ad8749": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c9859edd0d87110f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5299f012b60a9b9b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-61612dec98ecb085": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8bfeabf07b599b1e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c0ccc7549f2e4e6c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a1f48983b80292ff": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-89143a2661e8359a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-55d3ccf4b2fccd75": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which of the Seven Wonders of the Ancient World is still largely standing?"
+  },
+  "ot-c4445b0dba0c5106": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5b682d1d6589c811": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d00e7e5fad9ae33d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-36707b3b4487d20d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f0aab2d6bcb9fdba": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ebb52b960effbf29": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-70e71218179406de": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d6def1ca58115314": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b3cd71dcb0d8d33c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d9ae47c46ef85d0a": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-f402addaef27333f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1bbee7ae2aa5e633": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ecbedce0ffcd8bd7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4caba108534b392e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9f32beed61c2ed82": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7b152add80a7c540": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d816921c6519cf2a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-60bc0fd5f3d786df": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4a35c6b8c72d5aeb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-417b856ea06f4adf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-36600ea51e7c0d7d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a6a7a57f8228356f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which Soviet assault rifle has a name referring to the year 1947?"
+  },
+  "ot-9e259904b3efa2fc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which pair of Pok\u00e9mon games was first released in Japan in 1996?"
+  },
+  "ot-b0cf043d1f79618e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-95a50ebae13bdb6e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-38d736dc4d45339a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b4a65da1d6dc8225": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-886d2c087d2a186c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5051367ad0cd681d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5b25605b3ce99487": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0185cc80730a482e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "In computer networking, what does RIP stand for?"
+  },
+  "ot-4050e15057332a98": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dd8aea219918db6b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-504f8c194345dfde": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-67afc681f9ba93b5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6a27b1a8a28aa5f7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3aa44a5be1e287c1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-476354dfdc317520": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-51718ef3a26b7d5f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ea1c99d11c04c5eb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b2b2dc2a33c3d7ac": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fdc93a814f0e7223": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b74643bcdc274fa1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-14142fd9ff12dc5f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0cfbb04364990133": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f677ebbf1eaa1c58": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-82a2f5b91ed26281": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6de4992dfbd00bc0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1ed2e2fbf76f549a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-785d6148594e1c63": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3823420dc8d6b2fb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c474d22e1ae156de": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a0285b2da67492ce": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "answer": "Steven Moffat"
+  },
+  "ot-9a3bc6321d073942": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c52eea3e1428da3f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a1ffc5d9a6529d20": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5bf04e92761d9c29": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-267b5833eda33ebe": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d7311def6e3f8666": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-eaff1dc94cec3fc5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-52d157da1211707e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-af4aa3f86654ce77": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7ed75d88f8b0cabd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e56b5c8b155b498f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0272edbef0c3237a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5f7685dc18bda4e4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f749ba5fba59bc0d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d8369b8029030898": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6aa7a97140cd8086": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cd2647f64e916c90": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4bff95587b76de0a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-87ae1796bda9f4c9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e035256e01405632": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3740a6a2cd1af608": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cdd5494b94a58241": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-147c888296fb380f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bde48add84f94580": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-37250b66108daea7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-508868110beda10d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-266351e6bb019899": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f99761ddf7e43ed4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-22e1939dd06afeeb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1649be16419447e7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-15703e2d275fa4d4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-616a0531fc1d7ab7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-69f52dc1ce631bb9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1e59a5d06e391333": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9a46dbc9959aedab": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-087d29fab9dc8f8b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3624ae0102d8c2dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-909c7611a02e86e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5cfa9dcf198e92d1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f574e327cf3cf090": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-48c0e70bf941cd79": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9ec94198d308b828": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7166ef3d3cdbcd07": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0a5a1718aa8890a9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0f1de49a54cd6c83": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-da8012c7fa7cec08": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7dd19ed6c85b1482": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-901af24f70592a18": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1e367ae81214e57f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-41adaae33baecf5d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4bcb7e1efce28703": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c241bc6981832583": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-eede5f33bc454a41": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-65ca32df934b5a56": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bf3986761b5eba6d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-be577ba0b9f6f31f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1f46fe7115bc2072": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-22b550ca2c135907": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-58d8fb7d732c350a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-94a0795ad1909095": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bf3d6e51ae6041e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-81d45ab2689b0039": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-593de9ae264bccc4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ff9f058c6b0e96ee": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bba503c6170b97df": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-21e421518d915659": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-aaac1cf3b2aec8e2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-820d2068e4a4995f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-185ab64b44a49f86": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8cffb7aa092531c7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-083659c734cd4856": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a04aa38b02e558d9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "What is the designation of the moon where the colony in Aliens (1986) is located?"
+  },
+  "ot-a785e7de527976ee": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-681c9ce921edfc04": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8a18e6a6da902b97": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1808393833c5bade": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8947f9583efaa6b0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a1bcc4c2d25f64f6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d5b0cb3bf7d75b0d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-54e8e2eaa12a3bc4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e36e37461805d1d5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1b1a26228e9152a1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-12a75ae3c3f3cd33": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1ceb7d509e349cea": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0961a45b9dfd8056": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-518333d98f246d9b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5f854d76b352d322": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-373618e489b0710c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2a32e1f2b424f5c0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ad375c532a162b0a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7e5d7132bd525d3a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0385869e4cb2e8bb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-de3cb61a9cc51581": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b7b6ec988cd58158": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-985ee100ebaaf41f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4473878cbcea85ad": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a704cb47b99f1c65": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b947ce44e9762164": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7f06ed915fc1c551": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2f6f9206c21c54ab": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-35c8f01a7551465f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-abc8214c4b85c5dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-17adf1c77045c154": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4ebc9e5ca839c2f9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cb63d2277c904e2b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f207b049dcb851dd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-00fe3de1711185c9": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-0fd359d50630b39e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-8d41c2aa8726208d": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-75d3c9dcda03879a": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-2bd5ed28a7cbf535": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-916d4d1b04540c96": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-42cb7f5ad4ac004d": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-43de6d5cb4f9306e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-379668229b637a77": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-3c25710cdb8d1358": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b5e7ed0384a1dcb2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-5047a37f97fbd22c": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-d27f956ba7bde3ae": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-cb38bd91380a1c05": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-1f074d6aa1bae62e": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-6f8d728590c1ecb8": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-6043035f0418c657": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-6cf6c4f4d7e827ed": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-5c91a93be421bbdb": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c3a04e6b398a8747": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-663fe2141f00f994": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-4a28df9175a6d34b": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-10ccaa59792690ae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6a70c1d08fbaafe3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "How many English names of Gregorian calendar months begin with J?"
+  },
+  "ot-bb51f857f2341469": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ae4f2e6845d9873c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a7fda3fc66b6b2ae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 1,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5ed922526449ccd7": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0cb435f1d3ebc4c0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-94434732559584c4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f28a27e20f8de1dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-16d559797fbb00a0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fb5c198630595c19": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ba1a138a407601c1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e2b57314a1eccfaf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9662e7d8dbfa44a2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 2,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-978a1c1bfd139ceb": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-a55af24b20e76358": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9d4964cde7a5f6a0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-befe6fe0af43a9b6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "How many copies of a typical autosomal gene does a normal diploid human cell have?"
+  },
+  "ot-7536243e924a2e4e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "In computing, what does SSD most commonly stand for?",
+    "options": [
+      "Solid State Drive",
+      "Software Storage Directory",
+      "Single Sector Device",
+      "System Startup Driver"
+    ]
+  },
+  "ot-dd1fcb1b4ff51b05": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "How many chromosome pairs are usually present in a human somatic cell?"
+  },
+  "ot-4398687b35fa1f63": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bf5c87d1f75172e2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-de3dca46baf32020": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-47fea77c04339d74": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-74760d6514e5daf6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9ce457f3e3c1be18": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e631be50c018d0d0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-270dd0ba6dcb9d50": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-46c29de7513c462b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0f3c27159e0c93f3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-fd0494de2857cd91": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2adf0a11ef67ef17": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f1b03686d4f40eb2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2aa10f84c7e42baa": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5e2dae3685c1045d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4f977cbf5c0790f1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which city is the federal city and seat of the Swiss government?"
+  },
+  "ot-9aa2274258849e97": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bc8d02ee067a09fb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b42cdc8dccbd0f5e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0ccd81372c79aebd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which language is designated the national language of Pakistan?"
+  },
+  "ot-ab546dc4f56faf3b": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-23d093ac201d3c78": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9cd3ab6c2da429c5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f35f431c58ce7f10": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cc9d51ecb0da4150": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e373a79d971d8ffe": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-951c3132d79cf574": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4907356f8c425d53": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-58c4069e304465b5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-61e010743c4bb6ca": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-a8318558e8fd88ba": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-5ad2d8105ff237f1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c2306acda86de8e0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-463c79967a488f53": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which hockey player finished his NHL playing career with 2,857 regular-season points?"
+  },
+  "ot-86613cc814e6c8f9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-964080d3b44118b3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9f8296dce3810436": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-840265957303f190": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7401fa3ee1c8f972": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-13b416ef02296cbf": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-672641c708f7cc52": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-7a8d251af4d78ae3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-345dde775103b61d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b69e745353b44bde": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "In baseball, how many called balls result in a walk?"
+  },
+  "ot-fa3f1e608c65b1b1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b80c95837085fe76": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "In which Massachusetts city is Harvard University based?"
+  },
+  "ot-1d5ee1df9fb9c097": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4482e47e3ebeb901": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b37fdf58d9b57c90": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cc199e56ee06bb6c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 3,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-faa88885b8e25574": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2d141ee029f6ee32": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-579b4f3349115cca": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-327f3d3ac0ca7753": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6430c52d6efbf255": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-322d5c0cf732081c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e61e87092007637d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2a565099406ca3a3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-aff2db0ddaec96e9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ce4097203a88c640": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-afec4000a22b168b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-338f0125203210c4": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-de49a80c59768e6f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ae79ceb0b1d9b45f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f294c66e7d047aa9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-685cb8f79d302581": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1d10f627da9b7939": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-dc4de42e08f80941": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1b8f02ef864ee220": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8d926774c63b9936": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5a23958a70bfd68c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Using the Greater Caucasus as part of Europe, which mountain has the highest summit in Europe?"
+  },
+  "ot-4ee2762d67bacf6b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4dedcff01aa316b0": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-061813a9b129e9eb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4f62ae407434c834": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-123ff1a770d3746f": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1ed45e113e8cb5ca": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-2cc7c3e8f88531c1": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-46fe9c99aca18f58": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b55666a7624373ae": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4c144409c37df950": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Approximately 95% of a normal distribution lies within how many standard deviations of its mean?"
+  },
+  "ot-9426a14adf9aafa1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8291d739b3fe948a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c9c8da1b4ba00492": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1b46286e11b53f11": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-cf62f764f57b83fa": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4672e9aac70a0807": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d0955413a0109050": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-80435fb7b5d4fe57": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-8a00e5f5213995e9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d26c567876cb90e3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f22987ae2434622b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0ee7b318d13d9f19": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "answer": "Bertrand Russell"
+  },
+  "ot-eec5112064ece008": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-5452de80f86c0edc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Treating Michigan and Huron as separate lakes, which is the largest freshwater lake by surface area?"
+  },
+  "ot-4e4f00200b137b26": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-676c39e4cea0d15e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-253fcd53cc115b44": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ad4aaa5c81ddad7a": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d20a1bde5017bbda": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-416f08bb0ed0a770": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-29333e960948c65e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-59bffb6bbe522080": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-13839f6fb02aa30b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-6636f07715c06edb": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "Which actor was NOT one of the seven gunfighters in The Magnificent Seven (1960)?"
+  },
+  "ot-ed6c656b4964488e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-795290f8bf7e411c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d035c0bc46229fc6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-92b8464d1bc1f7cf": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-61cbba26f2313bdd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b2a3e475b7df68d9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3f97a7a42283eda1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "What is the main plumage colour of an adult female common blackbird (Turdus merula)?"
+  },
+  "ot-65cd2e1b12103f7b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bea35adec96597db": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bda6c0e2fc3d1625": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b5efb1a7566cda8e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e7bf72f656881c33": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-97087f3e12842778": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-52585dd3c11c02d9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-51960535e8b141e1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c97a3463ba0ff531": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-957e94d90f38edb2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-db42d0b254af12de": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c5f077008e192f68": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-56ee423d01e66ba8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-d92785a2510441d9": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ea04bfe83b9fd610": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e55b090178ac851d": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bd9a5178ced2136c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3778095750f81d23": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-79009f6d5af39081": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1ddf5c383fca060c": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-098ecea22ad59652": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-93711ab3f3790ea1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-18e71b874ed0b29b": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f1eea838d67df9a1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b484a5927cc304b0": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c2c1718327670b2e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ae432741e70a9b01": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-23a2f2d8e8755be3": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-76c811d2bdcde207": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 5,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-e4bda150f2d17fcd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-66837d283c70ce6e": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-c5d5bffedff945c1": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-48faf15b073c6937": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f1e9cf7e45341f10": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0e49f44c5a981070": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-02d3f71736f53161": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-0a961810d22c48dc": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
+    "prompt": "What is the total face-value score of all 100 tiles in a standard English-language Scrabble set?"
+  },
+  "ot-593d3b9eee1ffadd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-ca4a393f493e81b5": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-96d9b4e5d6f24dac": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-995174afe82b1033": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-9ccd726e0a97a833": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-1887d873fc5ef4c8": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-bc71063f3291a5c6": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-31ad22fb0e4df751": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-20723793955fe889": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-4b9d01122ab0cf66": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-94863da9dbbab800": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-21b19ca927dd3d36": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 6,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-3b5478fafcd69ddd": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 7,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-f74c97a77c5ae1e4": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-250ac453cfaeff38": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-bbb9884120f2f5a9": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-1320bf7bb4778f6d": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-0226876be08256d3": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-2f590769ebfedd5b": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b65295783eee4d87": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-e0a5a57402832c69": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-817b9d0ce65cdda2": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-6ee51108e9932124": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-65970b13d89f9265": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-2f1e811296f3b8bc": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-33259cc6dae87de3": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-0adcd4ecbb9af481": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-c89d9de1a1457be0": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-a4344f269a285515": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-213766e4374d7fd3": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-0344694315d9a67b": {
+    "status": "retired",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 0,
+    "note": "Excluded: duplicate, ambiguous, outdated, or unsuitable for this pool."
+  },
+  "ot-b127354bb3baa9c2": {
+    "status": "approved",
+    "reviewedAt": "2026-09-28",
+    "difficulty": 4,
+    "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  }
+}

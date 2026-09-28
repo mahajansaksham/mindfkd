@@ -12,6 +12,7 @@ import {
 import { questions } from "../data/questions";
 import {
   Run,
+  QuestionHistory,
   emptyRun,
   startRun,
   answerRun,
@@ -26,12 +27,16 @@ import {
   readStats,
   saveStats,
   accumulate,
+  readQuestionHistory,
+  rememberQuestion,
 } from "../lib/storage";
 import { shareRun, shareText } from "../lib/share";
 import Question from "./Question";
 import Timer from "./Timer";
 import Modal from "./Modal";
 import { useAccount } from "./Account";
+import { createRunTracker } from "../lib/analytics/run";
+import { trackEvent } from "../lib/analytics";
 import RankedGame from "./RankedGame";
 const labels = [
   "",
@@ -52,12 +57,17 @@ export default function Game() {
     [message, setMessage] = useState(""),
     [fallback, setFallback] = useState(false),
     [previousBest, setPreviousBest] = useState(0);
+  const telemetry = useRef<ReturnType<typeof createRunTracker> | null>(null);
+  const history = useRef<QuestionHistory>({});
   const current = useRef(run),
     rng = useRef<() => number>(Math.random),
     saved = useRef(false);
   const update = useCallback((next: Run) => {
+    if (next.question && next.question.id !== current.current.question?.id)
+      history.current = rememberQuestion(next.question, history.current);
     current.current = next;
     setRun(next);
+    telemetry.current?.observe(next);
   }, []);
   useEffect(() => {
     const id = requestAnimationFrame(() => setStats(readStats()));
@@ -83,6 +93,7 @@ export default function Game() {
             questions,
             rng.current,
             performance.now(),
+            history.current,
           ),
         ),
       run.feedback?.correct ? config.correctFeedbackMs : config.wrongFeedbackMs,
@@ -128,11 +139,32 @@ export default function Game() {
       const n = Number(new URLSearchParams(location.search).get("level"));
       if (n >= 1 && n <= 50) level = n;
     }
-    update(startRun(questions, rng.current, performance.now(), level));
+    telemetry.current = createRunTracker(
+      crypto.randomUUID(),
+      "guest",
+      readStats(),
+    );
+    history.current = { ...readQuestionHistory(), ...history.current };
+    update(
+      startRun(
+        questions,
+        rng.current,
+        performance.now(),
+        level,
+        history.current,
+      ),
+    );
   }
   async function share() {
     try {
-      setMessage(await shareRun(run, account.player?.username ?? undefined));
+      setMessage(
+        await shareRun(
+          run,
+          account.player?.username ?? undefined,
+          undefined,
+          telemetry.current?.id,
+        ),
+      );
     } catch {
       setFallback(true);
       setMessage("Select and copy your result below.");
@@ -178,14 +210,24 @@ export default function Game() {
             <button
               className="icon"
               aria-label="How to play"
-              onClick={() => setModal("help")}
+              onClick={() => {
+                setModal("help");
+                trackEvent("how_to_play_opened", {});
+              }}
             >
               <HelpCircle size={20} />
             </button>
             <button
               className="icon"
               aria-label="Your stats"
-              onClick={() => setModal("stats")}
+              onClick={() => {
+                setModal("stats");
+                trackEvent("stats_opened", {
+                  games_played: stats.gamesPlayed,
+                  best_score: stats.bestScore,
+                  best_level: stats.bestLevel,
+                });
+              }}
             >
               <BarChart3 size={20} />
             </button>
@@ -217,6 +259,10 @@ export default function Game() {
           <button className="primary start" onClick={start}>
             START RUN <ArrowUpRight size={23} />
           </button>
+          <a className="guest-leaderboard" href="/leaderboard">
+            <BarChart3 size={18} /> GLOBAL LEADERBOARD{" "}
+            <ArrowUpRight size={18} />
+          </a>
           <div className="difficulty-ruler">
             <span>EASY</span>
             <div>
@@ -291,7 +337,7 @@ export default function Game() {
         <div className="results">
           <div className="eyebrow result-kicker">
             {run.reason === "bank"
-              ? "QUESTION BANK CLEARED"
+              ? "DIFFICULTY TIER CLEARED"
               : "TIME’S UP. TAKE A BREATH."}
           </div>
           <div className="result-score">{run.score.toLocaleString()}</div>

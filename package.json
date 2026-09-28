@@ -14,7 +14,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
-    "build:site": "SITES_STATIC_EXPORT=1 next build --webpack && node scripts/build-worker.mjs"
+    "build:site": "SITES_STATIC_EXPORT=1 next build --webpack && node scripts/build-worker.mjs",
+    "questions:fetch": "node scripts/fetch-questions.mjs",
+    "questions:prepare": "node scripts/prepare-question-bank.mjs"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,8 @@
   },
   "homepage": "https://github.com/mahajansaksham/mindfkd#readme",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "drizzle-orm": "^0.45.3",
     "jose": "^6.2.12",
     "lucide-react": "^1.48.0",

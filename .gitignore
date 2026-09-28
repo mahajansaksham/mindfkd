@@ -8,3 +8,6 @@ out/
 .sites-runtime/
 
 dist/
+
+.env*
+!.env.example

@@ -1,4 +1,4 @@
-import { Run } from "./game";
+import { Run, Question, QuestionHistory } from "./game";
 export type Stats = {
   gamesPlayed: number;
   bestScore: number;
@@ -65,4 +65,47 @@ export function saveStats(stats: Stats) {
   } catch {
     return false;
   }
+}
+
+const historyKey = "mindfkd:questions:v1";
+export function readQuestionHistory(): QuestionHistory {
+  try {
+    const value = JSON.parse(localStorage.getItem(historyKey) ?? "{}");
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    return Object.fromEntries(
+      Object.entries(value).filter((entry): entry is [string, number] => {
+        const [id, time] = entry;
+        return (
+          id.length < 150 &&
+          typeof time === "number" &&
+          Number.isFinite(time) &&
+          time > 0
+        );
+      }),
+    );
+  } catch {
+    return {};
+  }
+}
+export function rememberQuestion(
+  question: Question,
+  history: QuestionHistory,
+): QuestionHistory {
+  const next = {
+    ...readQuestionHistory(),
+    ...history,
+    [question.topicKey ?? question.id]: Date.now(),
+  };
+  // Bound local storage, retaining the newest exposures if the catalog eventually grows.
+  const bounded = Object.fromEntries(
+    Object.entries(next)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20000),
+  );
+  try {
+    localStorage.setItem(historyKey, JSON.stringify(bounded));
+  } catch {
+    /* This session still avoids repeats. */
+  }
+  return bounded;
 }

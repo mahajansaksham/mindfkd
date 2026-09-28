@@ -1,3 +1,5 @@
+import { BANK_VERSION, CURRENT_SEASON, SEASONS } from "../lib/catalog";
+import type { QuestionHistory } from "../lib/game";
 import type { Env, Player } from "./types";
 import {
   cookie,
@@ -71,7 +73,20 @@ function publicPlayer(p: Player) {
     createdAt: p.created_at,
   };
 }
-const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished'), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
+const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished' AND r.season=?), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
+async function questionHistory(
+  env: Env,
+  playerId: string,
+): Promise<QuestionHistory> {
+  const rows = await env.DB.prepare(
+    "SELECT topic_key,MAX(shown_at) AS last_seen FROM question_events WHERE player_id=? GROUP BY topic_key",
+  )
+    .bind(playerId)
+    .all<{ topic_key: string; last_seen: number }>();
+  return Object.fromEntries(
+    rows.results.map((r) => [r.topic_key, r.last_seen]),
+  );
+}
 async function api(request: Request, env: Env) {
   const url = new URL(request.url),
     path = url.pathname,
@@ -187,17 +202,21 @@ async function api(request: Request, env: Env) {
   }
   if (path === "/api/leaderboard" && method === "GET") {
     const p = await currentPlayer(request, env);
+    const season = url.searchParams.get("season") ?? CURRENT_SEASON;
+    if (!SEASONS.some((s) => s.id === season)) fail(400, "Unknown season");
     const top = await env.DB.prepare(
       leaderboardSQL + "SELECT * FROM ranked ORDER BY rank LIMIT 50",
-    ).all();
+    )
+      .bind(season)
+      .all();
     const me = p?.username
       ? await env.DB.prepare(
           leaderboardSQL + "SELECT * FROM ranked WHERE username=?",
         )
-          .bind(p.username)
+          .bind(season, p.username)
           .first()
       : null;
-    return json({ players: top.results, me });
+    return json({ players: top.results, me, season, seasons: SEASONS });
   }
   if (path === "/api/player" && method === "GET") {
     const username = url.searchParams.get("u")?.toLowerCase();
@@ -291,13 +310,37 @@ async function api(request: Request, env: Env) {
       .first<{ n: number }>();
     if ((count?.n ?? 0) >= 120)
       fail(429, "Too many runs. Take a break and try again later.");
+    const history = await questionHistory(env, p.id);
     const id = crypto.randomUUID(),
-      state = newRanked(crypto.getRandomValues(new Uint32Array(1))[0], now);
-    await env.DB.prepare(
-      "INSERT INTO runs(id,player_id,state,status,created_at) VALUES(?,?,?,'active',?)",
-    )
-      .bind(id, p.id, JSON.stringify(state), now)
-      .run();
+      state = newRanked(
+        crypto.getRandomValues(new Uint32Array(1))[0],
+        now,
+        history,
+      );
+    const q = state.run.question!;
+    await env.DB.batch([
+      env.DB.prepare(
+        "INSERT INTO runs(id,player_id,state,status,created_at,season,bank_version) VALUES(?,?,?,'active',?,?,?)",
+      ).bind(
+        id,
+        p.id,
+        JSON.stringify(state),
+        now,
+        CURRENT_SEASON,
+        BANK_VERSION,
+      ),
+      env.DB.prepare(
+        "INSERT INTO question_events(run_id,question_id,topic_key,player_id,bank_version,difficulty,shown_at) VALUES(?,?,?,?,?,?,?)",
+      ).bind(
+        id,
+        q.id,
+        q.topicKey ?? q.id,
+        p.id,
+        BANK_VERSION,
+        q.difficulty,
+        now,
+      ),
+    ]);
     return json(publicRun(state, now, id, 0));
   }
   if (
@@ -309,10 +352,15 @@ async function api(request: Request, env: Env) {
     if (typeof input.id !== "string" || !Number.isInteger(input.version))
       fail(400, "Invalid run");
     const row = await env.DB.prepare(
-      "SELECT state,version,status FROM runs WHERE id=? AND player_id=?",
+      "SELECT state,version,status,bank_version FROM runs WHERE id=? AND player_id=?",
     )
       .bind(input.id, p.id)
-      .first<{ state: string; version: number; status: string }>();
+      .first<{
+        state: string;
+        version: number;
+        status: string;
+        bank_version: string;
+      }>();
     if (!row) fail(404, "Run not found");
     const state = JSON.parse(row!.state) as RankedState;
     if (row!.status === "finished" || row!.version !== input.version)
@@ -327,8 +375,15 @@ async function api(request: Request, env: Env) {
       ))
         fail(400, "Invalid answer");
       next = answerRanked(state, input.answer, now);
-    } else if (path.endsWith("/next")) next = advanceRanked(state, now);
-    else if (now >= state.run.deadline)
+    } else if (path.endsWith("/next")) {
+      // A run started before a bank update keeps its recorded score but cannot mix pools.
+      if (row!.bank_version !== BANK_VERSION)
+        next = {
+          ...state,
+          run: { ...state.run, phase: "gameOver", reason: "bank" },
+        };
+      else next = advanceRanked(state, now, await questionHistory(env, p.id));
+    } else if (now >= state.run.deadline)
       next = {
         ...state,
         run: { ...state.run, phase: "gameOver", reason: "time" },
@@ -337,23 +392,66 @@ async function api(request: Request, env: Env) {
       return json(publicRun(state, now, input.id, row!.version));
     const r = next.run,
       finished = r.phase === "gameOver";
-    const result = await env.DB.prepare(
+    const serialized = JSON.stringify(next);
+    const update = env.DB.prepare(
       "UPDATE runs SET state=?,version=version+1,status=?,score=?,level=?,correct=?,incorrect=?,best_combo=?,finished_at=? WHERE id=? AND player_id=? AND version=?",
-    )
-      .bind(
-        JSON.stringify(next),
-        finished ? "finished" : "active",
-        r.score,
-        r.level,
-        r.correct,
-        r.incorrect,
-        r.bestCombo,
-        finished ? now : null,
-        input.id,
-        p.id,
-        row!.version,
-      )
-      .run();
+    ).bind(
+      serialized,
+      finished ? "finished" : "active",
+      r.score,
+      r.level,
+      r.correct,
+      r.incorrect,
+      r.bestCombo,
+      finished ? now : null,
+      input.id,
+      p.id,
+      row!.version,
+    );
+    const statements = [update];
+    const q = r.question;
+    // Both writes share the same transaction. State/version guard prevents a losing
+    // concurrent request from recording an answer or exposure that was not accepted.
+    if (q && q.id !== state.run.question?.id) {
+      statements.push(
+        env.DB.prepare(
+          "INSERT OR IGNORE INTO question_events(run_id,question_id,topic_key,player_id,bank_version,difficulty,shown_at) SELECT ?,?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM runs WHERE id=? AND version=? AND state=?)",
+        ).bind(
+          input.id,
+          q.id,
+          q.topicKey ?? q.id,
+          p.id,
+          row!.bank_version,
+          q.difficulty,
+          now,
+          input.id,
+          row!.version + 1,
+          serialized,
+        ),
+      );
+    }
+    if (
+      path.endsWith("/answer") &&
+      state.run.phase === "playing" &&
+      r.feedback &&
+      q
+    ) {
+      statements.push(
+        env.DB.prepare(
+          "UPDATE question_events SET answered_at=?,elapsed_ms=?,correct=? WHERE run_id=? AND question_id=? AND answered_at IS NULL AND EXISTS(SELECT 1 FROM runs WHERE id=? AND version=? AND state=?)",
+        ).bind(
+          now,
+          Math.max(0, now - state.run.questionStartedAt),
+          Number(r.feedback.correct),
+          input.id,
+          q.id,
+          input.id,
+          row!.version + 1,
+          serialized,
+        ),
+      );
+    }
+    const [result] = await env.DB.batch(statements);
     if (!result.meta.changes) fail(409, "Run updated. Retry your request.");
     return json(publicRun(next, now, input.id, row!.version + 1));
   }

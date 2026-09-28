@@ -1,6 +1,7 @@
 import { questions } from "../data/questions";
 import {
   Run,
+  QuestionHistory,
   startRun,
   answerRun,
   nextQuestion,
@@ -8,9 +9,13 @@ import {
   config,
 } from "../lib/game";
 export type RankedState = { run: Run; seed: number; readyAt: number };
-export function newRanked(seed: number, now: number): RankedState {
+export function newRanked(
+  seed: number,
+  now: number,
+  history: QuestionHistory = {},
+): RankedState {
   return {
-    run: startRun(questions, seededRandom(seed), now),
+    run: startRun(questions, seededRandom(seed), now, 1, history),
     seed,
     readyAt: 0,
   };
@@ -33,7 +38,11 @@ export function answerRanked(
         : config.wrongFeedbackMs),
   };
 }
-export function advanceRanked(state: RankedState, now: number): RankedState {
+export function advanceRanked(
+  state: RankedState,
+  now: number,
+  history: QuestionHistory = {},
+): RankedState {
   if (now >= state.run.deadline)
     return {
       ...state,
@@ -47,6 +56,7 @@ export function advanceRanked(state: RankedState, now: number): RankedState {
       questions,
       seededRandom(state.seed + state.run.level),
       now,
+      history,
     ),
   };
 }

@@ -4,6 +4,8 @@ import { Run, multiplier } from "../lib/game";
 import { api } from "../lib/api";
 import { shareRun, shareText } from "../lib/share";
 import { useAccount } from "./Account";
+import { createRunTracker } from "../lib/analytics/run";
+import { readStats } from "../lib/storage";
 import Timer from "./Timer";
 import Question from "./Question";
 type Snapshot = {
@@ -19,6 +21,7 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [message, setMessage] = useState("");
+  const telemetry = useRef<ReturnType<typeof createRunTracker> | null>(null);
   const latest = useRef<Snapshot | null>(null),
     locked = useRef(false),
     initial = useRef(false),
@@ -34,6 +37,9 @@ export default function RankedGame({ onExit }: { onExit: () => void }) {
       s.run.deadline = performance.now() + s.remainingMs;
       latest.current = s;
       setSnapshot(s);
+      if (telemetry.current?.id !== s.id)
+        telemetry.current = createRunTracker(s.id, "ranked", readStats());
+      telemetry.current.observe(s.run);
       pending.current = null;
     } catch (e) {
       setError((e as Error).message);

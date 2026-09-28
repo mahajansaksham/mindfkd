@@ -1,6 +1,8 @@
 "use client";
+import { trackChallengeOpened } from "../lib/analytics";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { CURRENT_SEASON, SEASONS } from "../lib/catalog";
 import { api, Player, profileUrl } from "../lib/api";
 import { useAccount } from "./Account";
 type Row = {
@@ -60,6 +62,7 @@ function Shell({ children }: { children: React.ReactNode }) {
   );
 }
 export function Leaderboard() {
+  const [season, setSeason] = useState(CURRENT_SEASON);
   const [data, setData] = useState<{ players: Row[]; me: Row | null } | null>(
       null,
     ),
@@ -67,7 +70,9 @@ export function Leaderboard() {
   const { player } = useAccount();
   useEffect(() => {
     let active = true;
-    api<{ players: Row[]; me: Row | null }>("/api/leaderboard")
+    api<{ players: Row[]; me: Row | null }>(
+      `/api/leaderboard?season=${encodeURIComponent(season)}`,
+    )
       .then((d) => {
         if (active) {
           setData(d);
@@ -80,12 +85,29 @@ export function Leaderboard() {
     return () => {
       active = false;
     };
-  }, [player]);
+  }, [player, season]);
   return (
     <Shell>
       <div className="eyebrow">THE GLOBAL LEADERBOARD</div>
       <h1>Brains to beat.</h1>
-      <p className="muted">All time · each player’s best verified run</p>
+      <p className="muted">Each player’s best verified run in this season.</p>
+      <label className="season-picker">
+        Leaderboard
+        <select
+          value={season}
+          onChange={(e) => {
+            setData(null);
+            setError("");
+            setSeason(e.target.value);
+          }}
+        >
+          {SEASONS.map((s) => (
+            <option key={s.id} value={s.id}>
+              {s.label}
+            </option>
+          ))}
+        </select>
+      </label>
       {error ? (
         <p role="alert">
           {error}{" "}
@@ -152,11 +174,15 @@ export function PublicProfile() {
       return;
     }
     try {
-      setData(
-        await api<Profile>(
-          `/api/player?u=${encodeURIComponent(name)}&run=${encodeURIComponent(params.get("run") ?? "")}`,
-        ),
+      const profile = await api<Profile>(
+        `/api/player?u=${encodeURIComponent(name)}&run=${encodeURIComponent(params.get("run") ?? "")}`,
       );
+      setData(profile);
+      if (profile.sharedRun)
+        trackChallengeOpened({
+          challenge_id: profile.sharedRun.id,
+          page: "/profile",
+        });
       setError("");
     } catch (e) {
       setError((e as Error).message);

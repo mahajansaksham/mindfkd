@@ -2,7 +2,7 @@ import type { Run } from "../lib/game";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { DatabaseSync } from "node:sqlite";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import worker from "../server/index";
 import { hash } from "../server/auth";
 import {
@@ -31,7 +31,10 @@ test("ranked state hides answers, enforces feedback, timer and one submission", 
 });
 test("real SQLite persistence: auth, profiles, follows, ranked scores and idempotence", async () => {
   const sqlite = new DatabaseSync(":memory:");
-  sqlite.exec(readFileSync("drizzle/0000_happy_imperial_guard.sql", "utf8"));
+  for (const file of readdirSync("drizzle")
+    .filter((f) => f.endsWith(".sql"))
+    .sort())
+    sqlite.exec(readFileSync(`drizzle/${file}`, "utf8"));
   function prepare(sql: string) {
     let args: unknown[] = [];
     const obj = {
@@ -168,6 +171,15 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
   const start = await request("/api/runs/start", {});
   assert.equal(start.status, 200);
   const id = start.value.id;
+  const secondStart = await request("/api/runs/start", {});
+  assert.notEqual(
+    secondStart.value.run.question?.id,
+    start.value.run.question?.id,
+  );
+  assert.equal(
+    sqlite.prepare("SELECT COUNT(*) AS n FROM question_events").get()?.n,
+    2,
+  );
   const state = JSON.parse(
     sqlite.prepare("SELECT state FROM runs WHERE id=?").get(id)!
       .state as string,
@@ -187,6 +199,14 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
   });
   assert.equal(duplicate.value.run.score, first.value.run.score);
   assert.equal(
+    sqlite
+      .prepare(
+        "SELECT COUNT(*) AS n FROM question_events WHERE answered_at IS NOT NULL",
+      )
+      .get()?.n,
+    1,
+  );
+  assert.equal(
     (await request("/api/runs/finish", { id, version: 1 }, "two")).status,
     404,
   );
@@ -202,6 +222,10 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
   assert.equal(end.value.run.phase, "gameOver");
   const board = await request("/api/leaderboard");
   assert.equal(board.value.players.length, 1);
+  assert.equal(
+    (await request("/api/leaderboard?season=launch")).value.players.length,
+    0,
+  );
   assert.equal(board.value.players[0].username, "first");
   assert.equal(board.value.players[0].score, first.value.run.score);
   const p = await request(`/api/player?u=first&run=${id}`);

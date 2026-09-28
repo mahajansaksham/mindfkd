@@ -1,4 +1,6 @@
 import { Question, Kind } from "../lib/game";
+import community from "./community.json";
+import foundations from "./foundations.json";
 // Format: tier | category | prompt | correct answer | distractors. Stable, dated facts only.
 const facts = `
 1|Geography|What is the capital of France?|Paris|Rome|Madrid|Berlin
@@ -540,7 +542,7 @@ const extra: Array<
     "🇲🇿 Mozambique",
   ],
 ];
-export const questions: Question[] = [
+const original: Question[] = [
   ...standard,
   ...extra.map(
     (
@@ -559,3 +561,20 @@ export const questions: Question[] = [
   ),
 ];
 // Flags use native emoji, with accessible country labels hidden visually for flag questions.
+
+// Stable IDs keep historical answers valid. Regraded entries belong to Season 2.
+const tierOverrides: Record<string, number> = {
+ q31:2,q48:4,q51:4,q67:3,q68:3,q69:3,q70:3,q73:2,q74:2,q75:3,q77:3,q78:2,q80:3,q81:2,q82:3,q84:3,q85:2,q87:2,
+ q89:4,q90:4,q91:3,q92:4,q93:4,q94:4,q95:3,q96:3,q97:4,q98:3,q99:4,q100:3,q101:4,q102:3,q103:3,q104:4,q105:4,q106:4,q107:4,q108:3,q109:3,q110:3,
+ q111:4,q112:5,q113:5,q114:5,q115:5,q116:3,q117:3,q118:4,q119:6,q120:4,q121:5,q122:3,q123:4,q124:5,q125:4,q126:5,q127:4,q128:4,q129:4,q130:4,q131:5,q132:5,
+ q133:4,q134:5,q135:6,q136:6,q137:5,q138:4,q139:6,q140:4,q141:5,q142:5,q143:4,q144:6,q145:5,q146:5,q147:5,q148:6,q149:5,q150:5,q151:5,q152:6,q153:6,q154:5,
+ x13:4,x14:4,x15:1,x19:4,x20:4,x21:4,x23:3,x24:4,x25:4,x26:4,x27:5,x28:4,x29:4,x30:4,x31:3,x32:4,x33:5,x34:5,x35:4,x36:5,x37:4,x38:5,x39:5,x40:6,x41:3,x42:5,
+};
+export const questions: Question[] = [
+ ...original.map(q => ({...q,difficulty:tierOverrides[q.id] ?? q.difficulty,
+  prompt:q.id === 'q31' ? 'What does the first W in WWW stand for?' : q.id === 'q108' ? 'Which region is the origin of kimchi?' : q.prompt,
+  topicKey:q.id === 'x1' ? 'giraffe-height' : q.id === 'q109' ? 'atmosphere-nitrogen' : q.id,
+ })),
+ ...(community as Question[]),
+ ...(foundations as Question[]).map(q => ({...q,topicKey:q.prompt === 'Which animal is the tallest living land animal?' ? 'giraffe-height' : q.id})),
+];

@@ -31,7 +31,7 @@ npm start
 - `lib/storage.ts`: validated, versioned local statistics with graceful storage failures.
 - `lib/share.ts`: answer-free share text, Web Share and clipboard fallback.
 - `lib/session.ts`: versioned deterministic session contract and optional future sound adapter.
-- `data/questions.ts`: 196 authored questions across 13 categories and all seven difficulty tiers.
+- `data/questions.ts`: 1,042 questions across all seven difficulty tiers, including attributed community questions.
 
 The supplied remote was empty when inspected, so no Borderline code or history was removed. This implementation uses Next.js, TypeScript, React and plain token-based CSS; there was no existing Tailwind infrastructure to retain.
 
@@ -41,7 +41,7 @@ The supplied remote was empty when inspected, so no Borderline code or history w
 
 Score = `(150 × difficulty + max(0, 300 − floor(answerMilliseconds / 10))) × multiplier`, rounded once. Combo thresholds are 3 → 1.2×, 5 → 1.5×, 10 → 2×, 15 → 3×. Errors reset combo. Time bonuses are never multiplied.
 
-Levels 1–5 use tier 1, 6–10 tier 2, 11–15 tier 3, 16–20 tier 4, 21–30 tier 5, 31–40 tier 6, 41+ tier 7. Each tier has 28 questions. Questions and answer positions are seeded and shuffled, with no repeats in a run. After a tier is exhausted the selector chooses harder available questions, then the hardest remaining tier. Clearing the finite bank ends with an explicit completion result.
+Levels 1–5 use tier 1, 6–10 tier 2, 11–15 tier 3, 16–20 tier 4, 21–30 tier 5, 31–40 tier 6, 41+ tier 7. Questions and answer positions are seeded and shuffled. Cross-run history prioritizes unseen facts, then least recently seen. Facts do not repeat within a run. An exhausted tier ends the run without jumping difficulty. See QUESTIONS.md for review, attribution, calibration and seasons.
 
 Interactions: multiple choice, binary, higher/lower, chronological ordering (drag and arrow controls), true/false, numeric choice, and emoji visual choice. The number interface selects a value and locks it in. Keyboard: 1–4, arrows for numeric selection, Tab/Enter for controls. Reduced motion disables animation. Native dialogs trap focus and support Escape. No remote image or font dependencies.
 
@@ -73,3 +73,7 @@ The existing public Sites project serves mindfkd.com and www.mindfkd.com. `npm r
 Set the production runtime variable `GOOGLE_CLIENT_ID` to the Web client ID registered for `https://mindfkd.com` and `https://www.mindfkd.com`. No client secret is used. Configure Google's consent branding and audience before enabling public sign-in. Changes to production runtime variables require redeployment.
 
 `npm run dev` and `npm start` run the Next frontend only; ranked/auth endpoints require the Worker and D1 runtime. Guest play works without them. Tests use an isolated in-memory SQLite database and never insert sample accounts or scores into production.
+
+## Analytics
+
+See [ANALYTICS.md](ANALYTICS.md) for providers, configuration, consent, event definitions, validation and current hosting limitations. Analytics is optional and unconfigured by default.

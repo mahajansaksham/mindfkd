@@ -1,0 +1,2242 @@
+[
+  {
+    "id": "mf-6fb4ae31dbbe7f82",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is a common source of wool?",
+    "answer": "Sheep",
+    "options": [
+      "Sheep",
+      "Duck",
+      "Pig",
+      "Lizard"
+    ]
+  },
+  {
+    "id": "mf-157bb8d2a6fd4020",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal carries its home in a spiral shell?",
+    "answer": "Snail",
+    "options": [
+      "Snail",
+      "Spider",
+      "Worm",
+      "Butterfly"
+    ]
+  },
+  {
+    "id": "mf-2100c2c828cf6c45",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is famous for building dams?",
+    "answer": "Beaver",
+    "options": [
+      "Beaver",
+      "Fox",
+      "Deer",
+      "Otter"
+    ]
+  },
+  {
+    "id": "mf-38635fba28c3cd43",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which bird is often associated with delivering babies in stories?",
+    "answer": "Stork",
+    "options": [
+      "Stork",
+      "Penguin",
+      "Owl",
+      "Swan"
+    ]
+  },
+  {
+    "id": "mf-18003e99d1fe7e66",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is the tallest living land animal?",
+    "answer": "Giraffe",
+    "options": [
+      "Giraffe",
+      "Elephant",
+      "Camel",
+      "Horse"
+    ]
+  },
+  {
+    "id": "mf-44dc413379cbac07",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is a butterfly before metamorphosis?",
+    "answer": "Caterpillar",
+    "options": [
+      "Caterpillar",
+      "Tadpole",
+      "Maggot",
+      "Nymph"
+    ]
+  },
+  {
+    "id": "mf-a5840293469351fd",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is an arachnid?",
+    "answer": "Spider",
+    "options": [
+      "Spider",
+      "Ant",
+      "Bee",
+      "Beetle"
+    ]
+  },
+  {
+    "id": "mf-9dda82130658b1c2",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which bird is unable to fly?",
+    "answer": "Ostrich",
+    "options": [
+      "Ostrich",
+      "Sparrow",
+      "Eagle",
+      "Swallow"
+    ]
+  },
+  {
+    "id": "mf-d2837558e7bf61f8",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is known for its long trunk?",
+    "answer": "Elephant",
+    "options": [
+      "Elephant",
+      "Rhinoceros",
+      "Hippopotamus",
+      "Giraffe"
+    ]
+  },
+  {
+    "id": "mf-35062da6d0fd55e9",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which farm animal makes a quacking sound?",
+    "answer": "Duck",
+    "options": [
+      "Duck",
+      "Cow",
+      "Sheep",
+      "Horse"
+    ]
+  },
+  {
+    "id": "mf-6770e15eecfc7520",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a baby dog called?",
+    "answer": "Puppy",
+    "options": [
+      "Puppy",
+      "Kitten",
+      "Foal",
+      "Calf"
+    ]
+  },
+  {
+    "id": "mf-e48dc1ee3ce4de8e",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a baby cat called?",
+    "answer": "Kitten",
+    "options": [
+      "Kitten",
+      "Puppy",
+      "Calf",
+      "Cub"
+    ]
+  },
+  {
+    "id": "mf-6afd0963c6c0caa8",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal has eight arms?",
+    "answer": "Octopus",
+    "options": [
+      "Octopus",
+      "Jellyfish",
+      "Crab",
+      "Lobster"
+    ]
+  },
+  {
+    "id": "mf-a08545f0dd624fde",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which mammal can truly fly?",
+    "answer": "Bat",
+    "options": [
+      "Bat",
+      "Flying squirrel",
+      "Koala",
+      "Sloth"
+    ]
+  },
+  {
+    "id": "mf-946c30957497aa41",
+    "difficulty": 1,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which large cat has a mane in adult males?",
+    "answer": "Lion",
+    "options": [
+      "Lion",
+      "Tiger",
+      "Leopard",
+      "Cheetah"
+    ]
+  },
+  {
+    "id": "mf-626b27574012805d",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call water in its solid state?",
+    "answer": "Ice",
+    "options": [
+      "Ice",
+      "Steam",
+      "Mist",
+      "Rain"
+    ]
+  },
+  {
+    "id": "mf-ebfd9c3fa36b0163",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which natural object orbits Earth?",
+    "answer": "The Moon",
+    "options": [
+      "The Moon",
+      "The Sun",
+      "Venus",
+      "Jupiter"
+    ]
+  },
+  {
+    "id": "mf-65f1a98428236bf6",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which sense do we mainly use our ears for?",
+    "answer": "Hearing",
+    "options": [
+      "Hearing",
+      "Taste",
+      "Smell",
+      "Sight"
+    ]
+  },
+  {
+    "id": "mf-fc5849903b41d3cb",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which organ pumps blood around the body?",
+    "answer": "Heart",
+    "options": [
+      "Heart",
+      "Liver",
+      "Kidney",
+      "Stomach"
+    ]
+  },
+  {
+    "id": "mf-e0abaf0124174f94",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which part of a plant usually absorbs water from the soil?",
+    "answer": "Roots",
+    "options": [
+      "Roots",
+      "Petals",
+      "Fruit",
+      "Seeds"
+    ]
+  },
+  {
+    "id": "mf-5da4102f22abdbf2",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which part of a flowering plant attracts many pollinators with its colours?",
+    "answer": "Petals",
+    "options": [
+      "Petals",
+      "Roots",
+      "Bark",
+      "Thorns"
+    ]
+  },
+  {
+    "id": "mf-8184da4bbc3e6f3d",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which force keeps our feet on the ground?",
+    "answer": "Gravity",
+    "options": [
+      "Gravity",
+      "Magnetism",
+      "Friction",
+      "Buoyancy"
+    ]
+  },
+  {
+    "id": "mf-7fa3806318a061e4",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which device measures temperature?",
+    "answer": "Thermometer",
+    "options": [
+      "Thermometer",
+      "Compass",
+      "Ruler",
+      "Stopwatch"
+    ]
+  },
+  {
+    "id": "mf-65ec400552539388",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which device helps you see distant stars?",
+    "answer": "Telescope",
+    "options": [
+      "Telescope",
+      "Microscope",
+      "Stethoscope",
+      "Periscope"
+    ]
+  },
+  {
+    "id": "mf-2c6a14bc3ba7ab46",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which device makes tiny objects look larger?",
+    "answer": "Microscope",
+    "options": [
+      "Microscope",
+      "Barometer",
+      "Compass",
+      "Thermometer"
+    ]
+  },
+  {
+    "id": "mf-e1739bc1336f09b1",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which gas do human lungs take into the blood for respiration?",
+    "answer": "Oxygen",
+    "options": [
+      "Oxygen",
+      "Helium",
+      "Neon",
+      "Argon"
+    ]
+  },
+  {
+    "id": "mf-feb9fc043029cc5d",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which part of the body contains the brain?",
+    "answer": "Head",
+    "options": [
+      "Head",
+      "Chest",
+      "Abdomen",
+      "Leg"
+    ]
+  },
+  {
+    "id": "mf-4ea709fe6ce577bf",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which hard structures protect the tips of human fingers?",
+    "answer": "Nails",
+    "options": [
+      "Nails",
+      "Scales",
+      "Feathers",
+      "Fins"
+    ]
+  },
+  {
+    "id": "mf-0a9113c0696172d7",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call molten rock after it reaches Earth's surface?",
+    "answer": "Lava",
+    "options": [
+      "Lava",
+      "Magma",
+      "Granite",
+      "Coal"
+    ]
+  },
+  {
+    "id": "mf-262fc92acb072c11",
+    "difficulty": 1,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which event produces thunder?",
+    "answer": "Lightning",
+    "options": [
+      "Lightning",
+      "A rainbow",
+      "A solar eclipse",
+      "Snowfall"
+    ]
+  },
+  {
+    "id": "mf-da5309aaa679f0bd",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which direction is opposite to north?",
+    "answer": "South",
+    "options": [
+      "South",
+      "East",
+      "West",
+      "Northeast"
+    ]
+  },
+  {
+    "id": "mf-a841c06057203502",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which direction does the Sun generally rise in?",
+    "answer": "East",
+    "options": [
+      "East",
+      "West",
+      "North",
+      "South"
+    ]
+  },
+  {
+    "id": "mf-182a9b4d81ad03ab",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which shape best approximates Earth?",
+    "answer": "Sphere",
+    "options": [
+      "Sphere",
+      "Cube",
+      "Cone",
+      "Pyramid"
+    ]
+  },
+  {
+    "id": "mf-ae44b1c8e4f0f019",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which continent is the South Pole on?",
+    "answer": "Antarctica",
+    "options": [
+      "Antarctica",
+      "Europe",
+      "Africa",
+      "Asia"
+    ]
+  },
+  {
+    "id": "mf-83446a8b8edef1a2",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which country is famous for the ancient pyramids at Giza?",
+    "answer": "Egypt",
+    "options": [
+      "Egypt",
+      "Spain",
+      "Thailand",
+      "Norway"
+    ]
+  },
+  {
+    "id": "mf-bc7c514d46e4f986",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which country is home to the Taj Mahal?",
+    "answer": "India",
+    "options": [
+      "India",
+      "China",
+      "Japan",
+      "Greece"
+    ]
+  },
+  {
+    "id": "mf-d8414056994e17f1",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which city is home to the Statue of Liberty?",
+    "answer": "New York City",
+    "options": [
+      "New York City",
+      "Boston",
+      "Chicago",
+      "Los Angeles"
+    ]
+  },
+  {
+    "id": "mf-bc2e2615b437e9b5",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which country is shaped rather like a boot on a map?",
+    "answer": "Italy",
+    "options": [
+      "Italy",
+      "Sweden",
+      "Portugal",
+      "Belgium"
+    ]
+  },
+  {
+    "id": "mf-a04abb240a6641d1",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which of these is an ocean?",
+    "answer": "Atlantic",
+    "options": [
+      "Atlantic",
+      "Andes",
+      "Sahara",
+      "Alps"
+    ]
+  },
+  {
+    "id": "mf-bcadfe5c503dbd43",
+    "difficulty": 1,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which of these is a mountain range?",
+    "answer": "Himalayas",
+    "options": [
+      "Himalayas",
+      "Amazon",
+      "Pacific",
+      "Sahara"
+    ]
+  },
+  {
+    "id": "mf-bc33923b72ee301f",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which vegetable is the main ingredient in traditional French fries?",
+    "answer": "Potato",
+    "options": [
+      "Potato",
+      "Carrot",
+      "Turnip",
+      "Onion"
+    ]
+  },
+  {
+    "id": "mf-d2ba5391ee1b44bb",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which food is made by bees from nectar?",
+    "answer": "Honey",
+    "options": [
+      "Honey",
+      "Butter",
+      "Yogurt",
+      "Cheese"
+    ]
+  },
+  {
+    "id": "mf-d774cd749b1a389a",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which ingredient makes bread dough rise through fermentation?",
+    "answer": "Yeast",
+    "options": [
+      "Yeast",
+      "Salt",
+      "Oil",
+      "Water"
+    ]
+  },
+  {
+    "id": "mf-03a279539ca9866b",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which dairy food is made by churning cream?",
+    "answer": "Butter",
+    "options": [
+      "Butter",
+      "Yogurt",
+      "Milk",
+      "Cottage cheese"
+    ]
+  },
+  {
+    "id": "mf-3a02883ca1bb9842",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which food is made from cacao beans?",
+    "answer": "Chocolate",
+    "options": [
+      "Chocolate",
+      "Coffee",
+      "Vanilla",
+      "Toffee"
+    ]
+  },
+  {
+    "id": "mf-e7555b51309075a7",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which drink is made by steeping leaves of Camellia sinensis?",
+    "answer": "Tea",
+    "options": [
+      "Tea",
+      "Coffee",
+      "Cocoa",
+      "Lemonade"
+    ]
+  },
+  {
+    "id": "mf-e9a69134092cad03",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which fruit grows in bunches on a vine?",
+    "answer": "Grape",
+    "options": [
+      "Grape",
+      "Apple",
+      "Pear",
+      "Peach"
+    ]
+  },
+  {
+    "id": "mf-e42f756dd5a40a21",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which fruit usually has a thick, spiky skin and a leafy crown?",
+    "answer": "Pineapple",
+    "options": [
+      "Pineapple",
+      "Peach",
+      "Plum",
+      "Cherry"
+    ]
+  },
+  {
+    "id": "mf-fbb27e089eadb78c",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which fruit has varieties called Granny Smith and Fuji?",
+    "answer": "Apple",
+    "options": [
+      "Apple",
+      "Orange",
+      "Banana",
+      "Mango"
+    ]
+  },
+  {
+    "id": "mf-f7cc0a47bc10930e",
+    "difficulty": 1,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which utensil typically has prongs for picking up food?",
+    "answer": "Fork",
+    "options": [
+      "Fork",
+      "Spoon",
+      "Ladle",
+      "Spatula"
+    ]
+  },
+  {
+    "id": "mf-87ddae7b8d0a2ff3",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What is the opposite of transparent?",
+    "answer": "Opaque",
+    "options": [
+      "Opaque",
+      "Clear",
+      "Translucent",
+      "Visible"
+    ]
+  },
+  {
+    "id": "mf-3b2158f6f6746480",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which tool is designed to cut paper?",
+    "answer": "Scissors",
+    "options": [
+      "Scissors",
+      "Hammer",
+      "Wrench",
+      "Pliers"
+    ]
+  },
+  {
+    "id": "mf-3230e0007a705317",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which tool tells you compass directions?",
+    "answer": "Compass",
+    "options": [
+      "Compass",
+      "Clock",
+      "Scale",
+      "Thermometer"
+    ]
+  },
+  {
+    "id": "mf-5ffb7060485a0b7d",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which unit measures time?",
+    "answer": "Second",
+    "options": [
+      "Second",
+      "Metre",
+      "Gram",
+      "Litre"
+    ]
+  },
+  {
+    "id": "mf-de1035ef0df65b54",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which unit is used to measure mass?",
+    "answer": "Kilogram",
+    "options": [
+      "Kilogram",
+      "Kilometre",
+      "Kilowatt",
+      "Kelvin"
+    ]
+  },
+  {
+    "id": "mf-c9337dcfc616e9b4",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What do we call a shape with three sides?",
+    "answer": "Triangle",
+    "options": [
+      "Triangle",
+      "Square",
+      "Hexagon",
+      "Circle"
+    ]
+  },
+  {
+    "id": "mf-968096605a05fde2",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What do we call a shape with five sides?",
+    "answer": "Pentagon",
+    "options": [
+      "Pentagon",
+      "Hexagon",
+      "Octagon",
+      "Triangle"
+    ]
+  },
+  {
+    "id": "mf-932b9baab9f71220",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "How many faces does a cube have?",
+    "answer": "6",
+    "options": [
+      "6",
+      "4",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "id": "mf-403dd511cb46a1d8",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What is half of one hundred?",
+    "answer": "50",
+    "options": [
+      "50",
+      "25",
+      "20",
+      "75"
+    ]
+  },
+  {
+    "id": "mf-7148a5460b551f1b",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which of these numbers is even?",
+    "answer": "12",
+    "options": [
+      "12",
+      "7",
+      "9",
+      "15"
+    ]
+  },
+  {
+    "id": "mf-6a3a562c12bed9e8",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which number represents zero in Roman numerals?",
+    "answer": "There is no standard Roman numeral for zero",
+    "options": [
+      "There is no standard Roman numeral for zero",
+      "I",
+      "V",
+      "X"
+    ]
+  },
+  {
+    "id": "mf-1c1be7625d45f6d4",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "How many hours are in a standard day?",
+    "answer": "24",
+    "options": [
+      "24",
+      "12",
+      "30",
+      "60"
+    ]
+  },
+  {
+    "id": "mf-ac32c8430dad75f5",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "How many seconds are in a minute?",
+    "answer": "60",
+    "options": [
+      "60",
+      "30",
+      "100",
+      "24"
+    ]
+  },
+  {
+    "id": "mf-6a1612060cb50351",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which month follows March?",
+    "answer": "April",
+    "options": [
+      "April",
+      "May",
+      "February",
+      "June"
+    ]
+  },
+  {
+    "id": "mf-e84375ab18ee33b1",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "Which month comes immediately before December?",
+    "answer": "November",
+    "options": [
+      "November",
+      "October",
+      "January",
+      "September"
+    ]
+  },
+  {
+    "id": "mf-52ee898db3cebc21",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "How many days does February have in a leap year?",
+    "answer": "29",
+    "options": [
+      "29",
+      "28",
+      "30",
+      "31"
+    ]
+  },
+  {
+    "id": "mf-87ec7f52a420b899",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "How many equal quarters make a whole?",
+    "answer": "4",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "id": "mf-96f82bf877755f2f",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What number does the Roman numeral V represent?",
+    "answer": "5",
+    "options": [
+      "5",
+      "10",
+      "50",
+      "100"
+    ]
+  },
+  {
+    "id": "mf-1199bf2f6122953f",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What number does the Roman numeral X represent?",
+    "answer": "10",
+    "options": [
+      "10",
+      "5",
+      "50",
+      "100"
+    ]
+  },
+  {
+    "id": "mf-15b142a550f168ad",
+    "difficulty": 1,
+    "category": "General Knowledge",
+    "type": "choice",
+    "prompt": "What is a period of ten years called?",
+    "answer": "Decade",
+    "options": [
+      "Decade",
+      "Century",
+      "Millennium",
+      "Fortnight"
+    ]
+  },
+  {
+    "id": "mf-9a0d3753f3d573ff",
+    "difficulty": 1,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which sport uses clubs, a small ball, and holes in the ground?",
+    "answer": "Golf",
+    "options": [
+      "Golf",
+      "Hockey",
+      "Tennis",
+      "Rugby"
+    ]
+  },
+  {
+    "id": "mf-d8540285a699f9ba",
+    "difficulty": 1,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which sport uses a bat, wickets, and a ball?",
+    "answer": "Cricket",
+    "options": [
+      "Cricket",
+      "Basketball",
+      "Golf",
+      "Tennis"
+    ]
+  },
+  {
+    "id": "mf-3fc0a7d1c2f6915c",
+    "difficulty": 1,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which sport is performed on ice with skates and a puck?",
+    "answer": "Ice hockey",
+    "options": [
+      "Ice hockey",
+      "Rugby",
+      "Squash",
+      "Baseball"
+    ]
+  },
+  {
+    "id": "mf-1770cf557f58d518",
+    "difficulty": 1,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which swimming stroke is named after an insect?",
+    "answer": "Butterfly",
+    "options": [
+      "Butterfly",
+      "Dragonfly",
+      "Beetle",
+      "Cricket"
+    ]
+  },
+  {
+    "id": "mf-c7b1c096a70acaf4",
+    "difficulty": 1,
+    "category": "Sports",
+    "type": "choice",
+    "prompt": "Which sport involves riding a bicycle?",
+    "answer": "Cycling",
+    "options": [
+      "Cycling",
+      "Rowing",
+      "Fencing",
+      "Curling"
+    ]
+  },
+  {
+    "id": "mf-a73e6d5ffdf1791d",
+    "difficulty": 1,
+    "category": "Music",
+    "type": "choice",
+    "prompt": "Which instrument is played with a bow?",
+    "answer": "Violin",
+    "options": [
+      "Violin",
+      "Trumpet",
+      "Flute",
+      "Drum"
+    ]
+  },
+  {
+    "id": "mf-6db8aa52f8418acb",
+    "difficulty": 1,
+    "category": "Music",
+    "type": "choice",
+    "prompt": "Which instrument is usually played by blowing across a mouth hole?",
+    "answer": "Flute",
+    "options": [
+      "Flute",
+      "Violin",
+      "Piano",
+      "Harp"
+    ]
+  },
+  {
+    "id": "mf-8ad7a1ed27615be7",
+    "difficulty": 1,
+    "category": "Music",
+    "type": "choice",
+    "prompt": "Which instrument has a sliding tube to change pitch?",
+    "answer": "Trombone",
+    "options": [
+      "Trombone",
+      "Trumpet",
+      "Clarinet",
+      "Violin"
+    ]
+  },
+  {
+    "id": "mf-fa7ddfb9a20e2f28",
+    "difficulty": 1,
+    "category": "Technology",
+    "type": "choice",
+    "prompt": "Which device is used to type text into a computer?",
+    "answer": "Keyboard",
+    "options": [
+      "Keyboard",
+      "Speaker",
+      "Monitor",
+      "Projector"
+    ]
+  },
+  {
+    "id": "mf-78ce90c7b6398c74",
+    "difficulty": 1,
+    "category": "Technology",
+    "type": "choice",
+    "prompt": "What does a printer produce from a digital document?",
+    "answer": "A paper copy",
+    "options": [
+      "A paper copy",
+      "An audio recording",
+      "A radio signal",
+      "A battery charge"
+    ]
+  },
+  {
+    "id": "mf-e5323d52e25314ce",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a baby horse called?",
+    "answer": "Foal",
+    "options": [
+      "Foal",
+      "Calf",
+      "Lamb",
+      "Kid"
+    ]
+  },
+  {
+    "id": "mf-7982219cb1f61034",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a baby sheep called?",
+    "answer": "Lamb",
+    "options": [
+      "Lamb",
+      "Kid",
+      "Foal",
+      "Cub"
+    ]
+  },
+  {
+    "id": "mf-969155602965aed8",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a baby goat called?",
+    "answer": "Kid",
+    "options": [
+      "Kid",
+      "Lamb",
+      "Calf",
+      "Foal"
+    ]
+  },
+  {
+    "id": "mf-449ff4e80496dce2",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a female horse called?",
+    "answer": "Mare",
+    "options": [
+      "Mare",
+      "Stallion",
+      "Ram",
+      "Doe"
+    ]
+  },
+  {
+    "id": "mf-0b2282a0748c709f",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a male sheep called?",
+    "answer": "Ram",
+    "options": [
+      "Ram",
+      "Bull",
+      "Stallion",
+      "Buck"
+    ]
+  },
+  {
+    "id": "mf-9b5c4224711c0b3a",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is known for changing colour and moving its eyes independently?",
+    "answer": "Chameleon",
+    "options": [
+      "Chameleon",
+      "Iguana",
+      "Crocodile",
+      "Gecko"
+    ]
+  },
+  {
+    "id": "mf-1fed7198eea8750a",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal has a black-and-white coat and primarily eats bamboo?",
+    "answer": "Giant panda",
+    "options": [
+      "Giant panda",
+      "Raccoon",
+      "Badger",
+      "Skunk"
+    ]
+  },
+  {
+    "id": "mf-d3782edc20f4d1e9",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which bear species is native to the Arctic?",
+    "answer": "Polar bear",
+    "options": [
+      "Polar bear",
+      "Sun bear",
+      "Sloth bear",
+      "Spectacled bear"
+    ]
+  },
+  {
+    "id": "mf-568c333ae71ac017",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal has quills as a defence?",
+    "answer": "Porcupine",
+    "options": [
+      "Porcupine",
+      "Otter",
+      "Mole",
+      "Beaver"
+    ]
+  },
+  {
+    "id": "mf-046e76379f281f31",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which animal is the largest living land animal?",
+    "answer": "African elephant",
+    "options": [
+      "African elephant",
+      "Hippopotamus",
+      "White rhinoceros",
+      "Giraffe"
+    ]
+  },
+  {
+    "id": "mf-a64b781b68052225",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "What is a group of fish swimming together commonly called?",
+    "answer": "School",
+    "options": [
+      "School",
+      "Pride",
+      "Herd",
+      "Pack"
+    ]
+  },
+  {
+    "id": "mf-e32a3cf5881632e5",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which of these animals is a reptile?",
+    "answer": "Crocodile",
+    "options": [
+      "Crocodile",
+      "Frog",
+      "Salamander",
+      "Newt"
+    ]
+  },
+  {
+    "id": "mf-719dca775f693e58",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which of these animals is an amphibian?",
+    "answer": "Frog",
+    "options": [
+      "Frog",
+      "Turtle",
+      "Lizard",
+      "Snake"
+    ]
+  },
+  {
+    "id": "mf-7936a595a32caf49",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "How many legs does a spider have?",
+    "answer": "8",
+    "options": [
+      "8",
+      "6",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "id": "mf-9499fb589e3d8953",
+    "difficulty": 2,
+    "category": "Animals",
+    "type": "choice",
+    "prompt": "Which bird is known for mimicking human speech?",
+    "answer": "Parrot",
+    "options": [
+      "Parrot",
+      "Ostrich",
+      "Penguin",
+      "Swan"
+    ]
+  },
+  {
+    "id": "mf-860ec8847c6e4738",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the chemical symbol for oxygen?",
+    "answer": "O",
+    "options": [
+      "O",
+      "Ox",
+      "Og",
+      "Om"
+    ]
+  },
+  {
+    "id": "mf-7bea422cb104a46b",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the chemical symbol for gold?",
+    "answer": "Au",
+    "options": [
+      "Au",
+      "Ag",
+      "Gd",
+      "Go"
+    ]
+  },
+  {
+    "id": "mf-9ee331243f4d6271",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the chemical symbol for silver?",
+    "answer": "Ag",
+    "options": [
+      "Ag",
+      "Au",
+      "Si",
+      "Sr"
+    ]
+  },
+  {
+    "id": "mf-0881586ff44c8f2f",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the chemical symbol for sodium?",
+    "answer": "Na",
+    "options": [
+      "Na",
+      "S",
+      "Si",
+      "N"
+    ]
+  },
+  {
+    "id": "mf-5d1c7d864b4a2a56",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which planet is known as the Red Planet?",
+    "answer": "Mars",
+    "options": [
+      "Mars",
+      "Venus",
+      "Jupiter",
+      "Neptune"
+    ]
+  },
+  {
+    "id": "mf-c03288f6129943c1",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which planet is famous for its extensive ring system?",
+    "answer": "Saturn",
+    "options": [
+      "Saturn",
+      "Mercury",
+      "Venus",
+      "Mars"
+    ]
+  },
+  {
+    "id": "mf-69bfe3d423e9f002",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the name of our galaxy?",
+    "answer": "Milky Way",
+    "options": [
+      "Milky Way",
+      "Andromeda",
+      "Sombrero",
+      "Whirlpool"
+    ]
+  },
+  {
+    "id": "mf-d111094f350b82df",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call a scientist who studies the weather?",
+    "answer": "Meteorologist",
+    "options": [
+      "Meteorologist",
+      "Geologist",
+      "Archaeologist",
+      "Botanist"
+    ]
+  },
+  {
+    "id": "mf-4180ea994ecff855",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call a scientist who studies plants?",
+    "answer": "Botanist",
+    "options": [
+      "Botanist",
+      "Zoologist",
+      "Astronomer",
+      "Geologist"
+    ]
+  },
+  {
+    "id": "mf-334988ef9aabb6a5",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call a scientist who studies rocks?",
+    "answer": "Geologist",
+    "options": [
+      "Geologist",
+      "Biologist",
+      "Astronomer",
+      "Ecologist"
+    ]
+  },
+  {
+    "id": "mf-e702fbda302ab6b2",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which process turns liquid water into water vapour?",
+    "answer": "Evaporation",
+    "options": [
+      "Evaporation",
+      "Freezing",
+      "Condensation",
+      "Melting"
+    ]
+  },
+  {
+    "id": "mf-720e47e2cb7f7e40",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which process turns water vapour into liquid water?",
+    "answer": "Condensation",
+    "options": [
+      "Condensation",
+      "Melting",
+      "Freezing",
+      "Evaporation"
+    ]
+  },
+  {
+    "id": "mf-f146a51738ce219c",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which metal is liquid at ordinary room temperature?",
+    "answer": "Mercury",
+    "options": [
+      "Mercury",
+      "Copper",
+      "Iron",
+      "Aluminium"
+    ]
+  },
+  {
+    "id": "mf-b0b594f102c1cef9",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which natural substance is rated 10 on the Mohs hardness scale?",
+    "answer": "Diamond",
+    "options": [
+      "Diamond",
+      "Quartz",
+      "Talc",
+      "Gypsum"
+    ]
+  },
+  {
+    "id": "mf-3cfafa0c7083dc6b",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which organ filters blood to produce urine?",
+    "answer": "Kidney",
+    "options": [
+      "Kidney",
+      "Lung",
+      "Heart",
+      "Stomach"
+    ]
+  },
+  {
+    "id": "mf-d1ff09f141d29cba",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which cells carry oxygen around the human body?",
+    "answer": "Red blood cells",
+    "options": [
+      "Red blood cells",
+      "Platelets",
+      "White blood cells",
+      "Nerve cells"
+    ]
+  },
+  {
+    "id": "mf-58f6bda6e45fa838",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which blood components help form clots?",
+    "answer": "Platelets",
+    "options": [
+      "Platelets",
+      "Red blood cells",
+      "Neurons",
+      "Egg cells"
+    ]
+  },
+  {
+    "id": "mf-73e864c139f94278",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "Which substance gives human skin much of its colour?",
+    "answer": "Melanin",
+    "options": [
+      "Melanin",
+      "Keratin",
+      "Insulin",
+      "Collagen"
+    ]
+  },
+  {
+    "id": "mf-e94dc4c7dbb07dac",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What is the hardest substance in the human body?",
+    "answer": "Tooth enamel",
+    "options": [
+      "Tooth enamel",
+      "Bone",
+      "Cartilage",
+      "Hair"
+    ]
+  },
+  {
+    "id": "mf-88f1e1fe6b8ada5b",
+    "difficulty": 2,
+    "category": "Science",
+    "type": "choice",
+    "prompt": "What do we call animals that eat both plants and meat?",
+    "answer": "Omnivores",
+    "options": [
+      "Omnivores",
+      "Herbivores",
+      "Carnivores",
+      "Detritivores"
+    ]
+  },
+  {
+    "id": "mf-34746159cd638931",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of the United Kingdom?",
+    "answer": "London",
+    "options": [
+      "London",
+      "Manchester",
+      "Edinburgh",
+      "Cardiff"
+    ]
+  },
+  {
+    "id": "mf-9e5a38cb4ef14186",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Germany?",
+    "answer": "Berlin",
+    "options": [
+      "Berlin",
+      "Munich",
+      "Hamburg",
+      "Frankfurt"
+    ]
+  },
+  {
+    "id": "mf-90caa344192e8a4c",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Spain?",
+    "answer": "Madrid",
+    "options": [
+      "Madrid",
+      "Barcelona",
+      "Seville",
+      "Valencia"
+    ]
+  },
+  {
+    "id": "mf-6f960aab84852118",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Japan?",
+    "answer": "Tokyo",
+    "options": [
+      "Tokyo",
+      "Kyoto",
+      "Osaka",
+      "Hiroshima"
+    ]
+  },
+  {
+    "id": "mf-f1cb0e4fa3a96db9",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of China?",
+    "answer": "Beijing",
+    "options": [
+      "Beijing",
+      "Shanghai",
+      "Hong Kong",
+      "Guangzhou"
+    ]
+  },
+  {
+    "id": "mf-c53764ea632bafa1",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Canada?",
+    "answer": "Ottawa",
+    "options": [
+      "Ottawa",
+      "Toronto",
+      "Montreal",
+      "Vancouver"
+    ]
+  },
+  {
+    "id": "mf-4c14e71e36985f91",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of the United States?",
+    "answer": "Washington, D.C.",
+    "options": [
+      "Washington, D.C.",
+      "New York City",
+      "Philadelphia",
+      "Boston"
+    ]
+  },
+  {
+    "id": "mf-d5e670e90180e75d",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Greece?",
+    "answer": "Athens",
+    "options": [
+      "Athens",
+      "Sparta",
+      "Thessaloniki",
+      "Patras"
+    ]
+  },
+  {
+    "id": "mf-5617b4a17f7ac9dc",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Ireland?",
+    "answer": "Dublin",
+    "options": [
+      "Dublin",
+      "Cork",
+      "Galway",
+      "Limerick"
+    ]
+  },
+  {
+    "id": "mf-ef55216718942797",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the capital of Portugal?",
+    "answer": "Lisbon",
+    "options": [
+      "Lisbon",
+      "Porto",
+      "Coimbra",
+      "Faro"
+    ]
+  },
+  {
+    "id": "mf-f112e725d23143a2",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which river flows through London?",
+    "answer": "Thames",
+    "options": [
+      "Thames",
+      "Seine",
+      "Danube",
+      "Rhine"
+    ]
+  },
+  {
+    "id": "mf-f36e5e0b7a9de066",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which river flows through Egypt's Nile Valley?",
+    "answer": "Nile",
+    "options": [
+      "Nile",
+      "Congo",
+      "Amazon",
+      "Niger"
+    ]
+  },
+  {
+    "id": "mf-81c55c332ba40b52",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which ocean lies between Africa and Australia?",
+    "answer": "Indian Ocean",
+    "options": [
+      "Indian Ocean",
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Southern Ocean"
+    ]
+  },
+  {
+    "id": "mf-71afeaed9a4a78fb",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which continent contains the Andes Mountains?",
+    "answer": "South America",
+    "options": [
+      "South America",
+      "Asia",
+      "Europe",
+      "Africa"
+    ]
+  },
+  {
+    "id": "mf-0ffa6627fdba9016",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "Which continent contains the Sahara Desert?",
+    "answer": "Africa",
+    "options": [
+      "Africa",
+      "Asia",
+      "Australia",
+      "South America"
+    ]
+  },
+  {
+    "id": "mf-c30c5f0eaef603a3",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the name of the imaginary line at zero degrees latitude?",
+    "answer": "Equator",
+    "options": [
+      "Equator",
+      "Prime Meridian",
+      "Tropic of Cancer",
+      "Arctic Circle"
+    ]
+  },
+  {
+    "id": "mf-41a8190b0ecffa95",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What is the name of the line at zero degrees longitude?",
+    "answer": "Prime Meridian",
+    "options": [
+      "Prime Meridian",
+      "Equator",
+      "Tropic of Capricorn",
+      "Antarctic Circle"
+    ]
+  },
+  {
+    "id": "mf-a3c4424809a7d5a9",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What do map contour lines join?",
+    "answer": "Points of equal elevation",
+    "options": [
+      "Points of equal elevation",
+      "Capital cities",
+      "River mouths",
+      "Country borders"
+    ]
+  },
+  {
+    "id": "mf-27c1830872593430",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What do we call land completely surrounded by water?",
+    "answer": "Island",
+    "options": [
+      "Island",
+      "Peninsula",
+      "Isthmus",
+      "Cape"
+    ]
+  },
+  {
+    "id": "mf-dfde71c41fe08dd0",
+    "difficulty": 2,
+    "category": "World",
+    "type": "choice",
+    "prompt": "What do we call a narrow strip of land joining two larger land areas?",
+    "answer": "Isthmus",
+    "options": [
+      "Isthmus",
+      "Strait",
+      "Bay",
+      "Archipelago"
+    ]
+  },
+  {
+    "id": "mf-0a88f24d1d884bef",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which herb is traditionally a main ingredient of pesto alla genovese?",
+    "answer": "Basil",
+    "options": [
+      "Basil",
+      "Mint",
+      "Parsley",
+      "Rosemary"
+    ]
+  },
+  {
+    "id": "mf-0be6c6827291916c",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which bean is the main ingredient in traditional hummus?",
+    "answer": "Chickpea",
+    "options": [
+      "Chickpea",
+      "Kidney bean",
+      "Black bean",
+      "Green bean"
+    ]
+  },
+  {
+    "id": "mf-4debe3bf417bdd13",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which spice is made from the dried bark of certain trees?",
+    "answer": "Cinnamon",
+    "options": [
+      "Cinnamon",
+      "Turmeric",
+      "Cumin",
+      "Paprika"
+    ]
+  },
+  {
+    "id": "mf-b46ce1605dae341b",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which spice gives many curries a bright yellow colour?",
+    "answer": "Turmeric",
+    "options": [
+      "Turmeric",
+      "Clove",
+      "Cinnamon",
+      "Black pepper"
+    ]
+  },
+  {
+    "id": "mf-f6c5c40c487e9b9f",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which spice is made from dried flower buds?",
+    "answer": "Cloves",
+    "options": [
+      "Cloves",
+      "Cumin",
+      "Coriander",
+      "Ginger"
+    ]
+  },
+  {
+    "id": "mf-16eb6d2555cfc3c9",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which type of pasta is shaped like long, thin strands?",
+    "answer": "Spaghetti",
+    "options": [
+      "Spaghetti",
+      "Penne",
+      "Farfalle",
+      "Fusilli"
+    ]
+  },
+  {
+    "id": "mf-f5e8cf2972cee757",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which type of pasta is shaped like bow ties?",
+    "answer": "Farfalle",
+    "options": [
+      "Farfalle",
+      "Rigatoni",
+      "Linguine",
+      "Macaroni"
+    ]
+  },
+  {
+    "id": "mf-b6067d746f50e4f6",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which grain is used to make traditional couscous?",
+    "answer": "Wheat",
+    "options": [
+      "Wheat",
+      "Rice",
+      "Oats",
+      "Rye"
+    ]
+  },
+  {
+    "id": "mf-5a6c687468533395",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which grain is the primary ingredient in porridge made from rolled oats?",
+    "answer": "Oats",
+    "options": [
+      "Oats",
+      "Barley",
+      "Rye",
+      "Corn"
+    ]
+  },
+  {
+    "id": "mf-4ec055d01977cb2b",
+    "difficulty": 2,
+    "category": "Food",
+    "type": "choice",
+    "prompt": "Which nut is used in traditional peanut butter?",
+    "answer": "Peanut",
+    "options": [
+      "Peanut",
+      "Almond",
+      "Walnut",
+      "Hazelnut"
+    ]
+  },
+  {
+    "id": "mf-74eb13a880a2f5af",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "What is a word with the opposite meaning of another word called?",
+    "answer": "Antonym",
+    "options": [
+      "Antonym",
+      "Synonym",
+      "Homophone",
+      "Acronym"
+    ]
+  },
+  {
+    "id": "mf-b1699268b1b2519a",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "What is a word with a similar meaning to another word called?",
+    "answer": "Synonym",
+    "options": [
+      "Synonym",
+      "Antonym",
+      "Homophone",
+      "Palindrome"
+    ]
+  },
+  {
+    "id": "mf-4d4accdbec012470",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "What is a word that reads the same backwards and forwards called?",
+    "answer": "Palindrome",
+    "options": [
+      "Palindrome",
+      "Anagram",
+      "Synonym",
+      "Metaphor"
+    ]
+  },
+  {
+    "id": "mf-f72a2c296253bbfc",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "What do we call a word made by rearranging the letters of another word?",
+    "answer": "Anagram",
+    "options": [
+      "Anagram",
+      "Acronym",
+      "Antonym",
+      "Adverb"
+    ]
+  },
+  {
+    "id": "mf-35b8783b272b0e27",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which punctuation mark ends a direct question?",
+    "answer": "Question mark",
+    "options": [
+      "Question mark",
+      "Comma",
+      "Colon",
+      "Apostrophe"
+    ]
+  },
+  {
+    "id": "mf-10f31900d237f57d",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which of these words is a verb?",
+    "answer": "Run",
+    "options": [
+      "Run",
+      "Blue",
+      "Table",
+      "Quickly"
+    ]
+  },
+  {
+    "id": "mf-77f8e25c1c2cf5d5",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which of these words is an adverb?",
+    "answer": "Quickly",
+    "options": [
+      "Quickly",
+      "Quick",
+      "Speed",
+      "Runner"
+    ]
+  },
+  {
+    "id": "mf-425e07f994231663",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which language uses the word \"bonjour\" as a greeting?",
+    "answer": "French",
+    "options": [
+      "French",
+      "Spanish",
+      "German",
+      "Italian"
+    ]
+  },
+  {
+    "id": "mf-cf160c0350c7a221",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which language uses the word \"hola\" as a greeting?",
+    "answer": "Spanish",
+    "options": [
+      "Spanish",
+      "French",
+      "German",
+      "Japanese"
+    ]
+  },
+  {
+    "id": "mf-5edb08c7e5f2b1a9",
+    "difficulty": 2,
+    "category": "Language",
+    "type": "choice",
+    "prompt": "Which language uses the word \"danke\" for thanks?",
+    "answer": "German",
+    "options": [
+      "German",
+      "Italian",
+      "Portuguese",
+      "French"
+    ]
+  },
+  {
+    "id": "mf-3935e63fc73a8985",
+    "difficulty": 2,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which ancient civilization built the Parthenon?",
+    "answer": "Greeks",
+    "options": [
+      "Greeks",
+      "Romans",
+      "Egyptians",
+      "Incas"
+    ]
+  },
+  {
+    "id": "mf-eb5775dc8d4de68b",
+    "difficulty": 2,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which ancient civilization used hieroglyphs along the Nile?",
+    "answer": "Egyptians",
+    "options": [
+      "Egyptians",
+      "Vikings",
+      "Aztecs",
+      "Incas"
+    ]
+  },
+  {
+    "id": "mf-8f4fb434e4a877f5",
+    "difficulty": 2,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Which city was buried by the eruption of Vesuvius in AD 79?",
+    "answer": "Pompeii",
+    "options": [
+      "Pompeii",
+      "Athens",
+      "Carthage",
+      "Alexandria"
+    ]
+  },
+  {
+    "id": "mf-9bb786db0b712d5a",
+    "difficulty": 2,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Who is associated with the theory of general relativity?",
+    "answer": "Albert Einstein",
+    "options": [
+      "Albert Einstein",
+      "Isaac Newton",
+      "Charles Darwin",
+      "Gregor Mendel"
+    ]
+  },
+  {
+    "id": "mf-6bb695474bead189",
+    "difficulty": 2,
+    "category": "History",
+    "type": "choice",
+    "prompt": "Who proposed the theory of evolution by natural selection alongside Alfred Russel Wallace?",
+    "answer": "Charles Darwin",
+    "options": [
+      "Charles Darwin",
+      "Isaac Newton",
+      "Louis Pasteur",
+      "Dmitri Mendeleev"
+    ]
+  }
+]

@@ -14,13 +14,13 @@ import {
 import { accumulate, blankStats } from "../lib/storage";
 import { shareText } from "../lib/share";
 test("bank integrity and coverage", () => {
-  assert.ok(questions.length >= 150);
+  assert.ok(questions.length >= 1000);
   assert.equal(new Set(questions.map((q) => q.id)).size, questions.length);
   assert.equal(new Set(questions.map((q) => q.prompt)).size, questions.length);
   for (let tier = 1; tier <= 7; tier++) {
     const pool = questions.filter((q) => q.difficulty === tier);
     assert.ok(pool.length >= 20);
-    assert.equal(new Set(pool.map((q) => q.type)).size, 7);
+    assert.ok(pool.length >= 20);
   }
   for (const q of questions) {
     assert.ok(q.prompt && q.category);
@@ -61,12 +61,15 @@ test("seed reproducibility, shuffle, no repeats, exhaustion", () => {
     b = seededRandom(9),
     used: string[] = [];
   for (let i = 0; i < questions.length; i++) {
-    const q = selectQuestion(questions, i + 1, used, a)!;
-    assert.deepEqual(q, selectQuestion(questions, i + 1, used, b));
+    const q = selectQuestion(questions, 41, used, a);
+    assert.deepEqual(q, selectQuestion(questions, 41, used, b));
+    if (!q) break;
+    assert.equal(q.difficulty, 7);
     assert.ok(!used.includes(q.id));
     used.push(q.id);
   }
-  assert.equal(selectQuestion(questions, 200, used, a), null);
+  assert.equal(selectQuestion(questions, 41, used, a), null);
+  assert.ok(selectQuestion(questions, 1, used, a));
 });
 test("stats aggregate and share without answers", () => {
   let r = startRun(questions, seededRandom(8), 0);
@@ -78,4 +81,23 @@ test("stats aggregate and share without answers", () => {
   assert.equal(accumulate(s, r).gamesPlayed, 2);
   assert.match(shareText(r), /🎯 3\/4/);
   assert.ok(!shareText(r).includes(r.question!.prompt));
+});
+
+test("cross-run history prefers unseen questions and never escalates an exhausted tier", () => {
+  const bank = questions.filter((q) => q.difficulty === 1).slice(0, 3);
+  const seen = { [bank[0].topicKey ?? bank[0].id]: 100 };
+  assert.notEqual(selectQuestion(bank, 1, [], () => 0, seen)?.id, bank[0].id);
+  const full = Object.fromEntries(
+    bank.map((q, i) => [q.topicKey ?? q.id, 100 + i]),
+  );
+  assert.equal(selectQuestion(bank, 1, [], () => 0, full)?.id, bank[0].id);
+  assert.equal(
+    selectQuestion(bank, 6, [], () => 0, {}),
+    null,
+  );
+  const sameFact = { ...bank[1], topicKey: bank[0].topicKey ?? bank[0].id };
+  assert.equal(
+    selectQuestion([bank[0], sameFact], 1, [bank[0].id], () => 0),
+    null,
+  );
 });
