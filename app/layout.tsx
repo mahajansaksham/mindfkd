@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AccountProvider } from "../components/Account";
 export const metadata: Metadata = {
   title: "MINDFKD – How Far Can Your Brain Go?",
   description:
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AccountProvider>{children}</AccountProvider>
+      </body>
     </html>
   );
 }

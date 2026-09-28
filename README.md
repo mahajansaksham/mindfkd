@@ -1,6 +1,6 @@
 # MINDFKD
 
-How far can your brain go? A complete, local-first trivia survival prototype.
+How far can your brain go? A trivia survival game with guest play, Google login, public profiles and global rankings.
 
 ## Run
 
@@ -37,7 +37,7 @@ The supplied remote was empty when inspected, so no Borderline code or history w
 
 ## Rules
 
-30 seconds initially; correct answers add 4 seconds, wrong answers subtract 6 seconds. Time continues during feedback and in background tabs. Answers lock synchronously, preventing repeated taps from counting twice. Correct feedback lasts 520 ms, wrong feedback 850 ms. The monotonic `performance.now()` deadline is authoritative, independent of rendering cadence.
+30 seconds initially; correct answers add 4 seconds, wrong answers subtract 6 seconds. Time continues during feedback and in background tabs. Answers lock synchronously, preventing repeated taps from counting twice. Correct feedback lasts 520 ms, wrong feedback 850 ms. Guest games use a monotonic `performance.now()` deadline. Ranked games use a server-owned deadline and server-validated answer events; the browser timer is a display only.
 
 Score = `(150 × difficulty + max(0, 300 − floor(answerMilliseconds / 10))) × multiplier`, rounded once. Combo thresholds are 3 → 1.2×, 5 → 1.5×, 10 → 2×, 15 → 3×. Errors reset combo. Time bonuses are never multiplied.
 
@@ -53,10 +53,23 @@ Development-only `?level=31` starts at a specific level. Production ignores it. 
 
 Questions favor stable facts; dated comparisons explicitly name the reference year. Targeted source checks include [NASA Venus facts](https://science.nasa.gov/venus/venus-facts/), [NASA Titan atmosphere](https://www.nasa.gov/general/the-titan-haze-simulation-experiment-on-cosmic/), [ITU telegraph history](https://www.itu.int/en/history/Pages/ITUsHistory.aspx), and the [UN 2020 statistics pocketbook](https://unstats.un.org/unsd/publications/pocketbook/files/world-stats-pocketbook-2020.pdf). The bank has not yet received an independent editorial audit. Difficulty is authored, not calibrated against player response data.
 
-## V1.1
+## Accounts and social features
 
-Playtest completion times and per-question error rates; rebalance the curve, increase type variety, and expand/source-review the expert bank. Add a local deterministic daily practice mode before adding real ranked infrastructure. Future authenticated rankings should use versioned server-issued seeds and validate answer events server-side. No fake rankings, accounts, database, ads or payments are included.
+Google Identity Services supplies an ID token, verified server-side against Google signing keys, issuer, audience, expiry and a per-login nonce. Only the Google subject identifier is stored, never email, passwords or tokens. Sessions use hashed random tokens in D1 and a Secure, HttpOnly, SameSite cookie. Mutations require an allowed Origin and application header.
+
+Players choose a unique permanent username, display name and optional bio. Public profile links use `/profile?u=username`; result links add `&run=run-id`. Profiles show ranked stats, recent results, follower counts and following. Following is one-way and can be undone. Google identifiers and sessions are never exposed by public endpoints. Privacy information is at `/privacy`.
+
+Signed-in players with completed profiles start ranked runs. The Worker chooses questions, calculates scores, enforces time and feedback delays, checks ownership and uses optimistic versions to prevent duplicate answers. The leaderboard contains each player's best finished ranked run. Guest runs remain local and cannot be uploaded as ranked scores. This prevents forged client score submissions but is not a comprehensive anti-bot system; the question bank is public in the guest bundle.
+
+- `server/`: Google verification, sessions, API routes and authoritative ranked engine.
+- `db/schema.ts`, `drizzle/`: database schema and versioned SQL migrations.
+- `components/Account.tsx`, `RankedGame.tsx`, `Social.tsx`: login/profile editor, online gameplay and social views.
+- `tests/ranked.test.ts`: server timing and actual SQLite integration tests for profiles, follows, authorization and score integrity.
 
 ## Hosting
 
-The public Sites deployment uses `npm run build:site`, which exports static assets to `out/`. Standard `npm run build` followed by `npm start` retains the normal Next.js server workflow. `.openai/hosting.json` identifies the hosted site. The custom domains are mindfkd.com and www.mindfkd.com; DNS verification must complete before they serve the app.
+The existing public Sites project serves mindfkd.com and www.mindfkd.com. `npm run build:site` exports Next assets, then bundles a Cloudflare Worker into `dist/server/index.js` with assets in `dist/client`. Sites provisions the logical `DB` D1 binding declared in `.openai/hosting.json` and applies migrations. Publish through the Sites source workflow so the archive matches the pushed source commit.
+
+Set the production runtime variable `GOOGLE_CLIENT_ID` to the Web client ID registered for `https://mindfkd.com` and `https://www.mindfkd.com`. No client secret is used. Configure Google's consent branding and audience before enabling public sign-in. Changes to production runtime variables require redeployment.
+
+`npm run dev` and `npm start` run the Next frontend only; ranked/auth endpoints require the Worker and D1 runtime. Guest play works without them. Tests use an isolated in-memory SQLite database and never insert sample accounts or scores into production.

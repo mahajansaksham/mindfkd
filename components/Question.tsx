@@ -6,7 +6,9 @@ export default function Question({
   question: q,
   feedback,
   onAnswer,
+  disabled = false,
 }: {
+  disabled?: boolean;
   question: Q;
   feedback: Run["feedback"];
   onAnswer: (a: string | string[]) => void;
@@ -14,7 +16,7 @@ export default function Question({
   const [order, setOrder] = useState(q.options),
     [drag, setDrag] = useState<number | null>(null),
     [number, setNumber] = useState(0);
-  const locked = !!feedback;
+  const locked = !!feedback || disabled;
   useEffect(() => {
     function key(e: KeyboardEvent) {
       if (locked || e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;

@@ -1,0 +1,65 @@
+import {
+  sqliteTable,
+  text,
+  integer,
+  index,
+  primaryKey,
+} from "drizzle-orm/sqlite-core";
+export const players = sqliteTable("players", {
+  id: text("id").primaryKey(),
+  googleSub: text("google_sub").notNull().unique(),
+  username: text("username").unique(),
+  displayName: text("display_name").notNull(),
+  bio: text("bio").notNull().default(""),
+  createdAt: integer("created_at").notNull(),
+});
+export const sessions = sqliteTable(
+  "sessions",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    expiresAt: integer("expires_at").notNull(),
+  },
+  (t) => [index("session_expiry").on(t.expiresAt)],
+);
+export const runs = sqliteTable(
+  "runs",
+  {
+    id: text("id").primaryKey(),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    state: text("state").notNull(),
+    version: integer("version").notNull().default(0),
+    status: text("status").notNull(),
+    score: integer("score").notNull().default(0),
+    level: integer("level").notNull().default(1),
+    correct: integer("correct").notNull().default(0),
+    incorrect: integer("incorrect").notNull().default(0),
+    bestCombo: integer("best_combo").notNull().default(0),
+    createdAt: integer("created_at").notNull(),
+    finishedAt: integer("finished_at"),
+  },
+  (t) => [
+    index("runs_player_status").on(t.playerId, t.status),
+    index("runs_leaderboard").on(t.status, t.score),
+  ],
+);
+export const follows = sqliteTable(
+  "follows",
+  {
+    followerId: text("follower_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    followingId: text("following_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    createdAt: integer("created_at").notNull(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.followerId, t.followingId] }),
+    index("follows_target").on(t.followingId),
+  ],
+);

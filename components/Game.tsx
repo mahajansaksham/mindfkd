@@ -31,6 +31,8 @@ import { shareRun, shareText } from "../lib/share";
 import Question from "./Question";
 import Timer from "./Timer";
 import Modal from "./Modal";
+import { useAccount } from "./Account";
+import RankedGame from "./RankedGame";
 const labels = [
   "",
   "WARM UP",
@@ -42,6 +44,8 @@ const labels = [
   "MINDFKD",
 ];
 export default function Game() {
+  const account = useAccount();
+  const [ranked, setRanked] = useState(false);
   const [run, setRun] = useState<Run>(emptyRun),
     [stats, setStats] = useState<Stats>(blankStats),
     [modal, setModal] = useState<"help" | "stats" | null>(null),
@@ -110,6 +114,10 @@ export default function Game() {
     return () => cancelAnimationFrame(id);
   }, [run]);
   function start() {
+    if (account.player?.username) {
+      setRanked(true);
+      return;
+    }
     saved.current = false;
     setPreviousBest(stats.bestScore);
     setMessage("");
@@ -124,7 +132,7 @@ export default function Game() {
   }
   async function share() {
     try {
-      setMessage(await shareRun(run));
+      setMessage(await shareRun(run, account.player?.username ?? undefined));
     } catch {
       setFallback(true);
       setMessage("Select and copy your result below.");
@@ -132,6 +140,7 @@ export default function Game() {
   }
   const active = run.phase === "playing" || run.phase === "feedback";
   const tier = run.question?.difficulty ?? 1;
+  if (ranked) return <RankedGame onExit={() => setRanked(false)} />;
   return (
     <main className={active ? "is-playing" : ""}>
       <header>
@@ -151,6 +160,21 @@ export default function Game() {
           </div>
         ) : (
           <div className="header-tools">
+            <a
+              className="icon"
+              aria-label="Global leaderboard"
+              href="/leaderboard"
+            >
+              ↗
+            </a>
+            <button
+              className="text-button account-button"
+              onClick={account.openAccount}
+            >
+              {account.player?.username
+                ? "@" + account.player.username
+                : "SIGN IN"}
+            </button>
             <button
               className="icon"
               aria-label="How to play"
@@ -206,6 +230,17 @@ export default function Game() {
             </div>
             <span>IMPOSSIBLE</span>
           </div>
+          <p className="ranked-invite">
+            {account.player?.username ? (
+              "RANKED RUN · YOUR SCORE GOES GLOBAL"
+            ) : (
+              <button className="text-button" onClick={account.openAccount}>
+                {account.player
+                  ? "CREATE YOUR PROFILE TO PLAY RANKED"
+                  : "PLAY AS A GUEST · SIGN IN TO RANK"}
+              </button>
+            )}
+          </p>
           <div className="landing-meta">
             <span>
               PERSONAL BEST{" "}
@@ -310,7 +345,7 @@ export default function Game() {
           {fallback && (
             <textarea
               readOnly
-              value={shareText(run)}
+              value={shareText(run, account.player?.username ?? undefined)}
               aria-label="Share result"
               onFocus={(e) => e.target.select()}
             />
