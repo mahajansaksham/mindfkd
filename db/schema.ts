@@ -50,6 +50,7 @@ export const runs = sqliteTable(
     index("runs_leaderboard").on(t.status, t.score),
     index("runs_genre_score").on(t.season, t.genre, t.status, t.score),
     index("runs_player_created").on(t.playerId, t.createdAt),
+    index("runs_category_all_time").on(t.genre, t.status, t.score),
     index("runs_season_score").on(t.season, t.status, t.score),
   ],
 );
@@ -116,6 +117,9 @@ export const matches = sqliteTable(
     genre: text("genre").notNull(),
     status: text("status").notNull().default("waiting"),
     questions: text("questions").notNull(),
+    revision: integer("revision").notNull().default(0),
+    teamOneName: text("team_one_name").notNull().default("Team 1"),
+    teamTwoName: text("team_two_name").notNull().default("Team 2"),
     createdAt: integer("created_at").notNull(),
     startAt: integer("start_at"),
     endAt: integer("end_at"),
@@ -161,4 +165,39 @@ export const matchAnswers = sqliteTable(
     answeredAt: integer("answered_at").notNull(),
   },
   (t) => [primaryKey({ columns: [t.code, t.playerId, t.round] })],
+);
+
+// Approved playable catalog. Large candidate imports remain outside this table until review.
+export const questionBank = sqliteTable(
+  "question_bank",
+  {
+    id: text("id").primaryKey(),
+    topicKey: text("topic_key").notNull(),
+    promptHash: text("prompt_hash").notNull().unique(),
+    genre: text("genre").notNull(),
+    difficulty: integer("difficulty").notNull(),
+    sortKey: integer("sort_key").notNull(),
+    active: integer("active").notNull().default(1),
+    payload: text("payload").notNull(),
+    bankVersion: text("bank_version").notNull(),
+  },
+  (t) => [
+    index("bank_category_pick").on(t.active, t.genre, t.difficulty, t.sortKey),
+    index("bank_mixed_pick").on(t.active, t.difficulty, t.sortKey),
+    index("bank_topic").on(t.topicKey),
+  ],
+);
+// Exact membership, not a probabilistic Bloom filter. Reserve before returning a question.
+export const playerQuestionSeen = sqliteTable(
+  "player_question_seen",
+  {
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
+    topicKey: text("topic_key").notNull(),
+    questionId: text("question_id").notNull(),
+    firstSeenAt: integer("first_seen_at").notNull(),
+    source: text("source").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.playerId, t.topicKey] })],
 );

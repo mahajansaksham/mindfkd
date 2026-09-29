@@ -108,10 +108,8 @@ export function selectQuestion(
   if (!available.length) return null;
   const lastSeen = (q: Question) => history[group(q)] ?? 0;
   const unseen = available.filter((q) => !lastSeen(q));
-  const oldest = Math.min(...available.map(lastSeen));
-  let pool = unseen.length
-    ? unseen
-    : available.filter((q) => lastSeen(q) === oldest);
+  if (!unseen.length) return null;
+  let pool = unseen;
   const recentCategories = used.slice(-2).map((id) => byId.get(id)?.category);
   const varied = pool.filter((q) => !recentCategories.includes(q.category));
   if (varied.length) pool = varied;

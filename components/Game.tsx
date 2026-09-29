@@ -401,7 +401,7 @@ export default function Game() {
         <div className="results">
           <div className="eyebrow result-kicker">
             {run.reason === "bank"
-              ? "DIFFICULTY TIER CLEARED"
+              ? "NO UNSEEN QUESTIONS AT THIS DIFFICULTY"
               : "TIME’S UP. TAKE A BREATH."}
           </div>
           <div className="result-score">{run.score.toLocaleString()}</div>

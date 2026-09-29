@@ -31,7 +31,7 @@ npm start
 - `lib/storage.ts`: validated, versioned local statistics with graceful storage failures.
 - `lib/share.ts`: answer-free share text, Web Share and clipboard fallback.
 - `lib/session.ts`: versioned deterministic session contract and optional future sound adapter.
-- `data/questions.ts`: 1,042 questions across all seven difficulty tiers, including attributed community questions.
+- `data/questions.ts`: 1,170 guest questions across all seven difficulty tiers, including attributed community questions.
 
 The supplied remote was empty when inspected, so no Borderline code or history was removed. This implementation uses Next.js, TypeScript, React and plain token-based CSS; there was no existing Tailwind infrastructure to retain.
 
@@ -41,7 +41,7 @@ The supplied remote was empty when inspected, so no Borderline code or history w
 
 Score = `(150 × difficulty + max(0, 300 − floor(answerMilliseconds / 10))) × multiplier`, rounded once. Combo thresholds are 3 → 1.2×, 5 → 1.5×, 10 → 2×, 15 → 3×. Errors reset combo. Time bonuses are never multiplied.
 
-Levels 1–5 use tier 1, 6–10 tier 2, 11–15 tier 3, 16–20 tier 4, 21–30 tier 5, 31–40 tier 6, 41+ tier 7. Questions and answer positions are seeded and shuffled. Cross-run history prioritizes unseen facts, then least recently seen. Facts do not repeat within a run. An exhausted tier ends the run without jumping difficulty. See QUESTIONS.md for review, attribution, calibration and seasons.
+Levels 1–5 use tier 1, 6–10 tier 2, 11–15 tier 3, 16–20 tier 4, 21–30 tier 5, 31–40 tier 6, 41+ tier 7. Questions and answer positions are seeded and shuffled. Signed-in play selects from SQL with atomic, exact player/topic reservations across solo and live matches. Seen topics never recycle. Guest history stays in browser storage. An exhausted tier ends the run without jumping difficulty. See QUESTIONS.md for review, attribution and calibration.
 
 Interactions: multiple choice, binary, higher/lower, chronological ordering (drag and arrow controls), true/false, numeric choice, and emoji visual choice. Number choices submit immediately with one tap, like other choices. Keyboard: 1–4 to answer, Tab/Enter for controls. Ordering still requires confirming the completed sequence. Reduced motion disables animation. Native dialogs trap focus and support Escape. No remote image or font dependencies.
 
@@ -84,4 +84,8 @@ Number questions now use direct-submit choices and keyboard 1–4. Ranked answer
 
 ## Latest release
 
-Six playable categories, category/overall best-score leaderboards and `/compete` for shared-clock 1v1 or unequal-team matches. See PROJECT_LOG.md for decisions, SECURITY_AUDIT.md for the review, LIVE_MATCHES.md for rules/transport and SCALING.md for the million-question roadmap. Schema migrations are additive. See QUESTIONS.md for the current 1,146-question bank and editorial limitations.
+Six playable categories, category/overall best-score leaderboards and `/compete` for shared-clock 1v1 or unequal-team matches. See PROJECT_LOG.md for decisions, SECURITY_AUDIT.md for the review, LIVE_MATCHES.md for rules/transport and SCALING.md for the 100,000-question roadmap. Schema migrations are additive. See QUESTIONS.md for the current 1,170-question bank and editorial limitations.
+
+## September 29 update
+
+All-time category/Overall leaderboards, editable team names, compact match UI and WebSocket-first transport with fallback. SQL migration 0005 seeds the approved bank and backfills private no-repeat history. `npm run questions:import -- --input candidates.ndjson` stages up to 100,000 candidates per file; staging never publishes them. See QUESTIONS.md and PROJECT_LOG.md.

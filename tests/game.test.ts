@@ -90,7 +90,7 @@ test("cross-run history prefers unseen questions and never escalates an exhauste
   const full = Object.fromEntries(
     bank.map((q, i) => [q.topicKey ?? q.id, 100 + i]),
   );
-  assert.equal(selectQuestion(bank, 1, [], () => 0, full)?.id, bank[0].id);
+  assert.equal(selectQuestion(bank, 1, [], () => 0, full), null);
   assert.equal(
     selectQuestion(bank, 6, [], () => 0, {}),
     null,

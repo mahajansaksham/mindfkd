@@ -1,4 +1,4 @@
-# MINDFKD security review — 28 September 2026
+# MINDFKD security review — 29 September 2026
 
 Scope: application source, SQL boundaries, local API integration, runtime dependency audit. This is not an independent penetration test or a guarantee against cheating/abuse.
 
@@ -24,3 +24,11 @@ Automated integration exercises cross-account run writes, forged client identity
 - No external security scanner, infrastructure policy audit or recurring audit service was installed. Inspect logs without recording tokens, answers or personal data. Review dependency alerts and this document with each material release.
 
 Reference: https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html — authorization is required even when identifiers are difficult to guess.
+
+## September 29 additions
+
+WebSocket upgrades require an allowed Origin and authenticated membership. Writes revalidate sessions; synchronization revalidates periodically. Messages are bounded to 4KB and 20/second, with four queued operations at most. The upgrade response remains intact. The action queue prevents a normal answer arriving during synchronization from being rejected as busy. Connections expire/reconnect after ten minutes; fallback requests stop on component disposal and are throttled on failure.
+
+Team names are bounded, control/markup characters rejected, and own-side/lobby permissions checked in SQL. Exact no-repeat history stays private; clients cannot upload trusted seen IDs, answer keys or ranks. SQL reservations use bound values, a primary key per player/topic and server-selected recipients. Retiring a question must retain history. Reservations may include undelivered questions following interruption; this favors avoiding repeats over maximizing pool utilization.
+
+22 tests pass locally. Runtime dependency audit reported zero known issues; development dependencies include advisories and need routine maintenance. This does not establish production multi-region latency or a completed external security audit.

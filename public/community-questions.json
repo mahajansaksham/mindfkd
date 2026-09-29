@@ -10293,6 +10293,366 @@
         "James \"Jim\" Book"
       ],
       "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-b10f1231eacc4d3f",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Science",
+      "prompt": "Which of the following is the male pollen-producing reproductive part of a flower?",
+      "answer": "Stamen",
+      "options": [
+        "Stamen",
+        "Sepal",
+        "Pistil",
+        "Petal"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-36db6a2266140ec5",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Geography",
+      "prompt": "Where is the Volga River?",
+      "answer": "Russia",
+      "options": [
+        "Russia",
+        "Bulgaria",
+        "India",
+        "Sweden"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-7544668bb78a38a6",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "History",
+      "prompt": "What number does the Roman numeral \"D\" stand for?",
+      "answer": "500",
+      "options": [
+        "500",
+        "100",
+        "1000",
+        "50"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-dda3dd95c3be82e1",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "History",
+      "prompt": "Who assassinated Archduke Franz Ferdinand?",
+      "answer": "Gavrilo Princip",
+      "options": [
+        "Gavrilo Princip",
+        "Nedeljko Čabrinović",
+        "Oskar Potiorek",
+        "Ferdinand Cohen-Blind"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-80f4720daccd6e45",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "Geography",
+      "prompt": "The White Cliffs of Dover are in which country?",
+      "answer": "United Kingdom",
+      "options": [
+        "United Kingdom",
+        "United States",
+        "Netherlands",
+        "Sweden"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-b881533dc4ca3ca7",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "History",
+      "prompt": "In what dialogue did Socrates defend himself to the court of Athens?",
+      "answer": "The Apology",
+      "options": [
+        "The Apology",
+        "The Euthyphro",
+        "The Laws",
+        "The Republic"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-6659fc9306ac8805",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Geography",
+      "prompt": "Santorini is an island belonging to what European Country?",
+      "answer": "Greece",
+      "options": [
+        "Greece",
+        "Italy",
+        "Spain",
+        "Turkey"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-823952768eee0a83",
+      "type": "choice",
+      "difficulty": 6,
+      "category": "Science",
+      "prompt": "Which of these animals belongs in class Chondrichthyes?",
+      "answer": "Great white shark",
+      "options": [
+        "Great white shark",
+        "Octopus",
+        "Killer whale",
+        "Catfish"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-844dec9b2a2cea5c",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "Sports",
+      "prompt": "Which city hosted the 1980 Summer Olympics?",
+      "answer": "Moscow",
+      "options": [
+        "Moscow",
+        "Barcelona",
+        "Tokyo",
+        "Los Angeles"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-9790462fc30ca2c7",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "History",
+      "prompt": "Pianist Frédéric Chopin was a composer of which musical era?",
+      "answer": "Romantic",
+      "options": [
+        "Romantic",
+        "Classic",
+        "Baroque",
+        "Renaissance"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-eddc15a26b89d9a8",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "Science",
+      "prompt": "How many types of quarks are there in the standard model of physics?",
+      "answer": "6",
+      "options": [
+        "6",
+        "2",
+        "3",
+        "4"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-4bcf7fb94851b68d",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "Sports",
+      "prompt": "Who scored the injury time winning goal in the 1999 UEFA Champions League final between Manchester United and Bayern Munich?",
+      "answer": "Ole Gunnar Solskjær",
+      "options": [
+        "Ole Gunnar Solskjær",
+        "Dwight Yorke",
+        "Andy Cole",
+        "David Beckham"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-70cb2790307c09ee",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Geography",
+      "prompt": "What is the capital of the American state of Arizona?",
+      "answer": "Phoenix",
+      "options": [
+        "Phoenix",
+        "Montgomery",
+        "Tallahassee",
+        "Raleigh"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-8296f5f23aa65100",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "Technology",
+      "prompt": "In computing, what does MIDI stand for?",
+      "answer": "Musical Instrument Digital Interface",
+      "options": [
+        "Musical Instrument Digital Interface",
+        "Musical Interface of Digital Instruments",
+        "Modular Interface of Digital Instruments",
+        "Musical Instrument Data Interface"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-f218c9938e39ab0b",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Science",
+      "prompt": "Which noble gas has the lowest atomic number?",
+      "answer": "Helium",
+      "options": [
+        "Helium",
+        "Neon",
+        "Argon",
+        "Krypton"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-f926f5736083208a",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "History",
+      "prompt": "Which South American country fought Great Britain over the Falkland Islands in 1982?",
+      "answer": "Argentina",
+      "options": [
+        "Argentina",
+        "Brazil",
+        "Chile",
+        "Venezuela"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-9cbfd7fea81438be",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Geography",
+      "prompt": "Which of the following Japanese islands is the biggest?",
+      "answer": "Honshu",
+      "options": [
+        "Honshu",
+        "Hokkaido",
+        "Shikoku",
+        "Kyushu"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-15ee995d195049a8",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "History",
+      "prompt": "Which of the following Presidents of the United States was assassinated?",
+      "answer": "William McKinley",
+      "options": [
+        "William McKinley",
+        "Lyndon Johnson",
+        "Chester Arthur",
+        "Franklin Roosevelt"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-ba7f599075667617",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "Sports",
+      "prompt": "Which team was the 2014-2015 NBA Champions?",
+      "answer": "Golden State Warriors",
+      "options": [
+        "Golden State Warriors",
+        "Cleveland Cavaliers",
+        "Houston Rockets",
+        "Atlanta Hawks"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-48b9e459d73d6b18",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "Politics",
+      "prompt": "Who was elected leader of the UK Labour Party in September 2015?",
+      "answer": "Jeremy Corbyn",
+      "options": [
+        "Jeremy Corbyn",
+        "Ed Miliband",
+        "David Cameron",
+        "Theresa May"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-8dc45003e74c4040",
+      "type": "choice",
+      "difficulty": 6,
+      "category": "Politics",
+      "prompt": "Which United Nations principal organ suspended its regular operations in November 1994?",
+      "answer": "Trusteeship Council",
+      "options": [
+        "Trusteeship Council",
+        "Secretariat",
+        "General Assembly",
+        "Economic and Social Council"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-dd8d6a333fd59d46",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "Politics",
+      "prompt": "Which of the following United States Presidents served the shortest term in office?",
+      "answer": "William Henry Harrison",
+      "options": [
+        "William Henry Harrison",
+        "Zachary Taylor",
+        "James A. Garfield",
+        "Warren G. Harding"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-c6415612fd91974a",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "Geography",
+      "prompt": "What is the capital of Mauritius?",
+      "answer": "Port Louis",
+      "options": [
+        "Port Louis",
+        "Port Moresby",
+        "Port Vila",
+        "Port-au-Prince"
+      ],
+      "source": "https://opentdb.com/"
+    },
+    {
+      "id": "ot-cccc37678c7530b1",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "Science",
+      "prompt": "What is the molecular formula of Ozone?",
+      "answer": "O3",
+      "options": [
+        "O3",
+        "C6H2O6",
+        "N2O",
+        "SO4"
+      ],
+      "source": "https://opentdb.com/"
     }
   ]
 }

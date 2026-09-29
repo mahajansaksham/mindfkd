@@ -38,6 +38,7 @@ export function matchClock(startAt: number | null, now: number) {
 }
 export type MatchView = {
   code: string;
+  revision: number;
   mode: "duel" | "teams";
   genre: Genre;
   status: string;
@@ -65,6 +66,12 @@ export type MatchView = {
     unanswered: number;
     answered: boolean;
   }[];
-  teams: { team: number; players: number; total: number; score: number }[];
+  teams: {
+    name: string;
+    team: number;
+    players: number;
+    total: number;
+    score: number;
+  }[];
   rules: typeof MATCH_RULES;
 };

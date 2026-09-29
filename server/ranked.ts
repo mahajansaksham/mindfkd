@@ -3,6 +3,7 @@ import { questions } from "../data/questions";
 import {
   Run,
   QuestionHistory,
+  Question,
   startRun,
   answerRun,
   nextQuestion,
@@ -21,10 +22,11 @@ export function newRanked(
   now: number,
   history: QuestionHistory = {},
   genre: Genre = "mixed",
+  bank: Question[] = questions,
 ): RankedState {
   return {
     run: startRun(
-      questionsForGenre(questions, genre),
+      questionsForGenre(bank, genre),
       seededRandom(seed),
       now,
       1,
@@ -57,6 +59,7 @@ export function advanceRanked(
   state: RankedState,
   now: number,
   history: QuestionHistory = {},
+  bank: Question[] = questions,
 ): RankedState {
   if (now >= state.run.deadline)
     return {
@@ -68,7 +71,7 @@ export function advanceRanked(
     ...state,
     run: nextQuestion(
       state.run,
-      questionsForGenre(questions, state.genre ?? "mixed"),
+      questionsForGenre(bank, state.genre ?? "mixed"),
       seededRandom(state.seed + state.run.level),
       now,
       history,

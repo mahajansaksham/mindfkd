@@ -11,3 +11,6 @@ dist/
 
 .env*
 !.env.example
+
+# Local question-review catalog; not production content
+content/review/*.sqlite*

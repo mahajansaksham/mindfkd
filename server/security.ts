@@ -1,5 +1,6 @@
 // Static Next export needs its boot scripts; do not add unsafe-eval.
 export function secureResponse(response: Response, isHTML = false) {
+  if (response.status === 101) return response;
   const headers = new Headers(response.headers);
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
@@ -19,7 +20,7 @@ export function secureResponse(response: Response, isHTML = false) {
         "script-src 'self' 'unsafe-inline' https://accounts.google.com https://www.googletagmanager.com https://va.vercel-scripts.com",
         "style-src 'self' 'unsafe-inline' https://accounts.google.com",
         "img-src 'self' data: https://*.googleusercontent.com https://www.google-analytics.com https://www.googletagmanager.com",
-        "connect-src 'self' https://accounts.google.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+        "connect-src 'self' wss://mindfkd.com wss://www.mindfkd.com wss://mindfkd.sakshammahajan0404.chatgpt.site https://accounts.google.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
         "frame-src https://accounts.google.com",
         "font-src 'self' data:",
         "upgrade-insecure-requests",

@@ -1,14 +1,15 @@
-# Question-bank scaling plan
+# Question-bank scaling — September 29, 2026
 
-Current implementation serves 1,146 questions, not one million. Genre/difficulty indexes are cached in memory; guest data is loaded when playing rather than in the landing bundle. Selection stays in the requested tier and genre. A run never repeats a topic. Across runs, exact exposure history prefers unseen facts then least-recently-seen facts after exhaustion. Finite pools cannot promise permanent non-repetition; small category pools recycle sooner than Mixed.
+Target: 100,000 checked playable questions. Actual: **1,170**. No bulk licensed content source is connected. A 100,000-row synthetic benchmark is a storage/selection test, not content fulfillment.
 
-Before growing to one million:
+Implemented: indexed SQL catalog, stable normalized hashes/topic IDs, atomic exact account/topic reservations, historical backfill, shared-deck exclusion for every participant, bounded local candidate importer and strict exhaustion instead of recycling. Signed-in solo selection uses indexed randomized key ranges with exact NOT EXISTS history checks. Match setup uses SQL window functions to select all required tiers in one atomic reservation, avoiding partial consumption. Question/answer payloads for signed-in play come from SQL; the public guest pool remains a bundled 1,170-question subset.
 
-1. Move active catalog and answer keys to indexed server storage, with stable question/topic IDs, genre, tier, version, review status and retirement date. Query bounded candidates by `(genre,tier,status,shuffle_bucket)` rather than loading the entire catalog into a Worker/browser. Serve bounded guest batches without answer keys when verification is server-side.
-2. Keep normalized prompt hashes and canonical topic IDs for duplicate wording/fact detection. A prompt hash alone cannot detect paraphrases. Review candidate imports; do not auto-publish external trivia or erase old question/results records.
-3. Store exact exposure rows or compressed ID bitmaps by player/catalog version. Current history reads the player's full exposure aggregate and local storage caps history at 20,000 entries; both need bounded/indexed replacement at that scale.
-4. A Bloom filter can cheaply say a question is **definitely not seen** or **possibly seen**. Confirm possible matches against exact history before exclusion; false positives must not permanently hide unseen questions. Version/rebuild filters on catalog changes. It is an optimization, not the source of truth or a semantic duplicate detector.
-5. Calibrate within genre/tier using sufficient distinct players and first exposures, including response distributions. Preserve seasons when difficulty changes. Retire bad items from selection, retaining provenance and historical records.
-6. Load-test selection latency, bundle size, D1 row/query/storage limits and cost with representative data before importing massive batches. Shard/move catalog storage according to measured provider limits. Room real-time scaling is separate; see LIVE_MATCHES.md.
+Before expanding live content:
 
-No million-question import, Bloom filter, automatic weekly publisher or wholesale deletion was enabled in this release. This avoids claiming capacity the app has not tested.
+1. Obtain reusable source material and record rights, attribution and version. Review ambiguity, answers, distractors, duplicates and genre/tier coverage. Link paraphrases with common topic keys; hashes alone are insufficient.
+2. Stage up to 100,000 candidates/file with `questions:import`. Pending rows cannot enter the live game automatically. Prepare reviewed additive SQL migrations, update version/attribution and adapt guest delivery/count reporting for SQL-only growth. Never ship the large raw bank as a browser bundle.
+3. Benchmark remote D1 cold reads, nearly exhausted histories, match deck windows and realistic concurrency/cost. A local 100,000-row test passed; it does not prove remote scale. Measure storage growth: history grows with players × reserved topics.
+4. Exact SQL history is authoritative. Bloom filters are optional later cache optimizations; confirm possible matches against SQL so false positives cannot permanently hide unseen content. They do not create questions or solve semantic duplication.
+5. Keep inactive questions and historical scores; back up before operational migrations. Never clear history to make a finite pool appear fresh. Calibrate tiers using enough first-exposure data, retaining old score/version provenance.
+
+Live-room transport has separate scaling limits documented in LIVE_MATCHES.md. No recurring content publisher, Bloom filter or million-question claim is enabled.

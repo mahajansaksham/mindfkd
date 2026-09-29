@@ -1,8 +1,10 @@
+import { matchSocket } from "./match-socket";
 import { matchAPI, MatchError, competitionStats } from "./matches";
 import { GENRES, isGenre } from "../lib/genres";
 import { secureResponse } from "./security";
-import { BANK_VERSION, CURRENT_SEASON, SEASONS } from "../lib/catalog";
-import type { QuestionHistory } from "../lib/game";
+import { BANK_VERSION, CURRENT_SEASON } from "../lib/catalog";
+import { difficultyFor } from "../lib/game";
+import { reserveQuestion } from "./question-bank";
 import type { Env, Player } from "./types";
 import {
   cookie,
@@ -102,20 +104,7 @@ function publicPlayer(p: Player) {
     createdAt: p.created_at,
   };
 }
-const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished' AND r.season=? AND (?='overall' OR r.genre=?)), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,b.genre,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
-async function questionHistory(
-  env: Env,
-  playerId: string,
-): Promise<QuestionHistory> {
-  const rows = await env.DB.prepare(
-    "SELECT topic_key,MAX(shown_at) AS last_seen FROM question_events WHERE player_id=? GROUP BY topic_key",
-  )
-    .bind(playerId)
-    .all<{ topic_key: string; last_seen: number }>();
-  return Object.fromEntries(
-    rows.results.map((r) => [r.topic_key, r.last_seen]),
-  );
-}
+const leaderboardSQL = `WITH best AS (SELECT r.*,ROW_NUMBER() OVER (PARTITION BY r.player_id ORDER BY r.score DESC,r.level DESC,r.finished_at ASC,r.id ASC) AS best_run FROM runs r WHERE r.status='finished' AND (?='overall' OR r.genre=?)), ranked AS (SELECT p.username,p.display_name,b.score,b.level,b.id AS run_id,b.genre,ROW_NUMBER() OVER (ORDER BY b.score DESC,b.level DESC,b.finished_at ASC,b.id ASC) AS rank FROM best b JOIN players p ON p.id=b.player_id WHERE b.best_run=1 AND p.username IS NOT NULL) `;
 async function api(request: Request, env: Env) {
   const url = new URL(request.url),
     path = url.pathname,
@@ -135,6 +124,11 @@ async function api(request: Request, env: Env) {
     )
       fail(403, "Invalid request origin");
     const player = await requirePlayer(request, env);
+    if (path === "/api/matches/socket") {
+      if (!origins.has(request.headers.get("origin") ?? ""))
+        fail(403, "Invalid request origin");
+      return matchSocket(request, env, player);
+    }
     return matchAPI(
       request,
       env,
@@ -261,27 +255,23 @@ async function api(request: Request, env: Env) {
   }
   if (path === "/api/leaderboard" && method === "GET") {
     const p = await currentPlayer(request, env);
-    const season = url.searchParams.get("season") ?? CURRENT_SEASON;
     const genre = url.searchParams.get("genre") ?? "overall";
     if (genre !== "overall" && !isGenre(genre)) fail(400, "Unknown category");
-    if (!SEASONS.some((s) => s.id === season)) fail(400, "Unknown season");
     const top = await env.DB.prepare(
       leaderboardSQL + "SELECT * FROM ranked ORDER BY rank LIMIT 50",
     )
-      .bind(season, genre, genre)
+      .bind(genre, genre)
       .all();
     const me = p?.username
       ? await env.DB.prepare(
           leaderboardSQL + "SELECT * FROM ranked WHERE username=?",
         )
-          .bind(season, genre, genre, p.username)
+          .bind(genre, genre, p.username)
           .first()
       : null;
     return json({
       players: top.results,
       me,
-      season,
-      seasons: SEASONS,
       genre,
       genres: GENRES,
     });
@@ -382,23 +372,27 @@ async function api(request: Request, env: Env) {
     const input = await body(request);
     const genre = input.genre ?? "mixed";
     if (!isGenre(genre)) fail(400, "Unknown category");
-    const [count, history] = await Promise.all([
-      env.DB.prepare(
-        "SELECT COUNT(*) AS n FROM runs WHERE player_id=? AND created_at>?",
-      )
-        .bind(p.id, now - 3600000)
-        .first<{ n: number }>(),
-      questionHistory(env, p.id),
-    ]);
+    const count = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM runs WHERE player_id=? AND created_at>?",
+    )
+      .bind(p.id, now - 3600000)
+      .first<{ n: number }>();
     if ((count?.n ?? 0) >= 120)
       fail(429, "Too many runs. Take a break and try again later.");
-    const id = crypto.randomUUID(),
-      state = newRanked(
-        crypto.getRandomValues(new Uint32Array(1))[0],
-        now,
-        history,
-        genre,
+    const id = crypto.randomUUID();
+    const selected = await reserveQuestion(env, [p.id], genre, 1, `run:${id}`);
+    if (!selected)
+      fail(
+        409,
+        "You have played all available starter questions in this category. Try another category while we add more.",
       );
+    const state = newRanked(
+      crypto.getRandomValues(new Uint32Array(1))[0],
+      now,
+      {},
+      genre,
+      [selected!],
+    );
     const q = state.run.question!;
     const [created] = await env.DB.batch([
       env.DB.prepare(
@@ -483,7 +477,20 @@ async function api(request: Request, env: Env) {
           ...state,
           run: { ...state.run, phase: "gameOver", reason: "bank" },
         };
-      else next = advanceRanked(state, now, await questionHistory(env, p.id));
+      else if (
+        state.run.phase === "feedback" &&
+        now >= state.readyAt &&
+        now < state.run.deadline
+      ) {
+        const q = await reserveQuestion(
+          env,
+          [p.id],
+          state.genre ?? "mixed",
+          difficultyFor(state.run.level + 1),
+          `run:${input.id}`,
+        );
+        next = advanceRanked(state, Date.now(), {}, q ? [q] : []);
+      } else next = advanceRanked(state, now, {}, []);
     } else if (now >= state.run.deadline)
       next = {
         ...state,

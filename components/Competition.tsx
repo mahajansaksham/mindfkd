@@ -5,23 +5,36 @@ import { useAccount } from "./Account";
 import { api } from "../lib/api";
 import { GENRES, genreLabel, type Genre } from "../lib/genres";
 import { MATCH_RULES, type MatchView } from "../lib/matches";
+import { connectMatch } from "../lib/match-connection";
 import Question from "./Question";
 
-function Clock({ deadline, label }: { deadline: number; label: string }) {
-  const [left, setLeft] = useState(() =>
-    Math.max(0, deadline - performance.now()),
-  );
+function Clock({
+  deadline,
+  label,
+  onClose,
+}: {
+  deadline: number;
+  label: string;
+  onClose: () => void;
+}) {
+  const [left, setLeft] = useState(0);
   useEffect(() => {
-    let frame: number;
+    let frame: number,
+      notified = false;
     const tick = () => {
-      setLeft(Math.max(0, deadline - performance.now()));
+      const value = Math.max(0, deadline - performance.now());
+      setLeft(value);
+      if (value === 0 && !notified) {
+        notified = true;
+        onClose();
+      }
       frame = requestAnimationFrame(tick);
     };
-    frame = requestAnimationFrame(tick);
+    tick();
     return () => cancelAnimationFrame(frame);
-  }, [deadline]);
+  }, [deadline, onClose]);
   return (
-    <div className="match-clock">
+    <div className={`match-clock ${left < 3000 ? "urgent" : ""}`}>
       <strong aria-hidden="true">{(left / 1000).toFixed(1)}</strong>
       <span>{label}</span>
       <span className="sr-only">
@@ -41,24 +54,28 @@ export default function Competition() {
     [message, setMessage] = useState(""),
     [connection, setConnection] = useState("Connecting…"),
     [pending, setPending] = useState<string | string[] | null>(null),
-    [deadline, setDeadline] = useState(0);
+    [deadline, setDeadline] = useState(0),
+    [windowClosed, setWindowClosed] = useState(false),
+    [teamName, setTeamName] = useState("");
   const latest = useRef<MatchView | null>(null),
     lock = useRef(false),
     oneWay = useRef(0),
     pendingRequest = useRef<{
       action: string;
       data: Record<string, unknown>;
-    } | null>(null);
+    } | null>(null),
+    transport = useRef<ReturnType<typeof connectMatch> | null>(null);
   const accept = useCallback((value: MatchView) => {
-    // A slow earlier response must not roll the room back after a newer live event.
+    const previous = latest.current;
     if (
-      latest.current &&
-      latest.current.code === value.code &&
-      value.serverNow < latest.current.serverNow
+      previous?.code === value.code &&
+      (value.revision < previous.revision ||
+        (value.revision === previous.revision &&
+          value.serverNow < previous.serverNow))
     )
       return;
     if (
-      latest.current?.clock.round !== value.clock.round ||
+      previous?.clock.round !== value.clock.round ||
       value.answered ||
       value.clock.phase !== "question"
     )
@@ -66,19 +83,33 @@ export default function Competition() {
     latest.current = value;
     setRoom(value);
     setCode(value.code);
-    setDeadline(
-      performance.now() +
-        Math.max(0, value.clock.deadline - value.serverNow - oneWay.current),
+    const remaining = Math.max(
+      0,
+      value.clock.deadline - value.serverNow - oneWay.current,
     );
+    setDeadline(performance.now() + remaining);
+    setWindowClosed(remaining === 0);
   }, []);
+  const latency = useCallback((ms: number) => {
+    oneWay.current = Math.min(1000, ms);
+  }, []);
+  const closeWindow = useCallback(() => setWindowClosed(true), []);
   useEffect(() => {
-    const value = new URLSearchParams(location.search).get("room");
-    const id = requestAnimationFrame(() => {
-      if (value && /^[a-fA-F0-9]{12}$/.test(value))
-        setCode(value.toUpperCase());
-    });
-    return () => cancelAnimationFrame(id);
-  }, []);
+    if (!account.player?.username) return;
+    const invite = new URLSearchParams(location.search).get("room");
+    if (!invite || !/^[a-fA-F0-9]{12}$/.test(invite)) return;
+    let cancelled = false;
+    void api<MatchView>(`/api/matches/room?code=${invite}`)
+      .then((v) => {
+        if (!cancelled) accept(v);
+      })
+      .catch((e) => {
+        if (!cancelled) setError(e.message);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [account.player?.username, accept]);
   const request = useCallback(
     async (action: string, data: Record<string, unknown> = {}) => {
       if (lock.current) return;
@@ -88,10 +119,13 @@ export default function Competition() {
       pendingRequest.current = { action, data };
       try {
         const sent = performance.now();
-        const result = await api<MatchView | { left: true }>(
-          `/api/matches/${action}`,
-          data,
-        );
+        const result =
+          action !== "create" && transport.current
+            ? await transport.current.request(action, data)
+            : await api<MatchView | { left: true }>(
+                `/api/matches/${action}`,
+                data,
+              );
         oneWay.current = Math.min(1000, (performance.now() - sent) / 2);
         if ("left" in result) {
           latest.current = null;
@@ -112,99 +146,20 @@ export default function Competition() {
     },
     [accept],
   );
+  const roomCode = room?.code,
+    finished = room?.status === "finished" || room?.status === "cancelled";
   useEffect(() => {
-    if (
-      !room?.code ||
-      !account.player ||
-      ["finished", "cancelled"].includes(room.status)
-    )
-      return;
-    const events = new EventSource(`/api/matches/stream?code=${room.code}`);
-    let fallback: ReturnType<typeof setTimeout> | undefined,
-      stopped = false,
-      polling = false,
-      recovering = false;
-    // Recover if an intermediary buffers/drops SSE. Visible status avoids claiming
-    // a live connection while we are using the slower recovery transport.
-    const poll = async () => {
-      if (stopped || polling || !recovering) return;
-      polling = true;
-      try {
-        const sent = performance.now();
-        const value = await api<MatchView>(
-          `/api/matches/room?code=${room.code}`,
-        );
-        oneWay.current = Math.min(1000, (performance.now() - sent) / 2);
-        if (!stopped) accept(value);
-      } catch {
-      } finally {
-        polling = false;
-        if (!stopped && recovering)
-          fallback = setTimeout(() => void poll(), 1000);
-      }
-    };
-    let watchdog: ReturnType<typeof setTimeout>;
-    const arm = () => {
-      clearTimeout(watchdog);
-      watchdog = setTimeout(() => {
-        if (!stopped) {
-          recovering = true;
-          setConnection("Reconnecting · live refresh");
-          void poll();
-        }
-      }, 6000);
-    };
-    events.addEventListener("state", (event) => {
-      try {
-        const v = JSON.parse((event as MessageEvent).data) as MatchView;
-        accept(v);
-        recovering = false;
-        setConnection("Live");
-        if (fallback) clearTimeout(fallback);
-        arm();
-      } catch {}
-    });
-    events.addEventListener("ping", () => {
-      recovering = false;
-      setConnection("Live");
-      if (fallback) clearTimeout(fallback);
-      arm();
-    });
-    events.onopen = () => {
-      setConnection("Live");
-      arm();
-    };
-    events.onerror = () => {
-      if (!stopped) {
-        setConnection("Reconnecting…");
-        arm();
-      }
-    };
-    arm();
+    if (!roomCode || !account.player || finished) return;
+    const current = connectMatch(roomCode, accept, setConnection, latency);
+    transport.current = current;
     return () => {
-      stopped = true;
-      events.close();
-      clearTimeout(watchdog);
-      if (fallback) clearTimeout(fallback);
+      transport.current = null;
+      current.close();
     };
-  }, [room?.code, room?.status, account.player, accept]);
-  useEffect(() => {
-    if (!account.player?.username) return;
-    const invite = new URLSearchParams(location.search).get("room");
-    if (!invite || !/^[a-fA-F0-9]{12}$/.test(invite)) return;
-    let cancelled = false;
-    void api<MatchView>(`/api/matches/room?code=${invite}`)
-      .then((v) => {
-        if (!cancelled) accept(v);
-      })
-      .catch((e) => {
-        if (!cancelled) setError(e.message);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [account.player?.username, accept]);
-  const me = room?.members.find((m) => m.isMe);
+  }, [roomCode, finished, account.player, accept, latency]);
+  const me = room?.members.find((m) => m.isMe),
+    phase = room?.clock.phase,
+    playing = room?.status === "active";
   async function share() {
     if (!room) return;
     try {
@@ -217,7 +172,14 @@ export default function Competition() {
     }
   }
   function answer(value: string | string[]) {
-    if (!room || room.answered || pending !== null || lock.current) return;
+    if (
+      !room ||
+      room.answered ||
+      pending !== null ||
+      lock.current ||
+      performance.now() >= deadline
+    )
+      return;
     setPending(value);
     void request("answer", {
       code: room.code,
@@ -225,222 +187,280 @@ export default function Competition() {
       answer: value,
     });
   }
-  const phase = room?.clock.phase;
+  const reset = () => {
+    latest.current = null;
+    setRoom(null);
+    setCode("");
+    setError("");
+    setMessage("");
+    history.replaceState(null, "", "/compete");
+  };
   return (
-    <main className="competition-page">
+    <main className={`competition-page ${playing ? "match-playing" : ""}`}>
       <header>
         <Link className="brand" href="/">
           MIND<span>FKD</span>
           <i />
         </Link>
-        <Link className="text-link" href="/leaderboard">
-          LEADERBOARD ↗
-        </Link>
+        <div className="match-header-right">
+          <Link href="/leaderboard">Leaderboard</Link>
+          <span className="connection" role="status">
+            {room ? (finished ? "Final" : connection) : "Live matches"}
+          </span>
+        </div>
       </header>
-      <div className="social-content">
-        <div className="eyebrow">SAME QUESTIONS. SAME CLOCK.</div>
-        <h1>Brains collide.</h1>
+      <div className="arena">
         {!account.player?.username ? (
-          <div className="empty-state">
-            <p>Sign in and create your profile to host or join a live match.</p>
+          <div className="match-setup">
+            <h1>Play together.</h1>
+            <p>Sign in to host or join a match.</p>
             <button className="primary submit" onClick={account.openAccount}>
-              SIGN IN TO COMPETE ↗
+              SIGN IN TO COMPETE
             </button>
           </div>
         ) : !room ? (
-          <>
-            <p className="muted">
-              10 shared questions. 10 seconds each. Your own answer locks in
-              with one tap. A correct answer earns fixed points, so connection
-              speed never changes the points awarded.
-            </p>
-            <div className="match-create">
-              <label>
-                Match type
-                <select
-                  value={mode}
-                  onChange={(e) => setMode(e.target.value as "duel" | "teams")}
-                >
-                  <option value="duel">1 vs 1</option>
-                  <option value="teams">
-                    Team vs team · Uneven teams allowed
-                  </option>
-                </select>
-              </label>
-              <label>
-                Category
-                <select
-                  value={genre}
-                  onChange={(e) => setGenre(e.target.value as Genre)}
-                >
-                  {GENRES.map((g) => (
-                    <option key={g.id} value={g.id}>
-                      {g.label}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <button
-                className="primary submit"
-                disabled={busy}
-                onClick={() => void request("create", { mode, genre })}
-              >
-                {busy ? "CREATING…" : "CREATE ROOM ↗"}
-              </button>
+          <div className="match-setup">
+            <div>
+              <div className="eyebrow">LIVE COMPETITIONS</div>
+              <h1>Brains collide.</h1>
+              <p className="muted">10 questions. Same clock. Best team wins.</p>
             </div>
-            <div className="join-room">
-              <h2>Got an invite?</h2>
-              <label>
-                Room code
-                <input
-                  value={code}
-                  onChange={(e) =>
-                    setCode(
-                      e.target.value
-                        .toUpperCase()
-                        .replace(/[^A-F0-9]/g, "")
-                        .slice(0, 12),
-                    )
-                  }
-                  placeholder="12-character code"
-                  autoComplete="off"
-                />
-              </label>
-              <div className="profile-actions">
+            <div className="match-setup-grid">
+              <section>
+                <h2>Host a match</h2>
+                <label>
+                  Match type
+                  <select
+                    value={mode}
+                    onChange={(e) =>
+                      setMode(e.target.value as "duel" | "teams")
+                    }
+                  >
+                    <option value="duel">1 vs 1</option>
+                    <option value="teams">Team vs team</option>
+                  </select>
+                </label>
+                <label>
+                  Category
+                  <select
+                    value={genre}
+                    onChange={(e) => setGenre(e.target.value as Genre)}
+                  >
+                    {GENRES.map((g) => (
+                      <option key={g.id} value={g.id}>
+                        {g.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
                 <button
-                  className="outline-button"
-                  disabled={busy || code.length !== 12}
-                  onClick={() => void request("join", { code, team: 1 })}
+                  className="primary submit"
+                  disabled={busy}
+                  onClick={() => void request("create", { mode, genre })}
                 >
-                  JOIN TEAM 1
+                  {busy ? "CREATING…" : "CREATE ROOM"}
                 </button>
-                <button
-                  className="outline-button"
-                  disabled={busy || code.length !== 12}
-                  onClick={() => void request("join", { code, team: 2 })}
-                >
-                  JOIN TEAM 2
-                </button>
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="match-meta">
-              <span>
-                {genreLabel(room.genre)} ·{" "}
-                {room.mode === "duel" ? "1v1" : "Team vs team"}
-              </span>
-              <span className="eyebrow" role="status">
-                {room.status === "finished" ? "FINAL" : connection}
-              </span>
-            </div>
-            {room.status === "waiting" ? (
-              <>
-                <p>
-                  Room <strong className="room-code">{room.code}</strong>
-                </p>
-                <button className="outline-button" onClick={() => void share()}>
-                  COPY INVITE LINK
-                </button>
-                <p className="muted">
-                  Join either side, then mark yourself ready.{" "}
-                  {room.mode === "teams"
-                    ? `Uneven teams are allowed. Team points are added together; larger teams have an advantage. Up to ${MATCH_RULES.maxTeamSize} players per side.`
-                    : "One player per side."}
-                </p>
-                <div className="profile-actions">
+              </section>
+              <section>
+                <h2>Join your friends</h2>
+                <label>
+                  Room code
+                  <input
+                    value={code}
+                    onChange={(e) =>
+                      setCode(
+                        e.target.value
+                          .toUpperCase()
+                          .replace(/[^A-F0-9]/g, "")
+                          .slice(0, 12),
+                      )
+                    }
+                    placeholder="12-character code"
+                    autoComplete="off"
+                  />
+                </label>
+                <div className="join-actions">
                   <button
                     className="outline-button"
-                    disabled={busy}
+                    disabled={busy || code.length !== 12}
                     onClick={() => void request("join", { code, team: 1 })}
                   >
-                    JOIN TEAM 1
+                    JOIN SIDE 1
                   </button>
                   <button
                     className="outline-button"
-                    disabled={busy}
+                    disabled={busy || code.length !== 12}
                     onClick={() => void request("join", { code, team: 2 })}
                   >
-                    JOIN TEAM 2
+                    JOIN SIDE 2
                   </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="arena-meta">
+              <span>
+                {genreLabel(room.genre)} ·{" "}
+                {room.mode === "duel" ? "1v1" : "Team match"}
+              </span>
+              {playing ? (
+                <span>
+                  QUESTION {Math.min(room.clock.round + 1, MATCH_RULES.rounds)}{" "}
+                  / {MATCH_RULES.rounds}
+                </span>
+              ) : room.status === "waiting" ? (
+                <button className="text-button" onClick={() => void share()}>
+                  INVITE · {room.code}
+                </button>
+              ) : (
+                <span>Match complete</span>
+              )}
+            </div>
+            <div className="arena-scores">
+              {room.teams.map((team) => (
+                <div
+                  key={team.team}
+                  className={`arena-score ${me?.team === team.team ? "your-side" : ""}`}
+                >
+                  <span>
+                    {room.mode === "duel"
+                      ? (room.members.find((m) => m.team === team.team)
+                          ?.displayName ?? "Waiting for opponent")
+                      : team.name}
+                  </span>
+                  <strong>
+                    {team.total.toLocaleString()}
+                    <small>PTS</small>
+                  </strong>
+                  {room.mode === "teams" && (
+                    <small>{team.players} players</small>
+                  )}
+                </div>
+              ))}
+            </div>
+            {room.status === "waiting" ? (
+              <div className="lobby-controls">
+                <div className="lobby-actions">
+                  {room.teams.map((t) => (
+                    <button
+                      key={t.team}
+                      className="outline-button"
+                      disabled={
+                        busy ||
+                        me?.team === t.team ||
+                        (room.mode === "duel" && t.players > 0)
+                      }
+                      onClick={() =>
+                        void request("join", { code, team: t.team })
+                      }
+                    >
+                      {me?.team === t.team ? "JOINED" : "JOIN"}{" "}
+                      {room.mode === "teams" ? t.name : `SIDE ${t.team}`}
+                    </button>
+                  ))}
                   {me && (
                     <button
-                      className="primary submit"
+                      className="primary"
                       disabled={busy}
                       onClick={() =>
                         void request("ready", { code, ready: !me.ready })
                       }
                     >
-                      {me.ready ? "NOT READY" : "I’M READY"}
+                      {me.ready ? "READY ✓" : "I’M READY"}
+                    </button>
+                  )}
+                  {room.isHost && (
+                    <button
+                      className="primary"
+                      disabled={
+                        busy ||
+                        room.members.some((m) => !m.ready) ||
+                        room.teams.some((t) => !t.players)
+                      }
+                      onClick={() => void request("start", { code })}
+                    >
+                      START MATCH
                     </button>
                   )}
                 </div>
-                {room.isHost && (
-                  <button
-                    className="primary submit"
-                    disabled={
-                      busy ||
-                      room.members.some((m) => !m.ready) ||
-                      room.teams.some((t) => !t.players)
-                    }
-                    onClick={() => void request("start", { code })}
+                {me && room.mode === "teams" && (
+                  <form
+                    className="team-name-form"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      void request("name", { code, name: teamName });
+                    }}
                   >
-                    START MATCH ↗
-                  </button>
+                    <label htmlFor="team-name">Your team name</label>
+                    <input
+                      id="team-name"
+                      key={me.team}
+                      placeholder={
+                        room.teams.find((t) => t.team === me.team)?.name
+                      }
+                      value={teamName}
+                      onChange={(e) => setTeamName(e.target.value)}
+                      maxLength={24}
+                    />
+                    <button
+                      className="outline-button"
+                      disabled={busy || !teamName.trim()}
+                    >
+                      SAVE NAME
+                    </button>
+                  </form>
                 )}
-              </>
+                <p className="muted lobby-note">
+                  Everyone must be ready.{" "}
+                  {room.mode === "teams"
+                    ? "Uneven teams allowed; points are added together. Larger teams have an advantage."
+                    : "One player per side."}
+                </p>
+              </div>
             ) : room.status === "cancelled" ? (
               <p className="network-error">
                 This room was cancelled or expired.
               </p>
             ) : room.status === "finished" ? (
               <div className="match-result">
-                <div className="eyebrow">MATCH COMPLETE</div>
-                <h2>
+                <h1>
                   {room.winnerTeam === 0
-                    ? "A battle of equals."
-                    : `TEAM ${room.winnerTeam} WINS`}
-                </h2>
-                <p>
-                  {room.mode === "duel"
-                    ? "Your 1v1 record is saved on your profile."
-                    : "Your team result is saved on your profile."}
-                </p>
+                    ? "IT’S A DRAW"
+                    : `${room.mode === "duel" ? (room.members.find((m) => m.team === room.winnerTeam)?.displayName ?? "Winner") : room.teams.find((t) => t.team === room.winnerTeam)?.name} WINS`}
+                </h1>
                 <Link
-                  className="text-link"
                   href={`/profile?u=${encodeURIComponent(account.player.username)}`}
                 >
-                  YOUR PROFILE ↗
+                  View your updated record
                 </Link>
               </div>
             ) : (
-              <>
-                <div className="level-row">
-                  <span>
-                    QUESTION{" "}
-                    {Math.min(room.clock.round + 1, MATCH_RULES.rounds)} /{" "}
-                    {MATCH_RULES.rounds}
-                  </span>
+              <div className="match-question-area">
+                <div className="match-round-bar">
                   <span>
                     {phase === "countdown"
                       ? "GET READY"
                       : phase === "reveal"
                         ? "ANSWER REVEAL"
-                        : "LOCK YOUR ANSWER"}
+                        : room.answered
+                          ? "ANSWER LOCKED"
+                          : "CHOOSE YOUR ANSWER"}
                   </span>
+                  <Clock
+                    deadline={deadline}
+                    onClose={closeWindow}
+                    label={
+                      phase === "countdown"
+                        ? "STARTS IN"
+                        : phase === "reveal"
+                          ? "NEXT IN"
+                          : "SECONDS"
+                    }
+                  />
                 </div>
-                <Clock
-                  deadline={deadline}
-                  label={
-                    phase === "countdown"
-                      ? "STARTS IN"
-                      : phase === "reveal"
-                        ? "NEXT ROUND IN"
-                        : "SECONDS LEFT"
-                  }
-                />
-                {room.question && (
+                {room.question ? (
                   <Question
                     key={`${room.code}:${room.clock.round}`}
                     question={room.question}
@@ -454,6 +474,7 @@ export default function Competition() {
                         : null
                     }
                     disabled={
+                      windowClosed ||
                       busy ||
                       room.answered ||
                       pending !== null ||
@@ -461,116 +482,104 @@ export default function Competition() {
                     }
                     pendingLabel={
                       room.answered
-                        ? "Answer locked. Waiting for reveal…"
-                        : "Sending answer…"
+                        ? "Locked. Results at the reveal."
+                        : "Sending…"
                     }
                     pendingAnswer={
                       pending ?? (room.answered ? room.selected : null)
                     }
                     onAnswer={answer}
                   />
-                )}
-                {phase === "question" && room.answered && (
-                  <p className="muted" role="status">
-                    Answer locked. Everyone’s result is revealed together.
-                  </p>
+                ) : (
+                  <div className="match-countdown">
+                    <h1>Ready?</h1>
+                    <p>The same question arrives for everyone.</p>
+                  </div>
                 )}
                 {phase === "reveal" &&
                   room.correct === null &&
                   room.question && (
-                    <p className="muted">
-                      No answer submitted. Correct:{" "}
+                    <p className="unanswered-result">
+                      No answer · Correct:{" "}
                       {Array.isArray(room.question.answer)
                         ? room.question.answer.join(" → ")
                         : room.question.answer}
                     </p>
                   )}
-              </>
+              </div>
             )}
-            <div className="team-boards">
+            <div
+              className={`match-rosters ${playing && room.mode === "duel" ? "duel-rosters" : ""}`}
+            >
               {room.teams.map((team) => (
-                <section key={team.team} className="team-board">
-                  <div className="team-heading">
-                    <h2>TEAM {team.team}</h2>
-                    <strong>
-                      {team.total.toLocaleString()} <small>PTS</small>
-                    </strong>
+                <details
+                  key={team.team}
+                  open={room.mode === "duel" || !playing}
+                >
+                  <summary>
+                    {team.name} · {team.players} players
+                  </summary>
+                  <div className="roster-list">
+                    {room.members
+                      .filter((m) => m.team === team.team)
+                      .map((m) => (
+                        <div key={m.username} className="roster-player">
+                          <Link
+                            href={`/profile?u=${encodeURIComponent(m.username)}`}
+                          >
+                            {m.displayName}
+                            {m.isMe ? " (you)" : ""}
+                          </Link>
+                          <span>
+                            {room.status === "waiting"
+                              ? m.ready
+                                ? "Ready"
+                                : "Not ready"
+                              : `${m.correct} right · ${m.wrong} wrong · ${m.unanswered} missed`}
+                          </span>
+                          {playing && phase === "question" && (
+                            <small>{m.answered ? "Locked" : "Thinking…"}</small>
+                          )}
+                        </div>
+                      ))}
                   </div>
-                  {room.members
-                    .filter((m) => m.team === team.team)
-                    .map((m) => (
-                      <div key={m.username} className="team-player">
-                        <Link
-                          href={`/profile?u=${encodeURIComponent(m.username)}`}
-                        >
-                          {m.displayName}
-                          {m.isMe ? " (you)" : ""}
-                        </Link>
-                        <strong>{m.score.toLocaleString()}</strong>
-                        <small>
-                          {room.status === "waiting"
-                            ? m.ready
-                              ? "READY"
-                              : "NOT READY"
-                            : `${m.correct} right · ${m.wrong} wrong · ${m.unanswered} unanswered`}
-                        </small>
-                        {room.status === "active" && phase === "question" && (
-                          <small>
-                            {m.answered ? "ANSWER LOCKED" : "THINKING…"}
-                          </small>
-                        )}
-                      </div>
-                    ))}
-                  {!team.players && (
-                    <p className="muted">Waiting for players…</p>
-                  )}
-                </section>
+                </details>
               ))}
             </div>
-            {room.status === "waiting" ? (
-              <button
-                className="text-button"
-                disabled={busy}
-                onClick={() => void request("leave", { code })}
-              >
-                {room.isHost ? "CANCEL ROOM" : "LEAVE ROOM"}
-              </button>
-            ) : ["finished", "cancelled"].includes(room.status) ? (
-              <button
-                className="primary submit"
-                onClick={() => {
-                  latest.current = null;
-                  setRoom(null);
-                  setCode("");
-                  setError("");
-                  setMessage("");
-                  history.replaceState(null, "", "/compete");
-                }}
-              >
-                NEW MATCH ↗
-              </button>
-            ) : (
-              <p className="muted">
-                Teams are locked. Rejoin with this room code if disconnected;
-                unanswered rounds score zero. Correct/wrong counts update after
-                each reveal.
-              </p>
+            {!playing && (
+              <div className="arena-bottom">
+                {room.status === "waiting" ? (
+                  <button
+                    className="text-button"
+                    disabled={busy}
+                    onClick={() => void request("leave", { code })}
+                  >
+                    {room.isHost ? "CANCEL ROOM" : "LEAVE ROOM"}
+                  </button>
+                ) : (
+                  <button className="primary" onClick={reset}>
+                    NEW MATCH
+                  </button>
+                )}
+              </div>
             )}
           </>
         )}
         {error && (
           <div className="network-error" role="alert">
             {error}
-            <button
-              className="outline-button"
-              disabled={busy}
-              onClick={() => {
-                const p = pendingRequest.current;
-                if (p) void request(p.action, p.data);
-              }}
-            >
-              RETRY
-            </button>
+            {pendingRequest.current && (
+              <button
+                className="outline-button"
+                disabled={busy}
+                onClick={() => {
+                  const p = pendingRequest.current;
+                  if (p) void request(p.action, p.data);
+                }}
+              >
+                RETRY
+              </button>
+            )}
           </div>
         )}
         {message && (

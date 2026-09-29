@@ -18,10 +18,11 @@ export default function Page() {
           If you sign in with Google, MINDFKD verifies your Google identity and
           stores a Google account identifier, your chosen public username,
           display name, optional bio, verified runs and follow relationships. We
-          also store which questions you see and your answer accuracy and
-          response times to reduce repeats and improve difficulty. This question
-          history is private. We do not store your Google password or display
-          your email address.
+          also store private question reservations across solo and live play,
+          along with answer accuracy and response times, to prevent repeats and
+          improve difficulty. Reserved questions may be skipped after an
+          interrupted request or match. This question history is private. We do
+          not store your Google password or display your email address.
         </p>
         <p>
           Live rooms store team membership and submitted answers to verify

@@ -18,16 +18,17 @@ export default function Page() {
         </p>
         <p>
           Signed-in players have private question history across devices. Guest
-          history stays in this browser. We prefer questions you have not seen,
-          then the oldest seen questions when that tier is exhausted. No
-          question or linked duplicate fact is repeated within a run. Clearing
-          the available final tier completes your run.
+          history stays in this browser. Questions and linked duplicate facts do
+          not repeat while that history is retained. Live matches use questions
+          that are new to every participant. When no unseen questions remain at
+          the required difficulty, we stop instead of recycling them. Try
+          another category while we add more.
         </p>
         <p>
           Difficulty starts with editorial ratings, not measured player success
           rates. We record ranked answer accuracy and response times to inform
-          future reviews. Changes to difficulty are released with a new
-          leaderboard season; old scores and result links remain available.
+          future reviews. Leaderboards show all-time best scores by category.
+          Past scores and result links remain available when the bank changes.
         </p>
         <h2>Sources and corrections</h2>
         <p>

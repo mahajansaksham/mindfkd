@@ -3,7 +3,6 @@ import { trackChallengeOpened } from "../lib/analytics";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { GENRES, genreLabel, type LeaderboardGenre } from "../lib/genres";
-import { CURRENT_SEASON, SEASONS } from "../lib/catalog";
 import { api, Player, profileUrl } from "../lib/api";
 import { useAccount } from "./Account";
 type Row = {
@@ -73,7 +72,6 @@ function Shell({ children }: { children: React.ReactNode }) {
 }
 export function Leaderboard() {
   const [genre, setGenre] = useState<LeaderboardGenre>("overall");
-  const [season, setSeason] = useState(CURRENT_SEASON);
   const [data, setData] = useState<{ players: Row[]; me: Row | null } | null>(
       null,
     ),
@@ -81,9 +79,7 @@ export function Leaderboard() {
   const { player } = useAccount();
   useEffect(() => {
     let active = true;
-    api<{ players: Row[]; me: Row | null }>(
-      `/api/leaderboard?season=${encodeURIComponent(season)}&genre=${genre}`,
-    )
+    api<{ players: Row[]; me: Row | null }>(`/api/leaderboard?genre=${genre}`)
       .then((d) => {
         if (active) {
           setData(d);
@@ -96,15 +92,15 @@ export function Leaderboard() {
     return () => {
       active = false;
     };
-  }, [player, season, genre]);
+  }, [player, genre]);
   return (
     <Shell>
       <div className="eyebrow">THE GLOBAL LEADERBOARD</div>
       <h1>Brains to beat.</h1>
       <p className="muted">
         {genre === "overall"
-          ? "Each player’s highest single score across all categories in this season."
-          : `Each player’s best ${genreLabel(genre)} run in this season.`}
+          ? "Each player’s highest single score across all categories."
+          : `Each player’s best ${genreLabel(genre)} run.`}
       </p>
       <label className="season-picker">
         Category
@@ -120,23 +116,6 @@ export function Leaderboard() {
           {GENRES.map((g) => (
             <option key={g.id} value={g.id}>
               {g.label}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="season-picker">
-        Leaderboard
-        <select
-          value={season}
-          onChange={(e) => {
-            setData(null);
-            setError("");
-            setSeason(e.target.value);
-          }}
-        >
-          {SEASONS.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.label}
             </option>
           ))}
         </select>

@@ -96,12 +96,8 @@ export function rememberQuestion(
     ...history,
     [question.topicKey ?? question.id]: Date.now(),
   };
-  // Bound local storage, retaining the newest exposures if the catalog eventually grows.
-  const bounded = Object.fromEntries(
-    Object.entries(next)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 20000),
-  );
+  // Never evict seen facts: clearing browser storage is the guest-history boundary.
+  const bounded = next;
   try {
     localStorage.setItem(historyKey, JSON.stringify(bounded));
   } catch {

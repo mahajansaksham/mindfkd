@@ -1,5 +1,19 @@
 # MINDFKD project log
 
+## 2026-09-29 — Category boards, fast matches and exact SQL history
+
+- Public leaderboards combine all historical seasons by category and Overall. Overall remains each player's single highest score with its category. No old runs, scores or season provenance were deleted.
+- Team members can name their own side before start (1–24 characters); names are validated and rendered as text. Readiness, unequal teams, summed scores and per-player right/wrong counts are unchanged.
+- WebSocket-first match actions with immediate local locking, bounded action queue, revision-based state synchronization and SSE/HTTP recovery. Active synchronization checks every 250ms; lobby checks every second. This is still per-connection D1 synchronization, not a room-wide Durable Object broadcaster or zero-latency guarantee.
+- Compact arena verified locally at 1280×720 desktop and 390×844 mobile with no page overflow in the tested match state. Long questions, zoom and large expanded rosters can still scroll accessibly.
+- Bank 2026-09-29.1: **1,170 playable questions**, 24 additional editorial approvals and one rejected ribosome/DNA item. Six new answers were checked against primary references; other new approvals used editorial knowledge. No claim of an independent audit of every fact.
+- Migration 0004 adds team names/revisions and an all-time category score index. Migration 0005 adds indexed `question_bank` and exact `(player_id,topic_key)` history, seeds 1,170 entries and backfills historical solo exposures and active/completed match decks.
+- Authenticated question choice now happens in SQL. Selection and reservations are atomic, so simultaneous tabs cannot repeat a linked topic. Match decks are reserved atomically for every member; insufficient unseen coverage reserves nothing. Guests use retained browser history. Exhausted tiers stop rather than recycle; history is shared across ranked and match play.
+- Reservations precede run/match state commits. A cancelled/racing request can conservatively consume an unseen question/deck without displaying it; reservations are never released, to preserve the no-repeat guarantee. Unknown semantic duplicates still need editorial linking. Deleting an account or clearing guest storage breaks the identity/history boundary.
+- Added local SQLite candidate importer (100,000 rows/file, validation, source/license metadata and unique normalized prompt hashes). No provider or licensed 100,000-question source is configured. **The requested 100,000 playable questions remain outstanding.** Synthetic load fixtures stay outside the repository/live bank.
+- Verification: typecheck and 22 tests passed, including actual workerd WebSocket upgrades, concurrent sync/action acknowledgement, revoked sessions, SQL history backfill, concurrent reservations, shared-deck exhaustion and 100,000 synthetic SQL rows. The local SQL check made 20 selections in ~2ms; this is not a remote D1 performance promise. Separate candidate import handled 100,000 synthetic rows in ~5 seconds. Deployment receipts belong in the delivered release report.
+
+
 Update this file with every material implementation and publication. Record decisions, migrations, verification, limitations and follow-up work. Never include credentials or private player data. Deployment receipts live in the delivery report because the final commit is known only after packaging.
 
 ## 2026-09-28 — Categories, security and live competition

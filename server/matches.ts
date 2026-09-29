@@ -1,4 +1,5 @@
 import type { Env, Player } from "./types";
+import { reserveMatchDeck } from "./question-bank";
 import { questions } from "../data/questions";
 import { isGenre, type Genre } from "../lib/genres";
 import {
@@ -29,7 +30,10 @@ type StoredAnswer = {
   correct: number;
   answer: string;
 };
-type Room = {
+export type Room = {
+  revision: number;
+  team_one_name: string;
+  team_two_name: string;
   code: string;
   host_id: string;
   mode: "duel" | "teams";
@@ -80,7 +84,7 @@ export function buildMatchQuestions(genre: Genre, seed: number): Question[] {
   }
   return deck;
 }
-async function readRoom(env: Env, code: string): Promise<Room> {
+export async function readRoom(env: Env, code: string): Promise<Room> {
   const r = await env.DB.prepare(
     `SELECT r.*,
  (SELECT json_group_array(json_object('id',p.id,'username',p.username,'displayName',p.display_name,'team',m.team,'ready',m.ready)) FROM match_members m JOIN players p ON p.id=m.player_id WHERE m.code=r.code) AS members,
@@ -115,10 +119,10 @@ export function matchWinner(members: StoredMember[], answers: StoredAnswer[]) {
   const delta = a.total - b.total;
   return delta === 0 ? 0 : delta > 0 ? 1 : 2;
 }
-async function settle(env: Env, r: Room, now: number) {
+export async function settle(env: Env, r: Room, now: number) {
   if (r.status === "waiting" && now - r.created_at > MATCH_RULES.lobbyMs) {
     await env.DB.prepare(
-      "UPDATE matches SET status='cancelled' WHERE code=? AND status='waiting'",
+      "UPDATE matches SET status='cancelled',revision=revision+1 WHERE code=? AND status='waiting'",
     )
       .bind(r.code)
       .run();
@@ -130,7 +134,7 @@ async function settle(env: Env, r: Room, now: number) {
   const total = (team: number) =>
     `COALESCE((SELECT SUM(a.score) FROM match_answers a JOIN match_members m ON m.code=a.code AND m.player_id=a.player_id WHERE a.code=matches.code AND m.team=${team}),0)`;
   await env.DB.prepare(
-    `UPDATE matches SET status='finished',winner_team=CASE WHEN ${total(1)}>${total(2)} THEN 1 WHEN ${total(2)}>${total(1)} THEN 2 ELSE 0 END,finished_at=? WHERE code=? AND status='active' AND end_at<=?`,
+    `UPDATE matches SET status='finished',revision=revision+1,winner_team=CASE WHEN ${total(1)}>${total(2)} THEN 1 WHEN ${total(2)}>${total(1)} THEN 2 ELSE 0 END,finished_at=? WHERE code=? AND status='active' AND end_at<=?`,
   )
     .bind(now, r.code, now)
     .run();
@@ -155,6 +159,7 @@ export function matchView(r: Room, playerId: string, now: number): MatchView {
   const q = clock.phase === "question" || reveal ? deck[clock.round] : null;
   return {
     code: r.code,
+    revision: r.revision,
     mode: r.mode,
     genre: r.genre,
     status: r.status,
@@ -199,7 +204,10 @@ export function matchView(r: Room, playerId: string, now: number): MatchView {
         (a) => a.player === m.id && a.round === clock.round,
       ),
     })),
-    teams: teamsOf(members, visible),
+    teams: teamsOf(members, visible).map((t) => ({
+      ...t,
+      name: t.team === 1 ? r.team_one_name : r.team_two_name,
+    })),
     rules: MATCH_RULES,
   };
 }
@@ -244,10 +252,7 @@ export async function matchAPI(
         .replaceAll("-", "")
         .slice(0, 12)
         .toUpperCase(),
-      deck = buildMatchQuestions(
-        genre,
-        crypto.getRandomValues(new Uint32Array(1))[0],
-      );
+      deck: Question[] = [];
     const [created] = await env.DB.batch([
       env.DB.prepare(
         "INSERT INTO matches(code,host_id,mode,genre,questions,created_at) SELECT ?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM matches WHERE host_id=? AND created_at>?)<20",
@@ -376,7 +381,26 @@ export async function matchAPI(
       fail(409, "That team is full or the match has already started");
   } else {
     if (!me) fail(403, "Join a team first");
-    if (action === "ready") {
+    if (action === "name") {
+      const name =
+        typeof input.name === "string"
+          ? input.name.trim().replace(/\s+/g, " ")
+          : "";
+      if (
+        name.length < 1 ||
+        name.length > 24 ||
+        /[\u0000-\u001f\u007f<>]/.test(name)
+      )
+        fail(400, "Use 1–24 characters for your team name");
+      const column = me.team === 1 ? "team_one_name" : "team_two_name";
+      const changed = await env.DB.prepare(
+        `UPDATE matches SET ${column}=?,revision=revision+1 WHERE code=? AND status='waiting' AND EXISTS(SELECT 1 FROM match_members WHERE code=? AND player_id=? AND team=?)`,
+      )
+        .bind(name, code, code, player.id, me.team)
+        .run();
+      if (!changed.meta.changes)
+        fail(409, "Team names are locked once the match starts");
+    } else if (action === "ready") {
       if (typeof input.ready !== "boolean") fail(400, "Invalid readiness");
       const result = await env.DB.prepare(
         "UPDATE match_members SET ready=? WHERE code=? AND player_id=? AND EXISTS(SELECT 1 FROM matches WHERE code=? AND status='waiting')",
@@ -386,17 +410,50 @@ export async function matchAPI(
       if (!result.meta.changes) fail(409, "Match already started");
     } else if (action === "start") {
       if (room.host_id !== player.id) fail(403, "Only the host can start");
-      const start = now + MATCH_RULES.countdownMs;
+      if (room.status === "active")
+        return json(matchView(room, player.id, Date.now()));
+      if (
+        !members.some((m) => m.team === 1) ||
+        !members.some((m) => m.team === 2) ||
+        members.some((m) => !m.ready)
+      )
+        fail(409, "Both teams need players and everyone must be ready");
+      const shared = await reserveMatchDeck(
+        env,
+        members.map((m) => m.id),
+        room.genre as Genre,
+        code,
+      );
+      if (!shared)
+        fail(
+          409,
+          "Not enough questions that are new to everyone in this category. Try another category while we add more.",
+        );
+      const start = Date.now() + MATCH_RULES.countdownMs;
       const result = await env.DB.prepare(
-        `UPDATE matches SET status='active',start_at=?,end_at=? WHERE code=? AND host_id=? AND status='waiting'
+        `UPDATE matches SET status='active',revision=revision+1,start_at=?,end_at=?,questions=? WHERE code=? AND host_id=? AND status='waiting' AND revision=?
     AND (SELECT COUNT(*) FROM match_members WHERE code=? AND team=1)>0
     AND (SELECT COUNT(*) FROM match_members WHERE code=? AND team=2)>0
     AND NOT EXISTS(SELECT 1 FROM match_members WHERE code=? AND ready=0)`,
       )
-        .bind(start, start + matchDuration, code, player.id, code, code, code)
+        .bind(
+          start,
+          start + matchDuration,
+          JSON.stringify(shared),
+          code,
+          player.id,
+          room.revision,
+          code,
+          code,
+          code,
+        )
         .run();
-      if (!result.meta.changes)
-        fail(409, "Both teams need players and everyone must be ready");
+      if (!result.meta.changes) {
+        const latest = await readRoom(env, code);
+        if (latest.status === "active")
+          return json(matchView(latest, player.id, Date.now()));
+        fail(409, "The lobby changed. Everyone must be ready before starting.");
+      }
     } else if (action === "leave") {
       if (room.status !== "waiting")
         fail(
@@ -405,7 +462,7 @@ export async function matchAPI(
         );
       if (room.host_id === player.id)
         await env.DB.prepare(
-          "UPDATE matches SET status='cancelled' WHERE code=? AND status='waiting'",
+          "UPDATE matches SET status='cancelled',revision=revision+1 WHERE code=? AND status='waiting'",
         )
           .bind(code)
           .run();

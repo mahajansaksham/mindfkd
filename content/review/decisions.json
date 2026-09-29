@@ -2663,7 +2663,7 @@
     "reviewedAt": "2026-09-28",
     "difficulty": 3,
     "note": "Editorial wording and difficulty review; source community verification, not independent fact audit.",
-    "prompt": "Which pair of Pok\u00e9mon games was first released in Japan in 1996?"
+    "prompt": "Which pair of Pokémon games was first released in Japan in 1996?"
   },
   "ot-b0cf043d1f79618e": {
     "status": "approved",
@@ -4843,5 +4843,180 @@
     "reviewedAt": "2026-09-28",
     "difficulty": 4,
     "note": "Editorial wording and difficulty review; source community verification, not independent fact audit."
+  },
+  "ot-b10f1231eacc4d3f": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-36db6a2266140ec5": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-7544668bb78a38a6": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-dda3dd95c3be82e1": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-6659fc9306ac8805": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-823952768eee0a83": {
+    "status": "approved",
+    "difficulty": 6,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-844dec9b2a2cea5c": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A",
+    "prompt": "Which city hosted the 1980 Summer Olympics?"
+  },
+  "ot-9790462fc30ca2c7": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-eddc15a26b89d9a8": {
+    "status": "approved",
+    "difficulty": 5,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://home.cern/science/physics/standard-model/"
+  },
+  "ot-4bcf7fb94851b68d": {
+    "status": "approved",
+    "difficulty": 5,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://www.uefa.com/uefachampionsleague/news/025e-0f8bbd7e5380-eb00803acfbb-1000--classics-bayern-1-2-united-1999/"
+  },
+  "ot-8296f5f23aa65100": {
+    "status": "approved",
+    "difficulty": 5,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://midi.org/midi-1-0-core-specifications"
+  },
+  "ot-f218c9938e39ab0b": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-15ee995d195049a8": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-ba7f599075667617": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://www.nba.com/news/legendary-moments-history-golden-state-warriors-win-2015-nba-title"
+  },
+  "ot-48b9e459d73d6b18": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-8dc45003e74c4040": {
+    "status": "approved",
+    "difficulty": 6,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "https://www.un.org/en/node/131100",
+    "prompt": "Which United Nations principal organ suspended its regular operations in November 1994?"
+  },
+  "ot-dd8d6a333fd59d46": {
+    "status": "approved",
+    "difficulty": 4,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-c6415612fd91974a": {
+    "status": "approved",
+    "difficulty": 5,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-cccc37678c7530b1": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-9cbfd7fea81438be": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-70cb2790307c09ee": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-f926f5736083208a": {
+    "status": "approved",
+    "difficulty": 3,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-80f4720daccd6e45": {
+    "status": "approved",
+    "difficulty": 2,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit",
+    "prompt": "The White Cliffs of Dover are in which country?"
+  },
+  "ot-b881533dc4ca3ca7": {
+    "status": "approved",
+    "difficulty": 5,
+    "reviewedAt": "2026-09-29",
+    "review": "Checked answer, distractors, wording and active-bank overlap. Editorial tier; not calibrated from player data.",
+    "verification": "Editorial knowledge review; no independent external fact audit"
+  },
+  "ot-657ff72f46892e09": {
+    "status": "retired",
+    "reason": "Incorrect answer: ribosomes synthesize proteins, not DNA. Excluded rather than silently publishing."
   }
 }

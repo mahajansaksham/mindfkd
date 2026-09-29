@@ -251,7 +251,7 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
   assert.equal(board.value.players.length, 1);
   assert.equal(
     (await request("/api/leaderboard?season=launch")).value.players.length,
-    0,
+    1,
   );
   assert.equal(board.value.players[0].username, "first");
   assert.equal(board.value.players[0].score, first.value.run.score);
@@ -458,6 +458,11 @@ test("real SQLite persistence: auth, profiles, follows, ranked scores and idempo
     sqlite.prepare("SELECT COUNT(*) AS n FROM question_events").get()!.n,
     eventsBefore,
   );
+  sqlite.prepare("INSERT INTO runs(id,player_id,state,status,score,genre,season,created_at,finished_at) VALUES('old-winner','one','{}','finished',9999,'sports','launch',0,1)").run();
+  const historical = await request("/api/leaderboard?genre=overall");
+  assert.equal(historical.value.players[0].score, 9999);
+  assert.equal(historical.value.players[0].genre, "sports");
+  assert.equal((await request("/api/leaderboard?genre=sports")).value.players[0].score,9999);
   await request("/api/auth/logout", {});
   assert.equal((await request("/api/me")).value.player, null);
   sqlite.close();
