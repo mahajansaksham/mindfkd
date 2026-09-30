@@ -1,3 +1,4 @@
+import { RELEASE } from "../lib/rules";
 import Link from "next/link";
 import AnalyticsRoot from "../components/Analytics";
 import type { Metadata } from "next";
@@ -29,8 +30,9 @@ export default function RootLayout({
             Contact us <span>↗</span>
           </a>
           <Link href="/questions">Question sources &amp; fairness</Link>
+          <span>v{RELEASE}</span>
+          <AnalyticsRoot vercelHosted={process.env.VERCEL === "1"} />
         </footer>
-        <AnalyticsRoot vercelHosted={process.env.VERCEL === "1"} />
       </body>
     </html>
   );

@@ -43,3 +43,7 @@ GROUP BY bank_version, question_id, difficulty HAVING COUNT(*)>=30;
 ```
 
 Investigate outliers manually; do not automatically change tiers from small samples. Mean is shown only for a quick SQL report; use exported distributions/median for decisions. Public leaderboards combine all historical seasons by category and Overall. Overall selects each player's single highest score and shows its category. Historical bank/season metadata remains private provenance, not a user-facing filter. Do not rewrite past scores. Bump BANK_VERSION on catalog changes so an active old-version solo run ends safely before drawing from a new bank.
+
+## v1.1.0 Daily/friend exception
+
+The approved pool remains **1,170**, unchanged by this release. Daily/friend modes store immutable 50-question Mixed sequences with identical option order. They intentionally permit prior exposure so opponents see the same material. New exposures are still retained for subsequent RUN/live exclusion. UTC Daily decks rotate automatically by date using the approved SQL pool, with tomorrow prepared on today's request; this does not fetch or approve new external facts nightly. Familiarity goals by tier are editorial targets, not empirical percentages. Metadata types now include subcategory, country relevance, references and calibration counters; no automatic retiering was introduced.

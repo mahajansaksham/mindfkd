@@ -12,9 +12,9 @@ export type {
   Envelope,
 } from "./analytics/types";
 export const GA_ID = /^G-[A-Z0-9]+$/.test(
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-1PWY0WZQ6H",
 )
-  ? process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!
+  ? (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-1PWY0WZQ6H")
   : "";
 export const ANALYTICS_DEBUG =
   process.env.NODE_ENV !== "production" &&

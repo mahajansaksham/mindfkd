@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { comboHeat } from "../lib/rules";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
@@ -204,7 +205,7 @@ export default function Game() {
       />
     );
   return (
-    <main className={active ? "is-playing" : ""}>
+    <main className={`game-shell ${active ? "is-playing" : ""}`}>
       <header>
         <button
           className="brand"
@@ -266,101 +267,118 @@ export default function Game() {
       </header>
       {run.phase === "idle" ? (
         <div className="landing">
-          <div className="edition eyebrow">
-            <span /> THE TRIVIA SURVIVAL GAME
-          </div>
-          <h1>
-            How far can
-            <br />
-            your brain <em>go?</em>
-          </h1>
-          <p className="intro">
-            {config.startMs / 1000} seconds. Questions get harder.
-            <br />
-            Don’t run out of time.
-          </p>
-          <div className="start-clock">
-            {config.startMs / 1000}
-            <span>.00</span>
-            <span className="clock-label eyebrow">
-              SECONDS. MAKE THEM COUNT.
-            </span>
-          </div>
-          <fieldset className="genre-picker">
-            <legend className="eyebrow">CHOOSE YOUR CHALLENGE</legend>
-            <div>
-              {GENRES.map((g) => (
-                <label key={g.id} className={genre === g.id ? "selected" : ""}>
-                  <input
-                    type="radio"
-                    name="genre"
-                    value={g.id}
-                    checked={genre === g.id}
-                    disabled={loadingBank}
-                    onChange={() => setGenre(g.id)}
-                  />
-                  <span>{g.label}</span>
-                </label>
-              ))}
+          <div className="landing-hero">
+            <div className="edition eyebrow">
+              <span /> THE TRIVIA SURVIVAL GAME
             </div>
-            <p>{GENRES.find((g) => g.id === genre)?.description}</p>
-          </fieldset>
-          <button
-            className="primary start"
-            disabled={loadingBank}
-            onClick={() => void start()}
-            onPointerEnter={() => void loadQuestionBank(genre).catch(() => {})}
-            onFocus={() => void loadQuestionBank(genre).catch(() => {})}
-          >
-            {loadingBank ? "LOADING QUESTIONS…" : "START RUN"}{" "}
-            <ArrowUpRight size={23} />
-          </button>
-          {message && (
-            <p role="status" className="share-message">
-              {message}
+            <h1>
+              How far can
+              <br />
+              your brain <em>go?</em>
+            </h1>
+            <p className="intro">
+              {config.startMs / 1000} seconds. Questions get harder.
+              <br />
+              Don’t run out of time.
             </p>
-          )}
-          <Link className="guest-leaderboard" href="/leaderboard">
-            <BarChart3 size={18} /> GLOBAL LEADERBOARD{" "}
-            <ArrowUpRight size={18} />
-          </Link>
-          <Link className="live-invite" href="/compete">
-            LIVE COMPETITIONS <span>1v1 · Team vs team ↗</span>
-          </Link>
-          <div className="difficulty-ruler">
-            <span>EASY</span>
-            <div>
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
+            <div className="start-clock">
+              {config.startMs / 1000}
+              <span>.00</span>
+              <span className="clock-label eyebrow">
+                SECONDS. MAKE THEM COUNT.
+              </span>
             </div>
-            <span>IMPOSSIBLE</span>
           </div>
-          <p className="ranked-invite">
-            {account.player?.username ? (
-              "RANKED RUN · YOUR SCORE GOES GLOBAL"
-            ) : (
-              <button className="text-button" onClick={account.openAccount}>
-                {account.player
-                  ? "CREATE YOUR PROFILE TO PLAY RANKED"
-                  : "PLAY AS A GUEST · SIGN IN TO RANK"}
-              </button>
+          <div className="landing-controls">
+            <fieldset className="genre-picker">
+              <legend className="eyebrow">CHOOSE YOUR CHALLENGE</legend>
+              <div>
+                {GENRES.map((g) => (
+                  <label
+                    key={g.id}
+                    className={genre === g.id ? "selected" : ""}
+                  >
+                    <input
+                      type="radio"
+                      name="genre"
+                      value={g.id}
+                      checked={genre === g.id}
+                      disabled={loadingBank}
+                      onChange={() => setGenre(g.id)}
+                    />
+                    <span>{g.label}</span>
+                  </label>
+                ))}
+              </div>
+              <p>{GENRES.find((g) => g.id === genre)?.description}</p>
+            </fieldset>
+            <button
+              className="primary start"
+              disabled={loadingBank}
+              onClick={() => void start()}
+              onPointerEnter={() =>
+                void loadQuestionBank(genre).catch(() => {})
+              }
+              onFocus={() => void loadQuestionBank(genre).catch(() => {})}
+            >
+              {loadingBank ? "LOADING QUESTIONS…" : "START RUN"}{" "}
+              <ArrowUpRight size={23} />
+            </button>
+            {message && (
+              <p role="status" className="share-message">
+                {message}
+              </p>
             )}
-          </p>
-          <div className="landing-meta">
-            <span>
-              PERSONAL BEST{" "}
-              <strong>
-                {stats.bestScore ? stats.bestScore.toLocaleString() : "—"}
-              </strong>
-            </span>
-            <span>
-              <Zap size={13} /> THINK FAST. LAST LONG.
-            </span>
+            <Link className="guest-leaderboard" href="/leaderboard">
+              <BarChart3 size={18} /> GLOBAL LEADERBOARD{" "}
+              <ArrowUpRight size={18} />
+            </Link>
+            <nav className="mode-links" aria-label="Game modes">
+              <Link href="/daily">
+                DAILY <span>One day. One shot.</span>
+              </Link>
+              <Link href="/challenge">
+                1V1 <span>Challenge a friend</span>
+              </Link>
+              <Link href="/compete">
+                LIVE / TEAMS <span>Compete together</span>
+              </Link>
+            </nav>
+            <div className="difficulty-ruler">
+              <span>EASY</span>
+              <div>
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+              <span>IMPOSSIBLE</span>
+            </div>
+            <p className="ranked-invite">
+              {account.player?.username ? (
+                "RANKED RUN · YOUR SCORE GOES GLOBAL"
+              ) : (
+                <button className="text-button" onClick={account.openAccount}>
+                  {account.player
+                    ? "CREATE YOUR PROFILE TO PLAY RANKED"
+                    : "PLAY AS A GUEST · SIGN IN TO RANK"}
+                </button>
+              )}
+            </p>
+            <div className="landing-meta">
+              <span>
+                PERSONAL BEST{" "}
+                <strong>
+                  {stats.bestScore ? stats.bestScore.toLocaleString() : "—"}
+                </strong>
+              </span>
+              <span>
+                <Zap size={13} /> THINK FAST. LAST LONG.
+              </span>
+            </div>
           </div>
         </div>
       ) : active ? (
@@ -380,7 +398,7 @@ export default function Game() {
           />
           <div className={`combo ${run.combo >= 3 ? "lit" : ""}`}>
             <Flame size={16} />
-            <span>{run.combo} STREAK</span>
+            <span>{comboHeat(run.combo)}</span>
             <strong key={multiplier(run.combo)}>
               ×{multiplier(run.combo).toFixed(1)}
             </strong>
@@ -477,6 +495,9 @@ export default function Game() {
               onFocus={(e) => e.target.select()}
             />
           )}
+          <Link href="/challenge" className="text-link">
+            NEW FRIEND CHALLENGE ↗
+          </Link>
           <div className="personal-stats">
             <span>
               BEST SCORE <b>{stats.bestScore.toLocaleString()}</b>
@@ -489,14 +510,6 @@ export default function Game() {
             </span>
           </div>
         </div>
-      )}
-      {!active && (
-        <footer>
-          <span>A LITTLE KNOWLEDGE. A LOT OF PRESSURE.</span>
-          <span>
-            PLAY. PANIC. REPEAT. <ArrowUpRight size={12} />
-          </span>
-        </footer>
       )}
       {modal && (
         <Modal

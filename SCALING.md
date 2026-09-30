@@ -13,3 +13,7 @@ Before expanding live content:
 5. Keep inactive questions and historical scores; back up before operational migrations. Never clear history to make a finite pool appear fresh. Calibrate tiers using enough first-exposure data, retaining old score/version provenance.
 
 Live-room transport has separate scaling limits documented in LIVE_MATCHES.md. No recurring content publisher, Bloom filter or million-question claim is enabled.
+
+## v1.1.0 fixed challenge storage
+
+`challenge_sets` stores immutable approved decks; `challenge_attempts` owns official/guest attempts with a uniqueness constraint and score index. Candidate pools are bounded to 80/tier, but their initial SQL ordering scans the eligible indexed tier, so high-volume challenge creation needs profiling at 100k. Per-answer operations do not reload the question catalog. Daily preparation is request-driven and prepares tomorrow before publishing at UTC midnight when today's page receives traffic. A scheduler for external acquisition is not connected. Guest creation limits are identity-scoped, not edge/IP controls; add bot protection and retention policy before large traffic. Existing 100k synthetic checks do not establish production latency or question quality.

@@ -1,5 +1,16 @@
 # MINDFKD project log
 
+## 2026-09-30 — Release 1.1.0: Daily, friend challenges, compact UI and GA4
+
+- Audited gameplay, API/auth, SQL history, analytics, storage, a11y and rendering before implementation. Baseline typecheck, 22 tests and build passed; lint found two existing render-time ref reads in Competition, now corrected.
+- Shared versioned survival configuration, typed future question metadata and subtle combo heat. Existing 30/+4/−6 and scoring preserved; difficulty familiarity figures remain editorial goals, not measured accuracy claims.
+- Added Daily with one official signed-in attempt/day, immutable shared deck/order, UTC rollover, actual daily board and spoiler-free sharing. Added guest-friendly async friend links, server scores, comparisons and rematch lineage. Details/limitations in DAILY_CHALLENGES.md.
+- Migration 0006 adds challenge sets/attempts. Version checks, ownership, atomic history updates, bounded answers and creation limits protect writes. No existing score/history migrations changed.
+- Compact desktop two-column home and compact gameplay; removed filled hover so the next answer under a stationary pointer does not appear selected. Preserved keyboard focus, mobile flow, zoom and accessible scrolling for expanded/long content.
+- GA4 property 556715225 / stream 15870863387 / public measurement ID G-1PWY0WZQ6H configured in the client. Enhanced measurement disabled in Google UI. Analytics stays opt-in, production-domain-only and respects DNT/GPC; no names/emails/answer text sent. Provider receipt is recorded separately after deployment.
+- Package/footer version 1.1.0. 24 tests, typecheck and lint passed during release verification. Local browser: 1280×720 desktop home/game and 390×844 mobile home/game fit without scrolling; option C selection resets; two players receive matching Daily and friend questions/options. Final build and deployment receipt recorded in delivery report.
+- Actual approved catalog remains 1,170. No 100,000-question source was fabricated. Daily prepares the next approved sequence on requests, with lazy fallback; no unattended external fetch/publication job is installed. Hosting linked-automation inventory is unavailable, preventing safe schedule setup under the Sites skill.
+
 ## 2026-09-29 — Category boards, fast matches and exact SQL history
 
 - Public leaderboards combine all historical seasons by category and Overall. Overall remains each player's single highest score with its category. No old runs, scores or season provenance were deleted.

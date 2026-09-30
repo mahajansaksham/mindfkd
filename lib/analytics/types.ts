@@ -1,7 +1,7 @@
 import type { Genre } from "../genres";
 export type Scalar = string | number | boolean;
 export type Properties = Record<string, Scalar>;
-export type Mode = "guest" | "ranked";
+export type Mode = "guest" | "ranked" | "daily" | "challenge";
 export type Acquisition = {
   utm_source?: string;
   utm_medium?: string;

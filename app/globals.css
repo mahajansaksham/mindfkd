@@ -1929,3 +1929,244 @@ body:has(.competition-page) > .site-contact {
     display: none;
   }
 }
+
+/* v1.1: fit the core experience without hiding content or preventing zoom/scroll. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+main.game-shell {
+  min-height: 0;
+  flex: 1;
+  width: 100%;
+}
+.game-shell > header {
+  height: 72px;
+}
+.game-shell .landing {
+  max-width: 1060px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+.landing-hero {
+  text-align: left;
+}
+.game-shell .landing h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  margin: 20px 0;
+}
+.game-shell .start-clock {
+  font-size: 88px;
+  margin: 28px 0 0;
+}
+.game-shell .genre-picker {
+  margin: 0 0 16px;
+}
+.game-shell .difficulty-ruler {
+  margin: 20px auto;
+}
+.game-shell .landing-meta {
+  margin-top: 16px;
+  font-size: 9px;
+}
+.game-shell .ranked-invite {
+  margin: 12px 0;
+}
+.mode-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.mode-links a {
+  padding: 14px 4px;
+  border-bottom: 1px solid #33362c;
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+.mode-links span {
+  display: block;
+  font-size: 10px;
+  color: #999d91;
+  margin-top: 7px;
+  font-weight: 400;
+}
+.game-shell .play {
+  margin: 16px auto;
+}
+.game-shell .timer-number {
+  font-size: 72px;
+}
+.game-shell .combo {
+  height: 36px;
+}
+.game-shell .category {
+  margin: 12px 0;
+}
+.game-shell .question h2 {
+  font-size: 26px;
+  min-height: 60px;
+  margin: 12px 0 18px;
+}
+.game-shell .answer {
+  min-height: 64px;
+}
+/* A stationary pointer must never make the next question look selected. */
+.answer:hover:not(:disabled) {
+  background: var(--surface);
+  border-color: var(--line);
+  transform: none;
+}
+.game-shell .results {
+  margin: 20px auto;
+}
+.game-shell .result-score {
+  font-size: 72px;
+  margin: 8px 0;
+}
+.game-shell .results h1 {
+  margin: 12px 0;
+  font-size: 30px;
+}
+.game-shell .run-stats {
+  margin: 20px 0;
+}
+.site-contact {
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 20px;
+  margin-top: auto;
+}
+.site-contact .analytics-choices {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 440px;
+  text-align: left;
+}
+@media (max-width: 760px) {
+  .game-shell > header {
+    height: 60px;
+  }
+  .game-shell .landing {
+    display: block;
+    margin: 14px auto 20px;
+    max-width: 440px;
+  }
+  .landing-hero {
+    text-align: center;
+  }
+  .game-shell .landing h1 {
+    font-size: 38px;
+    margin: 12px 0 8px;
+  }
+  .game-shell .intro {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .game-shell .start-clock {
+    font-size: 52px;
+    margin: 12px 0;
+  }
+  .game-shell .clock-label {
+    margin-top: 2px;
+    font-size: 8px;
+  }
+  .game-shell .genre-picker {
+    margin: 12px 0;
+  }
+  .game-shell .genre-picker label {
+    padding: 9px 4px;
+  }
+  .game-shell .genre-picker p {
+    margin: 7px 0;
+  }
+  .game-shell .start {
+    min-height: 50px;
+  }
+  .game-shell .difficulty-ruler {
+    margin: 12px auto;
+  }
+  .game-shell .landing-meta {
+    margin-top: 12px;
+  }
+  .game-shell .play {
+    margin: 14px auto;
+  }
+  .game-shell .timer-number {
+    font-size: 64px;
+  }
+  .game-shell .question h2 {
+    font-size: 23px;
+  }
+  .site-contact {
+    font-size: 10px;
+    padding: 12px;
+    gap: 10px 16px;
+  }
+}
+.sequence-landing {
+  max-width: 580px;
+  margin: 42px auto;
+  text-align: center;
+}
+.sequence-landing h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  margin: 20px 0;
+  letter-spacing: -2px;
+}
+.sequence-landing h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+.sequence-landing p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sequence-landing .start {
+  margin-top: 20px;
+}
+.sequence-shell .text-link {
+  display: block;
+  margin: 20px auto;
+}
+.daily-board {
+  max-width: 580px;
+  margin: 20px auto;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.daily-board summary {
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.daily-board li {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.daily-board a {
+  color: inherit;
+}
+.comparison {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.comparison p {
+  margin: 8px 0;
+  font-size: 13px;
+}
+.opponent-target strong {
+  display: block;
+  font-size: 32px;
+  color: var(--accent);
+}

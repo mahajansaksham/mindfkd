@@ -568,7 +568,7 @@ export default function Competition() {
         {error && (
           <div className="network-error" role="alert">
             {error}
-            {pendingRequest.current && (
+            {error && (
               <button
                 className="outline-button"
                 disabled={busy}

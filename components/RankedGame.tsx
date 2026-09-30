@@ -2,6 +2,7 @@
 import { genreLabel, type Genre } from "../lib/genres";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { comboHeat } from "../lib/rules";
 import { Run, multiplier } from "../lib/game";
 import { api } from "../lib/api";
 import { shareRun, shareText } from "../lib/share";
@@ -105,7 +106,7 @@ export default function RankedGame({
   }
   const r = snapshot?.run;
   return (
-    <main>
+    <main className="game-shell">
       <header>
         <span className="brand">
           MIND<span>FKD</span>
@@ -202,6 +203,9 @@ export default function RankedGame({
           <p className="share-message" role="status">
             {message}
           </p>
+          <Link href="/challenge" className="text-link">
+            NEW FRIEND CHALLENGE ↗
+          </Link>
           <div className="profile-actions">
             <Link href="/leaderboard" className="text-link">
               GLOBAL LEADERBOARD ↗
@@ -227,7 +231,8 @@ export default function RankedGame({
             delta={r.feedback ? (r.feedback.correct ? 4 : -6) : null}
           />
           <div className="combo lit">
-            {r.combo} STREAK <strong>×{multiplier(r.combo).toFixed(1)}</strong>
+            {comboHeat(r.combo)}{" "}
+            <strong>×{multiplier(r.combo).toFixed(1)}</strong>
           </div>
           {r.question && (
             <Question

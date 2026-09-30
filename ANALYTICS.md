@@ -91,3 +91,9 @@ Only consenting, unblocked browsers contribute. Blockers, offline use, closing a
 To add PostHog, Amplitude, Mixpanel or a backend later, implement `AnalyticsProvider.send(Envelope)` and register it in AnalyticsRoot. Keep its initialization and delivery behind the existing privacy/development gates, define event-volume policy, and update privacy disclosures. Do not call a provider directly from gameplay.
 
 Category selection is included as the allowlisted `genre` field on game-start/end events. Competition invite query strings are excluded from page analytics; `/compete` is a known page path. Live submitted answers remain application data and are never analytics payloads.
+
+## Connected configuration — 30 September 2026
+
+GA4 account 58928057; property **MINDFKD** 556715225; Web stream 15870863387; public measurement ID **G-1PWY0WZQ6H**. Dashboard: https://analytics.google.com/analytics/web/#/a58928057p556715225/reports/intelligenthome . Stream settings: https://analytics.google.com/analytics/web/#/a58928057p556715225/admin/streams/table/15870863387 . Enhanced measurement disabled; events are explicit in the app. The measurement ID is public configuration, not a password/API secret. `NEXT_PUBLIC_GA_MEASUREMENT_ID` can override the checked-in default at build time. No Measurement Protocol secret is used. Data reception must be verified separately after publish; property creation alone does not prove reception.
+
+Added `daily`/`challenge` run modes, fixed challenge open events and successful result-sharing events. Private invite UUIDs are removed from page locations (`/v`). The funnel uses existing game_started, question_shown/answered, game_over, challenge_opened and score_shared events. No fake scores/traffic are generated. Analytics preferences remains off until explicit consent and honors DNT/GPC. Vercel analytics packages remain disabled because production is Sites, not Vercel.

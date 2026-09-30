@@ -1,3 +1,4 @@
+import { RULES } from "./rules";
 import { type Genre, categoryGenre } from "./genres";
 export type Kind =
   "choice" | "binary" | "higher" | "order" | "boolean" | "number" | "visual";
@@ -13,25 +14,33 @@ export type Question = {
   topicKey?: string;
   source?: string;
   genre?: Genre;
+  subcategory?: string;
+  countryRelevance?: string[];
+  reference?: { url?: string; reviewedAt?: string; license?: string };
+  metrics?: {
+    timesServed: number;
+    answerCount: number;
+    correctCount: number;
+    averageResponseMs: number;
+    reportCount: number;
+  };
 };
-export const config = {
-  startMs: 30000,
-  bonusMs: 4000,
-  penaltyMs: 6000,
-  correctFeedbackMs: 520,
-  wrongFeedbackMs: 850,
-};
+export const config = RULES;
 export const difficultyFor = (level: number) =>
-  level <= 20 ? Math.ceil(level / 5) : level <= 30 ? 5 : level <= 40 ? 6 : 7;
+  RULES.difficultyCeilings.findIndex((n) => level <= n) + 1;
 export const multiplier = (combo: number) =>
-  combo >= 15 ? 3 : combo >= 10 ? 2 : combo >= 5 ? 1.5 : combo >= 3 ? 1.2 : 1;
+  RULES.multipliers.find(([n]) => combo >= n)?.[1] ?? 1;
 export function scoreAnswer(
   difficulty: number,
   elapsedMs: number,
   combo: number,
 ) {
   return Math.round(
-    (difficulty * 150 + Math.max(0, 300 - Math.floor(elapsedMs / 10))) *
+    (difficulty * RULES.pointsPerTier +
+      Math.max(
+        0,
+        RULES.speedBonus - Math.floor(elapsedMs / RULES.speedStepMs),
+      )) *
       multiplier(combo),
   );
 }

@@ -33,6 +33,7 @@ export const KEYS = {
 export const productionHost = (host: string) =>
   ["mindfkd.com", "www.mindfkd.com"].includes(host.toLowerCase());
 export function safePage(path: string) {
+  if (/^\/v\/[a-f0-9-]{36}\/?$/.test(path)) return "/v";
   return [
     "/",
     "/profile",
@@ -40,6 +41,9 @@ export function safePage(path: string) {
     "/privacy",
     "/questions",
     "/compete",
+    "/daily",
+    "/challenge",
+    "/v",
   ].includes(path)
     ? path
     : "/other";

@@ -18,17 +18,26 @@ export default function Page() {
         </p>
         <p>
           Signed-in players have private question history across devices. Guest
-          history stays in this browser. Questions and linked duplicate facts do
-          not repeat while that history is retained. Live matches use questions
-          that are new to every participant. When no unseen questions remain at
-          the required difficulty, we stop instead of recycling them. Try
-          another category while we add more.
+          history stays in this browser. In RUN, questions and linked duplicate
+          facts do not repeat while that history is retained. Live matches use
+          questions that are new to every participant. When no unseen questions
+          remain at the required difficulty, we stop instead of recycling them.
+          Try another category while we add more.
         </p>
         <p>
           Difficulty starts with editorial ratings, not measured player success
           rates. We record ranked answer accuracy and response times to inform
           future reviews. Leaderboards show all-time best scores by category.
           Past scores and result links remain available when the bank changes.
+        </p>
+        <p>
+          Daily and friend challenges deliberately share a fixed sequence, even
+          if you have seen a fact before. Daily allows one official attempt per
+          signed-in account per UTC day. Tomorrow’s sequence is prepared from
+          the reviewed catalog when today’s Daily is opened, and becomes
+          available at 00:00 UTC. New external imports still require review.
+          Friend links use the same question order and survival rules for 30
+          days.
         </p>
         <h2>Sources and corrections</h2>
         <p>

@@ -25,3 +25,7 @@ Migration 0003 retains authoritative matches/membership/answers. Migration 0005 
 At 100 active sockets, 250ms sync can mean approximately 400 cheap revision reads/second, plus changes/actions. This is not a tested 100-player capacity guarantee. Load-test Worker/D1 budgets and cross-region latency. The next scale step is one Durable Object per room with WebSocket broadcasts/hibernation, if hosting exposes that binding; this Site currently only declares D1 and static assets. Reference: https://developers.cloudflare.com/durable-objects/concepts/what-are-durable-objects/ .
 
 Local workerd tests cover real upgrades, direct acknowledgements during sync, cross-client revision propagation, bounded names, hidden answers, session revocation, shared clocks, unequal summed teams, duplicate answers and persistent results. Local acknowledgement figures are not a production SLA.
+
+## v1.1.0 addition
+
+Async 1v1 is separate at `/challenge` and `/v/<id>`; see DAILY_CHALLENGES.md. Live 1v1/teams remain at `/compete` with the same WebSocket-first transport, shared-round timing and profile win/loss calculations. The ref-in-render lint issue in the connection-error retry UI was corrected. Shared answer hover styling no longer resembles a selection on the next question. No production latency improvement or load guarantee is claimed for this release.

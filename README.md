@@ -89,3 +89,7 @@ Six playable categories, category/overall best-score leaderboards and `/compete`
 ## September 29 update
 
 All-time category/Overall leaderboards, editable team names, compact match UI and WebSocket-first transport with fallback. SQL migration 0005 seeds the approved bank and backfills private no-repeat history. `npm run questions:import -- --input candidates.ndjson` stages up to 100,000 candidates per file; staging never publishes them. See QUESTIONS.md and PROJECT_LOG.md.
+
+## Release 1.1.0
+
+New `/daily` and `/challenge` modes share the survival engine; issued `/v/<id>` links work without guest login. Daily is one official account attempt per UTC day. See DAILY_CHALLENGES.md for timing, storage and repeat-policy exceptions. Package/footer version is 1.1.0. Desktop/mobile core screens are compact, answer hover does not carry a selected appearance forward, and optional GA4 is configured. Run `npm run typecheck`, `npm run lint`, `npm test` and `npm run build:site` before release. Maintain PROJECT_LOG.md and the release delivery report with every material change. The live bank remains 1,170 reviewed entries; 100,000 is an unfulfilled sourcing target.

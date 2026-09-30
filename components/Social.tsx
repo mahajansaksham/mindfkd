@@ -311,15 +311,15 @@ export function PublicProfile() {
           <div className="competition-record">
             <div>
               <strong>{data.competition.wins}</strong>
-              <span>1V1 WINS</span>
+              <span>LIVE 1V1 WINS</span>
             </div>
             <div>
               <strong>{data.competition.losses}</strong>
-              <span>1V1 LOSSES</span>
+              <span>LIVE 1V1 LOSSES</span>
             </div>
             <div>
               <strong>{data.competition.draws}</strong>
-              <span>1V1 DRAWS</span>
+              <span>LIVE 1V1 DRAWS</span>
             </div>
           </div>
           <p className="muted">

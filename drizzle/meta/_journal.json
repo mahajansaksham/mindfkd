@@ -43,6 +43,13 @@
       "when": 1790693317875,
       "tag": "0005_sql_question_bank",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1790730723584,
+      "tag": "0006_daily_challenges",
+      "breakpoints": true
     }
   ]
 }

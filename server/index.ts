@@ -1,3 +1,4 @@
+import { challengeAPI } from "./challenges";
 import { matchSocket } from "./match-socket";
 import { matchAPI, MatchError, competitionStats } from "./matches";
 import { GENRES, isGenre } from "../lib/genres";
@@ -116,6 +117,13 @@ async function api(request: Request, env: Env) {
       request.headers.get("x-mindfkd-request") !== "1")
   )
     fail(403, "Invalid request origin");
+  if (path.startsWith("/api/challenges/"))
+    return challengeAPI(
+      request,
+      env,
+      method === "POST" ? await body(request) : {},
+      now,
+    );
   if (path.startsWith("/api/matches/")) {
     if (
       method === "GET" &&
@@ -571,6 +579,13 @@ const worker = {
       const url = new URL(request.url);
       if (url.pathname.startsWith("/api/"))
         return secureResponse(await api(request, env));
+      if (/^\/v\/[a-f0-9-]{36}\/?$/.test(url.pathname)) {
+        url.pathname = "/challenge";
+        return secureResponse(
+          await env.ASSETS.fetch(new Request(url, request)),
+          true,
+        );
+      }
       const response = await env.ASSETS.fetch(request);
       return secureResponse(
         response,

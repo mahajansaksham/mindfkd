@@ -4,6 +4,7 @@ import {
   integer,
   index,
   primaryKey,
+  uniqueIndex,
 } from "drizzle-orm/sqlite-core";
 export const players = sqliteTable("players", {
   id: text("id").primaryKey(),
@@ -200,4 +201,51 @@ export const playerQuestionSeen = sqliteTable(
     source: text("source").notNull(),
   },
   (t) => [primaryKey({ columns: [t.playerId, t.topicKey] })],
+);
+
+// Fixed immutable decks. Daily/friend modes intentionally permit previously seen facts.
+export const challengeSets = sqliteTable(
+  "challenge_sets",
+  {
+    id: text("id").primaryKey(),
+    kind: text("kind").notNull(),
+    day: text("day").unique(),
+    creatorActor: text("creator_actor"),
+    creatorName: text("creator_name").notNull().default("A friend"),
+    parentId: text("parent_id"),
+    deck: text("deck").notNull(),
+    rulesVersion: integer("rules_version").notNull(),
+    bankVersion: text("bank_version").notNull(),
+    createdAt: integer("created_at").notNull(),
+    opensAt: integer("opens_at").notNull(),
+    expiresAt: integer("expires_at").notNull(),
+  },
+  (t) => [index("challenge_creator_created").on(t.creatorActor, t.createdAt)],
+);
+export const challengeAttempts = sqliteTable(
+  "challenge_attempts",
+  {
+    id: text("id").primaryKey(),
+    setId: text("set_id")
+      .notNull()
+      .references(() => challengeSets.id),
+    actor: text("actor").notNull(),
+    playerId: text("player_id").references(() => players.id, {
+      onDelete: "cascade",
+    }),
+    displayName: text("display_name").notNull(),
+    state: text("state").notNull(),
+    answers: text("answers").notNull().default("[]"),
+    version: integer("version").notNull().default(0),
+    status: text("status").notNull().default("active"),
+    score: integer("score").notNull().default(0),
+    result: text("result"),
+    createdAt: integer("created_at").notNull(),
+    finishedAt: integer("finished_at"),
+  },
+  (t) => [
+    index("challenge_ranking").on(t.setId, t.status, t.score, t.finishedAt),
+    index("challenge_actor_created").on(t.actor, t.createdAt),
+    uniqueIndex("challenge_once").on(t.setId, t.actor),
+  ],
 );

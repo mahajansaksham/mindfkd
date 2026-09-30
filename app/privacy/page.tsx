@@ -48,7 +48,7 @@ export default function Page() {
         <p>
           Optional usage analytics are off until you allow them through
           Analytics preferences, which appears when a provider is configured.
-          Google Analytics may receive anonymous browser, session and run
+          Google Analytics may receive pseudonymous browser, session and run
           identifiers, campaign labels, page visits and game outcomes. Vercel
           Analytics and Speed Insights may measure usage and performance on
           supported hosting. We do not send names, emails, profile text or
@@ -62,7 +62,15 @@ export default function Page() {
           Control disable optional analytics. Essential sign-in, local game
           statistics and ranked question history work independently.
         </p>
-        <p>Last updated: 28 September 2026.</p>
+        <p>
+          Daily attempts and friend challenges store server-verified outcomes,
+          response times and fixed question sets. Daily rankings are public.
+          People with a friend link can see its creator and completed scores.
+          Guest friend challenges use a separate secure cookie for up to 30
+          days; clearing it loses access to that guest attempt. Do not share a
+          challenge link with people you do not want to see its results.
+        </p>
+        <p>Last updated: 30 September 2026.</p>
       </article>
     </main>
   );
