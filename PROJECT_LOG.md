@@ -1,5 +1,9 @@
 # MINDFKD project log
 
+## 2026-09-30 — 1.1.1 restore the prior visual layout
+
+At the owner’s request, restored the pre-1.1 centered homepage, original typography/spacing, large clock, live-competition link and footer. Removed compact-layout overrides on RUN/results and the global body/footer changes. Daily/friend modes and Analytics remain available; unobtrusive footer links lead to the new modes. The next-question neutral-hover bug fix remains. This intentionally restores the earlier scrolling behavior. No database, scoring, authentication or question-history changes. Verification and publication receipts are in the delivered release report.
+
 ## 2026-09-30 — Release 1.1.0: Daily, friend challenges, compact UI and GA4
 
 - Audited gameplay, API/auth, SQL history, analytics, storage, a11y and rendering before implementation. Baseline typecheck, 22 tests and build passed; lint found two existing render-time ref reads in Competition, now corrected.

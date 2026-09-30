@@ -25,4 +25,4 @@ export const RULES = {
 };
 export const comboHeat = (combo: number) =>
   RULES.heat.find(([n]) => combo >= n)?.[1] ?? `${combo} STREAK`;
-export const RELEASE = "1.1.0";
+export const RELEASE = "1.1.1";

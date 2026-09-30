@@ -1,4 +1,3 @@
-import { RELEASE } from "../lib/rules";
 import Link from "next/link";
 import AnalyticsRoot from "../components/Analytics";
 import type { Metadata } from "next";
@@ -29,10 +28,11 @@ export default function RootLayout({
           <a href="mailto:ceo@mindfkd.com">
             Contact us <span>↗</span>
           </a>
+          <Link href="/daily">Daily</Link>
+          <Link href="/challenge">Challenge a friend</Link>
           <Link href="/questions">Question sources &amp; fairness</Link>
-          <span>v{RELEASE}</span>
-          <AnalyticsRoot vercelHosted={process.env.VERCEL === "1"} />
         </footer>
+        <AnalyticsRoot vercelHosted={process.env.VERCEL === "1"} />
       </body>
     </html>
   );

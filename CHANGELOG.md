@@ -1,5 +1,9 @@
 # Releases
 
+## 1.1.1 — 30 September 2026
+
+Restore the prior centered UI and original gameplay sizes/spacing at the owner’s request. Keep Daily, friend challenges, Analytics and the answer-selection fix. No database changes.
+
 ## 1.1.0 — 30 September 2026
 
 - Shared Daily: one official account attempt per UTC day, immutable escalating sequence, daily rankings and spoiler-free results.

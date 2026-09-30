@@ -106,7 +106,7 @@ export default function RankedGame({
   }
   const r = snapshot?.run;
   return (
-    <main className="game-shell">
+    <main>
       <header>
         <span className="brand">
           MIND<span>FKD</span>
